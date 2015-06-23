@@ -12,7 +12,14 @@
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
 \RequirePackage{hyperref}
-\RequirePackage{cite}
+\RequirePackage{natbib}
+\RequirePackage{pslatex}
+\RequirePackage{latexsym}
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{epsfig}
+
+
 \graphicspath{ {imagenes/} }
 
 \selectlanguage{spanish}
