@@ -11,13 +11,7 @@
 \RequirePackage[english,spanish]{babel}
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
-\RequirePackage{hyperref}
-\RequirePackage{natbib}
-\RequirePackage{pslatex}
-\RequirePackage{latexsym}
-\RequirePackage{amssymb}
-\RequirePackage{amsmath}
-\RequirePackage{epsfig}
+\RequirePackage{url}
 
 
 \graphicspath{ {imagenes/} }
