@@ -1,16 +1,17 @@
+
 %% inicio, la clase del documento es iccmemoria.cls
 \documentclass{iccmemoria}
 
 %% datos generales y para la tapa
-\titulo{Título de la Memoria}
-\author{Nombre del Alumno}
-\supervisor{Profesor Supervisor}
+\titulo{Dispositivo de riego inteligente de bajo costo para el uso eficiente del agua}
+\author{Nicolás Gastón Maturana Barrios}
+\supervisor{Benjamin Ingram}
 \informantes
 	{Profesor Informante 1}
 	{Profesor Informante 2}
 \adicional{(sólo por si se necesita agregar algún otro profesor)}
 \director{Profesor del ramo Memoria de Título}
-\date{mes, año}
+\date{Diciembre, 2015}
 
 %% inicio de documento
 \begin{document}
@@ -212,14 +213,12 @@ Cada uno de estos tipos de suelos presentan una propiedad llamada permeabilidad;
 
 Por regla general, como se muestra en la Figura 1, mientras más fina sea la textura del suelo, más lenta sera la permeabilidad:
 
-\begin{figure}[ht!]
-  \caption{Permeabilidad según textura del suelo}
-  \centering
-  \includegraphics[bb=0 0 640 480, width=7cm]{permeabilidad.png}
+\begin{figure}[htb]
+	\caption{Permeabilidad según textura del suelo}
+	\begin{center}
+		\includegraphics[bb=0 0 640 480, width=6cm]{permeabilidad.PNG}
+	\end{center}
 \end{figure}
-
-\newpage
-
 
 \section{Servicios web meteorológicos}
 \subsection{¿Qué es un servicio web?}
@@ -229,10 +228,10 @@ estándares que garantizan la interoperabilidad de los servicios~\cite{webService
 En la Figura 2, se puede apreciar la arquitectura de un servicio web, se ve que el cliente realiza un petición al servidor y éste le envía una respuesta con lo solicitado.
 
 
-\begin{figure}[ht!]
+\begin{figure}[htb]
 \caption{Arquitectura servicio web}
 \centering
-\includegraphics[bb=0 0 640 480, width=7cm]{rest.jpg}
+\includegraphics[bb=0 0 640 480, width=5cm]{rest.jpg}
 \end{figure}
 
 Un servicio web REST, es un servicio implementado usando HTTP y que entrega como resultado un XML o un JSON de los cuales se puede obtener la información solicitada.
@@ -436,9 +435,51 @@ Estos pines son una interfaz física entre el la Raspberry y el mundo exterior. A
 Puede programar los pines de maneras asombrosas para interactuar con el mundo real. Las entradas no tienen que venir de un interruptor físico; podría ser la entrada de un sensor o una señal de otro ordenador o dispositivo, por ejemplo. La salida también puede hacer cualquier cosa, desde encender un LED con el envío de una señal o de datos a otro dispositivo. Si la Raspberry está en una red, puede controlar los dispositivos que están conectados a él desde cualquier lugar. Conectividad y control de los dispositivos físicos a través de Internet es algo muy poderoso y emocionante, y la Raspberry es ideal para esto.
 
 %% contenido del tercer capítulo
-\chapter{Definición de la solución}
+\chapter{Análisis del problema}
 
-El presente capítulo tiene por objetivo dar a conocer la forma global del funcionamiento del sistema.
+El presente capítulo tiene por objetivo dar a conocer la problemática existente relacionada a la mantención de césped, mencionando también los métodos utilizados, los problemas que estos tienen y mostrar un prototipo de como sulucionar uno los problemas que se mencionarán.
+
+\section{Descripción del problema}
+
+La mantención de jardines y áreas verdes es una actividad muy común hoy en día en Chile, más aún cuando existen propuestas  del propio estado de Chile por promover esta iniciativa, aumentando la inversión y ampliando cada vez más los parques en diferentes comunas de Chile.
+
+Estas áreas verdes no requieren de mucho cuidado, principalmente se necesita cortar y regar el césped que es en la actividad que estamos enfocados, entonces ¿Cómo se riega el césped hoy en día en nuestro país? principalmente se utilizan dos métodos:
+
+\begin{itemize}
+\item Riego manual: la persona encargada del riego, riega hasta que concidere que el césped se encuentra lo suficientemente húmedo.
+\item Riego por aspersores: generalmente funcionan automáticamente todos los días durante un periodo de tiempo determinado.
+\end{itemize}
+
+En ambos métodos se utiliza un exceso de agua, y además si a esto le sumamos que por lo general se utiliza agua potable se traduce en un gran desperdicio y más aún que existe escasez de agua en el país.
+
+El año 2013 fue uno de los años más secos desde 1866. Existen déficit de precipitaciones que van desde un 20\% llegando incluso hasta un 60\% entre las zonas de Copiapó y Talca al sur, estas son zonas de gran producción agrícola y además entre los lugares mencionados son los que han tenido mayor inversión para poder satisfacer la demanda de agua dulce a las personas~\cite{sequia}. 
+
+Es por ello, que es muy importante y de suma urgencia idear nuevas técnicas de riego sustentables en las que se obtenga el mayor provecho del agua.
+
+
+\section{Problemas identificados}
+
+"Apagar el sistema de riego por aspersores después de que llueve es el primer paso que se debe tomar en primavera para ahorrar agua.", Chuck Ingels asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento.\\
+
+"El riego de césped y jardines representa más de la mitad del agua usada en un hogar promedio.", Chuck Ingels asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento.\\
+
+"Ha llevado a cabo estudios sobre un problema común relacionado al riego de céspedes residenciales en California: el escurrimiento de agua.", Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes\\
+
+"Mucha del agua que se aplica a los céspedes termina directamente en las alcantarillas. No solo se trata de agua desperdiciada; hemos descubierto también que el agua de escurrimientos arrastra contaminantes ?incluyendo pesticidas y fertilizantes? hasta las alcantarillas y, eventualmente, a los canales y vías fluviales. El problema radica en que los sistemas de aspersores típicos aplican agua de forma más rápida que la que la tierra puede absorber, lo cual lleva al escurrimiento.", Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes
+
+\section{Información disponible}
+
+Para los problemas anteriormente mencionados existe información que puede ser utilizada para darles solución, los podemos ver a continuación:
+
+\begin{itemize}
+\item Datos climatológicos: serán utilizados para saber cuando comenzará una lluvia y así evitar el riego antes o después de una lluvia.
+\item Tipo de suelo: existe información con los tipos de suelo de todo Chile. Con esta información se podrá aplicar un mejor riego evitando el escurrimiento de agua.
+\item Humedad del suelo:se puede determinar la humedad actual que tiene el suelo, para aplicar justo el agua necesaria para el césped.
+\end{itemize}
+
+\section{Prototipo básico del dispositivo}
+
+Imagen del dispositivo y breve explicación de éste.
 
 \section{Funcionamiento del sistema}
 

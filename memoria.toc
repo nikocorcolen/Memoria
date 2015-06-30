@@ -3,65 +3,69 @@
 \contentsline {chapter}{Dedicatoria}{\es@scroman {i}}
 \contentsline {chapter}{Agradecimientos}{\es@scroman {ii}}
 \contentsline {chapter}{Tabla de Contenidos}{\es@scroman {iii}}
-\contentsline {chapter}{\IeC {\"\i }\IeC {\textquestiondown }\IeC {\textonehalf }ndice de Figuras}{\es@scroman {v}}
-\contentsline {chapter}{\IeC {\"\i }\IeC {\textquestiondown }\IeC {\textonehalf }ndice de Tablas}{\es@scroman {vi}}
-\contentsline {chapter}{Resumen}{\es@scroman {vii}}
-\contentsline {chapter}{\numberline {1}Introducci\'on}{8}
-\contentsline {section}{\numberline {1.1}Descripci\'on de la propuesta}{8}
-\contentsline {subsection}{\numberline {1.1.1}Contexto del proyecto}{8}
-\contentsline {subsection}{\numberline {1.1.2}Trabajo relacionado}{9}
-\contentsline {subsection}{\numberline {1.1.3}Definici\'on del problema}{9}
-\contentsline {subsection}{\numberline {1.1.4}Propuesta de soluci\'on}{10}
-\contentsline {section}{\numberline {1.2}Hip\'otesis}{10}
-\contentsline {section}{\numberline {1.3}Objetivos}{11}
-\contentsline {paragraph}{Objetivo general}{11}
-\contentsline {paragraph}{Objetivos espec\IeC {\'\i }ficos}{11}
-\contentsline {section}{\numberline {1.4}Alcances}{11}
-\contentsline {section}{\numberline {1.5}Metodolog\IeC {\'\i }a}{11}
-\contentsline {paragraph}{Objetivo 1:}{11}
-\contentsline {paragraph}{Objetivo 2:}{12}
-\contentsline {paragraph}{Objetivo 3:}{12}
-\contentsline {paragraph}{Objetivo 4:}{12}
-\contentsline {section}{\numberline {1.6}Plan de trabajo}{13}
-\contentsline {paragraph}{Etapa 1:}{13}
-\contentsline {paragraph}{Etapa 2:}{13}
-\contentsline {paragraph}{Etapa 3:}{13}
-\contentsline {paragraph}{Etapa 4:}{14}
-\contentsline {chapter}{\numberline {2}Marco te\'orico}{15}
-\contentsline {section}{\numberline {2.1}Programaci\'on del riego}{15}
-\contentsline {subsection}{\numberline {2.1.1}Textura del suelo}{16}
+\contentsline {chapter}{\IeC {\"\i }\IeC {\textquestiondown }\IeC {\textonehalf }ndice de Figuras}{\es@scroman {vi}}
+\contentsline {chapter}{\IeC {\"\i }\IeC {\textquestiondown }\IeC {\textonehalf }ndice de Tablas}{\es@scroman {vii}}
+\contentsline {chapter}{Resumen}{\es@scroman {viii}}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{9}
+\contentsline {section}{\numberline {1.1}Descripci\'on de la propuesta}{9}
+\contentsline {subsection}{\numberline {1.1.1}Contexto del proyecto}{9}
+\contentsline {subsection}{\numberline {1.1.2}Trabajo relacionado}{10}
+\contentsline {subsection}{\numberline {1.1.3}Definici\'on del problema}{10}
+\contentsline {subsection}{\numberline {1.1.4}Propuesta de soluci\'on}{11}
+\contentsline {section}{\numberline {1.2}Hip\'otesis}{11}
+\contentsline {section}{\numberline {1.3}Objetivos}{12}
+\contentsline {paragraph}{Objetivo general}{12}
+\contentsline {paragraph}{Objetivos espec\IeC {\'\i }ficos}{12}
+\contentsline {section}{\numberline {1.4}Alcances}{12}
+\contentsline {section}{\numberline {1.5}Metodolog\IeC {\'\i }a}{12}
+\contentsline {paragraph}{Objetivo 1:}{12}
+\contentsline {paragraph}{Objetivo 2:}{13}
+\contentsline {paragraph}{Objetivo 3:}{13}
+\contentsline {paragraph}{Objetivo 4:}{13}
+\contentsline {section}{\numberline {1.6}Plan de trabajo}{14}
+\contentsline {paragraph}{Etapa 1:}{14}
+\contentsline {paragraph}{Etapa 2:}{14}
+\contentsline {paragraph}{Etapa 3:}{14}
+\contentsline {paragraph}{Etapa 4:}{15}
+\contentsline {chapter}{\numberline {2}Marco te\'orico}{16}
+\contentsline {section}{\numberline {2.1}Programaci\'on del riego}{16}
+\contentsline {subsection}{\numberline {2.1.1}Textura del suelo}{17}
 \contentsline {section}{\numberline {2.2}Servicios web meteorol\'ogicos}{17}
 \contentsline {subsection}{\numberline {2.2.1}\IeC {\textquestiondown }Qu\'e es un servicio web?}{17}
 \contentsline {subsection}{\numberline {2.2.2}Wunderground}{18}
 \contentsline {section}{\numberline {2.3}Trabajos relacionados}{19}
 \contentsline {subsection}{\numberline {2.3.1}Cultivar}{19}
-\contentsline {subsection}{\numberline {2.3.2}Rachio IRO}{20}
+\contentsline {subsection}{\numberline {2.3.2}Rachio IRO}{21}
 \contentsline {section}{\numberline {2.4}Hardware}{21}
-\contentsline {subsection}{\numberline {2.4.1}Raspberry pi}{21}
-\contentsline {subsection}{\numberline {2.4.2}Servidor de base de datos}{21}
-\contentsline {subsection}{\numberline {2.4.3}Servidor web}{22}
-\contentsline {subsection}{\numberline {2.4.4}Sensores de humedad}{22}
-\contentsline {subsection}{\numberline {2.4.5}Sensor de flujo de agua}{22}
+\contentsline {subsection}{\numberline {2.4.1}Raspberry pi}{22}
+\contentsline {subsection}{\numberline {2.4.2}Servidor de base de datos}{22}
+\contentsline {subsection}{\numberline {2.4.3}Servidor web}{23}
+\contentsline {subsection}{\numberline {2.4.4}Sensores de humedad}{23}
+\contentsline {subsection}{\numberline {2.4.5}Sensor de flujo de agua}{23}
 \contentsline {subsection}{\numberline {2.4.6}V\'alvula solenoide}{23}
-\contentsline {subsection}{\numberline {2.4.7}GPS}{23}
+\contentsline {subsection}{\numberline {2.4.7}GPS}{24}
 \contentsline {subsection}{\numberline {2.4.8}M\'odem 3G}{24}
-\contentsline {subsection}{\numberline {2.4.9}Cargador}{24}
-\contentsline {section}{\numberline {2.5}Software}{25}
-\contentsline {subsection}{\numberline {2.5.1}Raspbian}{25}
-\contentsline {subsection}{\numberline {2.5.2}Python}{25}
-\contentsline {subsubsection}{Librer\IeC {\'\i }a GPIO}{26}
-\contentsline {chapter}{\numberline {3}Definici\'on de la soluci\'on}{28}
-\contentsline {section}{\numberline {3.1}Funcionamiento del sistema}{28}
-\contentsline {subsection}{\numberline {3.1.1}Entradas del sistema}{28}
-\contentsline {subsection}{\numberline {3.1.2}Procesamiento de datos}{29}
-\contentsline {subsection}{\numberline {3.1.3}Salidas del sistema}{29}
-\contentsline {chapter}{Glosario}{30}
-\contentsline {chapter}{Glosario}{31}
-\contentsline {chapter}{Bibliograf\'{\i }a}{32}
+\contentsline {subsection}{\numberline {2.4.9}Cargador}{25}
+\contentsline {section}{\numberline {2.5}Software}{26}
+\contentsline {subsection}{\numberline {2.5.1}Raspbian}{26}
+\contentsline {subsection}{\numberline {2.5.2}Python}{26}
+\contentsline {subsubsection}{Librer\IeC {\'\i }a GPIO}{27}
+\contentsline {chapter}{\numberline {3}An\'alisis del problema}{29}
+\contentsline {section}{\numberline {3.1}Descripci\'on del problema}{29}
+\contentsline {section}{\numberline {3.2}Problemas identificados}{30}
+\contentsline {section}{\numberline {3.3}Informaci\'on disponible}{31}
+\contentsline {section}{\numberline {3.4}Prototipo b\'asico del dispositivo}{31}
+\contentsline {section}{\numberline {3.5}Funcionamiento del sistema}{31}
+\contentsline {subsection}{\numberline {3.5.1}Entradas del sistema}{32}
+\contentsline {subsection}{\numberline {3.5.2}Procesamiento de datos}{32}
+\contentsline {subsection}{\numberline {3.5.3}Salidas del sistema}{32}
+\contentsline {chapter}{Glosario}{33}
+\contentsline {chapter}{Glosario}{34}
+\contentsline {chapter}{Bibliograf\'{\i }a}{35}
 \contentsline {chapter}{Anexos}{}
-\contentsline {chapter}{A:\hspace {1em}El Primer Anexo}{35}
-\contentsline {section}{\numberline {A.1}La primera secci\'on del primer anexo}{35}
-\contentsline {section}{\numberline {A.2}La segunda secci\'on del primer anexo}{35}
-\contentsline {subsection}{\numberline {A.2.1}La primera subsecci\'on de la segunda secci\'on del primer anexo}{35}
-\contentsline {chapter}{B:\hspace {1em}El segundo Anexo}{36}
-\contentsline {section}{\numberline {B.1}La primera secci\'on del segundo anexo}{36}
+\contentsline {chapter}{A:\hspace {1em}El Primer Anexo}{38}
+\contentsline {section}{\numberline {A.1}La primera secci\'on del primer anexo}{38}
+\contentsline {section}{\numberline {A.2}La segunda secci\'on del primer anexo}{38}
+\contentsline {subsection}{\numberline {A.2.1}La primera subsecci\'on de la segunda secci\'on del primer anexo}{38}
+\contentsline {chapter}{B:\hspace {1em}El segundo Anexo}{39}
+\contentsline {section}{\numberline {B.1}La primera secci\'on del segundo anexo}{39}
