@@ -1,7 +1,6 @@
 
 %% inicio, la clase del documento es iccmemoria.cls
 \documentclass{iccmemoria}
-
 %% datos generales y para la tapa
 \titulo{Dispositivo de riego inteligente de bajo costo para el uso eficiente del agua}
 \author{Nicolás Gastón Maturana Barrios}
@@ -211,13 +210,14 @@ Para conocer la textura de una muestra de suelo~\cite{sueloTextura}:
 
 Cada uno de estos tipos de suelos presentan una propiedad llamada permeabilidad; que es la característica que tiene el suelo de transmitir el agua y el aire y es una de las cualidades más importantes que han de considerarse a la hora de realizar un riego. Mientras más permeable sea el suelo, mayor sera la filtración.
 
-Por regla general, como se muestra en la Figura 1, mientras más fina sea la textura del suelo, más lenta sera la permeabilidad:
+Por regla general, como se muestra en la Figura \ref{permeabilidad}, mientras más fina sea la textura del suelo, más lenta sera la permeabilidad:
 
-\begin{figure}[htb]
-	\caption{Permeabilidad según textura del suelo}
+\begin{figure}[h]
 	\begin{center}
-		\includegraphics[bb=0 0 640 480, width=6cm]{permeabilidad.PNG}
+		\includegraphics[width=6cm]{permeabilidad.PNG}
 	\end{center}
+	\caption{Permeabilidad según textura del suelo}
+	\label{permeabilidad}
 \end{figure}
 
 \section{Servicios web meteorológicos}
@@ -225,13 +225,13 @@ Por regla general, como se muestra en la Figura 1, mientras más fina sea la text
 Los servicios web son sistemas de software que permiten el intercambio de datos y funcionalidad entre aplicaciones sobre una red. Esta soportado en diferentes 
 estándares que garantizan la interoperabilidad de los servicios~\cite{webService}.
 
-En la Figura 2, se puede apreciar la arquitectura de un servicio web, se ve que el cliente realiza un petición al servidor y éste le envía una respuesta con lo solicitado.
+En la Figura \ref{rest}, se puede apreciar la arquitectura de un servicio web, se ve que el cliente realiza un petición al servidor y éste le envía una respuesta con lo solicitado.
 
-
-\begin{figure}[htb]
-\caption{Arquitectura servicio web}
+\begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=5cm]{rest.jpg}
+\includegraphics[width=5cm]{rest.jpg}
+\caption{Arquitectura servicio web}
+\label{rest}
 \end{figure}
 
 Un servicio web REST, es un servicio implementado usando HTTP y que entrega como resultado un XML o un JSON de los cuales se puede obtener la información solicitada.
@@ -258,13 +258,16 @@ La estructura de la url para realizar la consulta de la siguiente:
 \item \url{.json} es el formato en el que se devuelve la información, también puede ser .xml.
 \end{itemize}
 
-Los datas obtenidos se pueden apreciar en la Figura 3:
+Los datas obtenidos se pueden apreciar en la Figura \ref{response}:
 
-\begin{figure}[ht!]
-\caption{Respuesta del servicio wunderground al hacer una consulta}
+\begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=10cm]{response.png}
+\includegraphics[width=10cm]{response.png}
+\caption{Respuesta del servicio wunderground al hacer una consulta}
+\label{response}
 \end{figure}
+
+\newpage
 
 De toda la información que entrega el servicio web wunderground, lo único que nos interesa hasta el momento, es el campo pop, que significa probabilidad de precipitación, que esta representada en porcentaje.
 
@@ -320,10 +323,11 @@ El Raspberry Pi~\cite{raspberry} es un microcomputador del tamaño de una tarjeta
 
 Raspberry Pi tiene la capacidad de interactuar con el mundo exterior, y se ha utilizado en una amplia gama de proyectos digitales, máquinas de música y detectores en las estaciones meteorológicas.
 
-\begin{figure}[ht!]
-\caption{Raspberry Pi modelo B+}
+\begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=5cm]{rasp.png}
+\includegraphics[width=5cm]{rasp.png}
+\caption{Raspberry Pi modelo B+}
+\label{rasp}
 \end{figure}
 
 \subsection{Servidor de base de datos}
@@ -338,57 +342,64 @@ Básicamente, un servidor web sirve contenido estático a un navegador, carga un a
 Un sensor de resistencia eléctrica~\cite{sensor}, estima indirectamente la tensión del suelo mediante la medición de la resistencia eléctrica utilizando alambre que va en un bloque de un material especial que mantiene su contenido de humedad en equilibrio con el suelo. La resistencia eléctrica dentro del bloque varía con el contenido de agua del suelo. 
 Estos requieren poca preparación antes de la instalación y no requieren mantenimiento durante la temporada.
 
-\begin{figure}[ht!]
-\caption{Sensor de humedad}
+\begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=5cm]{sensorHumedad.jpg}
+\includegraphics[width=5cm]{sensorHumedad.jpg}
+\caption{Sensor de humedad}
+\label{snsorHumedad}
 \end{figure}
 
 
 \subsection{Sensor de flujo de agua}
 El sensor de flujo de agua consiste en una válvula de cuerpo plástico, un rotor de agua y un sensor de efecto hall. Cuando el agua fluye a través del rotor, el rotor gira. Su velocidad cambia con diferentes ritmos de flujo. El sensor de efecto hall tiene como salida la señal de pulso correspondiente.
 
-\begin{figure}[ht!]
-\caption{Sensor de flujo de agua}
+\begin{figure}[h]
 \centering
 \includegraphics[bb=0 0 640 480, width=5cm]{sensorFlujo.jpg}
+\caption{Sensor de flujo de agua}
+\label{sensorFlujo}
 \end{figure}
 
 \subsection{Válvula solenoide}
 Una válvula solenoide esta diseñada para controlar el paso de un fluido por un conducto o tubería. La válvula se mueve mediante una bobina solenoide. Generalmente no tiene más que dos posiciones: abierto y cerrado, o todo y nada. Las electroválvulas se usan en multitud de aplicaciones para controlar el flujo de todo tipo de fluidos.
 
-\begin{figure}[ht!]
-\caption{Válvula solenoide}
+\begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=5cm]{valvulasolenoide.jpg}
+\includegraphics[width=5cm]{valvulasolenoide.jpg}
+\caption{Válvula solenoide}
+\label{valvulasolenoide}
 \end{figure}
 
 \subsection{GPS}
 GPS~\cite{gps} es un sistema que tiene como objetivo la determinación de las coordenadas espaciales de puntos respecto de un sistema de referencia mundial. Los puntos pueden estar ubicados en cualquier lugar del planeta, pueden permanecer estáticos o en movimiento y las observaciones pueden realizarse en cualquier momento del día. Para la obtención de coordenadas el sistema se basa en la determinación simultánea de las distancias a cuatro satélites (como mínimo) de coordenadas conocidas. Estas distancias se obtienen a partir de las señales emitidas por los satélites, las que son recibidas por receptores especialmente diseñados. Las coordenadas de los satélites son provistas al receptor por el sistema. 
 
-\begin{figure}[ht!]
-\caption{Módulo GPS USB}
+\begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=5cm]{gps.jpg}
+\includegraphics[width=5cm]{gps.jpg}
+\caption{Módulo GPS USB}
+\label{gps}
 \end{figure}
 
 \subsection{Módem 3G}
 Módem 3G es un terminal de red inalámbrica basada en la tecnología CDMA2000. Es la mejor opción para los usuarios que necesiten acceder a Internet desde cualquier lugar en cualquier momento. El módem está conectado al micro computador mediante una interfaz USB.
 
-\begin{figure}[ht!]
-\caption{Módem 3G}
+\begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=4cm]{modem.jpg}
+\includegraphics[width=4cm]{modem.jpg}
+\caption{Módem 3G}
+\label{modem}
 \end{figure}
 
 \subsection{Cargador}
 Un cargador es un dispositivo utilizado para suministrar corriente eléctrica a un dispositivo, que en este caso se tratará de la Raspberry Pi. El cargador debe funcionar a 5V y entregar una corriente de 700mA.
 
-\begin{figure}[ht!]
-\caption{Cargador}
+\begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=4cm]{cargador.jpg}
+\includegraphics[width=4cm]{cargador.jpg}
+\caption{Cargador}
 \end{figure}
+
+\newpage
 
 \section{Software}
 \subsection{Raspbian}
@@ -416,18 +427,20 @@ Algunas de las caracteristicas de Python son:
 \subsubsection{Librería GPIO}
 Una de las características de gran alcance de la Raspberry Pi es la fila de GPIO~\cite{gpio} (Entrada/Salida de Propósito General) alfileres a lo largo del borde de la placa, junto a la salida de vídeo socket amarilla como se puede apreciar en la Figura 12:
 
-\begin{figure}[ht!]
-\caption{GPIO Raspberry Pi}
+\begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=7cm]{gpio.jpg}
+\includegraphics[width=7cm]{gpio.jpg}
+\caption{GPIO Raspberry Pi}
+\label{gpio}
 \end{figure}
 
 Estos pines son una interfaz física entre el la Raspberry y el mundo exterior. Al nivel más simple, se puede pensar en ellos como interruptores que puede activar o desactivar ya sean las entradas como las salidas. Diecisiete de los veinte y seis pines son GPIO; los otros son pines de alimentación o de tierra como se ve en la Figura 13:
 
-\begin{figure}[ht!]
-\caption{Pines GPIO}
+\begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=7cm]{giop1.png}
+\includegraphics[width=7cm]{giop1.png}
+\caption{Pines GPIO}
+\label{giop1}
 \end{figure}
 
 ¿Qué puedo hacer con esto?\\
@@ -459,13 +472,13 @@ Es por ello, que es muy importante y de suma urgencia idear nuevas técnicas de r
 
 \section{Problemas identificados}
 
-"Apagar el sistema de riego por aspersores después de que llueve es el primer paso que se debe tomar en primavera para ahorrar agua.", Chuck Ingels asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento.\\
+``Apagar el sistema de riego por aspersores después de que llueve es el primer paso que se debe tomar en primavera para ahorrar agua.", Chuck Ingels asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento.\\
 
-"El riego de césped y jardines representa más de la mitad del agua usada en un hogar promedio.", Chuck Ingels asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento.\\
+``El riego de césped y jardines representa más de la mitad del agua usada en un hogar promedio.", Chuck Ingels asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento.\\
 
-"Ha llevado a cabo estudios sobre un problema común relacionado al riego de céspedes residenciales en California: el escurrimiento de agua.", Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes\\
+``Ha llevado a cabo estudios sobre un problema común relacionado al riego de céspedes residenciales en California: el escurrimiento de agua.", Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes\\
 
-"Mucha del agua que se aplica a los céspedes termina directamente en las alcantarillas. No solo se trata de agua desperdiciada; hemos descubierto también que el agua de escurrimientos arrastra contaminantes ?incluyendo pesticidas y fertilizantes? hasta las alcantarillas y, eventualmente, a los canales y vías fluviales. El problema radica en que los sistemas de aspersores típicos aplican agua de forma más rápida que la que la tierra puede absorber, lo cual lleva al escurrimiento.", Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes
+``Mucha del agua que se aplica a los céspedes termina directamente en las alcantarillas. No solo se trata de agua desperdiciada; hemos descubierto también que el agua de escurrimientos arrastra contaminantes (incluyendo pesticidas y fertilizantes) hasta las alcantarillas y, eventualmente, a los canales y vías fluviales. El problema radica en que los sistemas de aspersores típicos aplican agua de forma más rápida que la que la tierra puede absorber, lo cual lleva al escurrimiento.", Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes
 
 \section{Información disponible}
 
@@ -483,9 +496,11 @@ Imagen del dispositivo y breve explicación de éste.
 
 \section{Funcionamiento del sistema}
 
-\begin{figure}[ht!]
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.5]{sistema.png}
 \caption{Entradas y salidas del sistema}
-\includegraphics[bb=0 0 640 480, scale=.5]{sistema.png}
+\label{sistema}
 \end{figure}
 
 \subsection{Entradas del sistema}

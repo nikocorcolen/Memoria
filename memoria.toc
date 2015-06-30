@@ -3,8 +3,8 @@
 \contentsline {chapter}{Dedicatoria}{\es@scroman {i}}
 \contentsline {chapter}{Agradecimientos}{\es@scroman {ii}}
 \contentsline {chapter}{Tabla de Contenidos}{\es@scroman {iii}}
-\contentsline {chapter}{\IeC {\"\i }\IeC {\textquestiondown }\IeC {\textonehalf }ndice de Figuras}{\es@scroman {vi}}
-\contentsline {chapter}{\IeC {\"\i }\IeC {\textquestiondown }\IeC {\textonehalf }ndice de Tablas}{\es@scroman {vii}}
+\contentsline {chapter}{\'{\i }ndice de Figuras}{\es@scroman {vi}}
+\contentsline {chapter}{\'{\i }ndice de Tablas}{\es@scroman {vii}}
 \contentsline {chapter}{Resumen}{\es@scroman {viii}}
 \contentsline {chapter}{\numberline {1}Introducci\'on}{9}
 \contentsline {section}{\numberline {1.1}Descripci\'on de la propuesta}{9}
@@ -30,21 +30,21 @@
 \contentsline {chapter}{\numberline {2}Marco te\'orico}{16}
 \contentsline {section}{\numberline {2.1}Programaci\'on del riego}{16}
 \contentsline {subsection}{\numberline {2.1.1}Textura del suelo}{17}
-\contentsline {section}{\numberline {2.2}Servicios web meteorol\'ogicos}{17}
-\contentsline {subsection}{\numberline {2.2.1}\IeC {\textquestiondown }Qu\'e es un servicio web?}{17}
+\contentsline {section}{\numberline {2.2}Servicios web meteorol\'ogicos}{18}
+\contentsline {subsection}{\numberline {2.2.1}\IeC {\textquestiondown }Qu\'e es un servicio web?}{18}
 \contentsline {subsection}{\numberline {2.2.2}Wunderground}{18}
-\contentsline {section}{\numberline {2.3}Trabajos relacionados}{19}
-\contentsline {subsection}{\numberline {2.3.1}Cultivar}{19}
+\contentsline {section}{\numberline {2.3}Trabajos relacionados}{20}
+\contentsline {subsection}{\numberline {2.3.1}Cultivar}{20}
 \contentsline {subsection}{\numberline {2.3.2}Rachio IRO}{21}
-\contentsline {section}{\numberline {2.4}Hardware}{21}
+\contentsline {section}{\numberline {2.4}Hardware}{22}
 \contentsline {subsection}{\numberline {2.4.1}Raspberry pi}{22}
 \contentsline {subsection}{\numberline {2.4.2}Servidor de base de datos}{22}
 \contentsline {subsection}{\numberline {2.4.3}Servidor web}{23}
 \contentsline {subsection}{\numberline {2.4.4}Sensores de humedad}{23}
 \contentsline {subsection}{\numberline {2.4.5}Sensor de flujo de agua}{23}
-\contentsline {subsection}{\numberline {2.4.6}V\'alvula solenoide}{23}
+\contentsline {subsection}{\numberline {2.4.6}V\'alvula solenoide}{24}
 \contentsline {subsection}{\numberline {2.4.7}GPS}{24}
-\contentsline {subsection}{\numberline {2.4.8}M\'odem 3G}{24}
+\contentsline {subsection}{\numberline {2.4.8}M\'odem 3G}{25}
 \contentsline {subsection}{\numberline {2.4.9}Cargador}{25}
 \contentsline {section}{\numberline {2.5}Software}{26}
 \contentsline {subsection}{\numberline {2.5.1}Raspbian}{26}
