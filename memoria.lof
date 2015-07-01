@@ -2,20 +2,22 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Permeabilidad seg\'un textura del suelo}}{17}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Arquitectura servicio web}}{18}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Respuesta del servicio wunderground al hacer una consulta}}{20}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Raspberry Pi modelo B+}}{22}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Sensor de humedad}}{23}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Sensor de flujo de agua}}{24}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces V\'alvula solenoide}}{24}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces M\'odulo GPS USB}}{25}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces M\'odem 3G}}{25}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Cargador}}{26}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces GPIO Raspberry Pi}}{27}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Pines GPIO}}{27}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Permeabilidad seg\'un textura del suelo}}{16}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Arquitectura servicio web}}{17}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Respuesta del servicio wunderground al hacer una consulta}}{19}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Raspberry Pi modelo B+}}{21}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Sensor de humedad}}{22}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Sensor de flujo de agua}}{23}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces V\'alvula solenoide}}{23}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces M\'odulo GPS USB}}{24}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces M\'odem 3G}}{24}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Cargador}}{25}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces GPIO Raspberry Pi}}{26}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Pines GPIO}}{26}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Entradas y salidas del sistema}}{31}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Prototipo funcionando con tierra seca}}{30}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Prototipo funcionando con tierra h\'umeda}}{31}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Datos climatol\'ogicos}}{31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

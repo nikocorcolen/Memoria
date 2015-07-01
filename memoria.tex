@@ -472,13 +472,14 @@ Es por ello, que es muy importante y de suma urgencia idear nuevas técnicas de r
 
 \section{Problemas identificados}
 
-``Apagar el sistema de riego por aspersores después de que llueve es el primer paso que se debe tomar en primavera para ahorrar agua.", Chuck Ingels asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento.\\
+Según Chuck Ingels~\cite{problemas}, asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento y Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes, existen problemas en los sistemas de riego actuales que hoy en día son utilizados, ellos nombran principalmente cuatro problemas: 
 
-``El riego de césped y jardines representa más de la mitad del agua usada en un hogar promedio.", Chuck Ingels asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento.\\
-
-``Ha llevado a cabo estudios sobre un problema común relacionado al riego de céspedes residenciales en California: el escurrimiento de agua.", Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes\\
-
-``Mucha del agua que se aplica a los céspedes termina directamente en las alcantarillas. No solo se trata de agua desperdiciada; hemos descubierto también que el agua de escurrimientos arrastra contaminantes (incluyendo pesticidas y fertilizantes) hasta las alcantarillas y, eventualmente, a los canales y vías fluviales. El problema radica en que los sistemas de aspersores típicos aplican agua de forma más rápida que la que la tierra puede absorber, lo cual lleva al escurrimiento.", Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes
+\begin{itemize}
+\item ``Apagar el sistema de riego por aspersores después de que llueve es el primer paso que se debe tomar para ahorrar agua"
+\item ``El riego de césped y jardines representa más de la mitad del agua usada en un hogar promedio"
+\item ``Ha llevado a cabo estudios sobre un problema común relacionado al riego de céspedes residenciales en California: el escurrimiento de agua"
+\item ``Mucha del agua que se aplica a los céspedes termina directamente en las alcantarillas. No solo se trata de agua desperdiciada; hemos descubierto también que el agua de escurrimientos arrastra contaminantes (incluyendo pesticidas y fertilizantes) hasta las alcantarillas y, eventualmente, a los canales y vías fluviales. El problema radica en que los sistemas de aspersores típicos aplican agua de forma más rápida que la que la tierra puede absorber, lo cual lleva al escurrimiento"
+\end{itemize}
 
 \section{Información disponible}
 
@@ -492,34 +493,36 @@ Para los problemas anteriormente mencionados existe información que puede ser ut
 
 \section{Prototipo básico del dispositivo}
 
-Imagen del dispositivo y breve explicación de éste.
+A continuación se muestran algunas imágenes de un prototipo básico del dispositivo que tiene algunas funcionalidades.
 
-\section{Funcionamiento del sistema}
+La Figura \ref{prot2} se peude ver el micro computador funcionando, el cual esta conectado a Internet por cable de red y el sensor de humedad conectado a la interfaz GPIO. De fondo en la pantalla se esta ejecutando el programa que lee los datos del sensor de humedad, como en esta caso la tierra se encuentra seca, el programa muestra un 1, que significa que se debe regar.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=.5]{sistema.png}
-\caption{Entradas y salidas del sistema}
-\label{sistema}
+\includegraphics[width=10cm]{prot2.jpg}
+\caption{Prototipo funcionando con tierra seca}
+\label{prot2}
 \end{figure}
 
-\subsection{Entradas del sistema}
-En la figura se puede ver como funcionará el sistema a grandes rasgos. Las entradas con las que contará, como se aprecia en la imagen serán de un par de sensores de humedad, un GPS, un Servicio de mapas de suelos que entrega información acerca del tipo de suelo en el que el sistema se encuentra y servicio meteorológico que indica la probabilidad de lluvia y la temperatura del lugar.
-Otra entrada del sistema que se utilizará para medir el consumo de agua, será de la un sensor de caudal el cual cada vez que se realice un riego, enviará esta información al sistema.
+\newpage
 
-\subsection{Procesamiento de datos}
-Toda esta información es enviada al micro computador, que en este caso es una Raspberry la que se encargará de procesar los datos y decidir si se debe efectuar un riego, que tiempo de riego se debe realizar para el tipo de suelo en el que nos encontramos, la cantidad de agua a utilizar o si debe notificar al usuario por algún evento meteorológico que pueda producir daños.
-El micro computador también estará constantemente enviando datos a un servidor en el que se guardará la información recibida.
+En la Figura \ref{prot2} la diferencia es que la tierra esta húmeda, por lo que el programa muestra un 0 que significa que no se debe regar.
 
-\subsection{Salidas del sistema}
-Las salidas con las que el sistema contará, serán básicamente tres.
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{prot1.jpg}
+\caption{Prototipo funcionando con tierra húmeda}
+\label{prot2}
+\end{figure}
 
+La Figura \ref{climatologicos} muestra los datos entregados por el servicio web meteorológico, entregándole como parámetro las coordenadas de la posición con un GPS.
 
-\begin{itemize}
-\item Activar o desactivar las válvulas solenoides que permiten que el agua circule para el riego.
-\item Envió de datos a un servidor en Internet que almacenará la información para que los usuario puedan consultarla.
-\item Notificar a través de un correo o emitir un alarma en caso de detectar una amenaza meteorológica.  
-\end{itemize}
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm]{climaGps.png}
+\caption{Datos climatológicos}
+\label{climatologicos}
+\end{figure}
 
 
 %% ambiente glosario
