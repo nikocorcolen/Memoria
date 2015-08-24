@@ -17,11 +17,11 @@
 \contentsline {paragraph}{Objetivo general}{11}
 \contentsline {paragraph}{Objetivos espec\IeC {\'\i }ficos}{11}
 \contentsline {section}{\numberline {1.4}Alcances}{11}
-\contentsline {section}{\numberline {1.5}Metodolog\IeC {\'\i }a}{11}
-\contentsline {paragraph}{Objetivo 1:}{11}
+\contentsline {section}{\numberline {1.5}Metodolog\IeC {\'\i }a}{12}
+\contentsline {paragraph}{Objetivo 1:}{12}
 \contentsline {paragraph}{Objetivo 2:}{12}
 \contentsline {paragraph}{Objetivo 3:}{12}
-\contentsline {paragraph}{Objetivo 4:}{12}
+\contentsline {paragraph}{Objetivo 4:}{13}
 \contentsline {section}{\numberline {1.6}Plan de trabajo}{13}
 \contentsline {paragraph}{Etapa 1:}{13}
 \contentsline {paragraph}{Etapa 2:}{13}

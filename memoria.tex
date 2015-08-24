@@ -44,26 +44,26 @@ Aquí va el resumen (en Castellano)...
 \chapter{Introducción}
 \section{Descripción de la propuesta}
 \subsection{Contexto del proyecto}
-El proyecto consiste en desarrollar un sistema de riego autónomo e inteligente ideal para las personas que viajan mucho y les gusta mantener sus jardines en buen estado. Lo que se busca es reducir la intervención humana, aumentar la eficiencia en el uso del agua, ahorrar dinero y entregar datos estadísticos a los usuarios. El sistema básicamente cociste en sensores de humedad del suelo, un micro computador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el jardín en buen estado, le envía una señal a la raspberry la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
+El proyecto consiste en desarrollar un sistema de riego autónomo e inteligente ideal para las personas que viajan mucho y les gusta mantener sus jardines en buen estado. Lo que se busca es reducir la intervención humana, aumentar la eficiencia en el uso del agua, ahorrar dinero y entregar datos estadísticos a los usuarios. El sistema básicamente cociste en sensores de humedad del suelo, un micro computador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el cesped en buen estado, le envía una señal a la raspberry la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
 
 Para el proyecto se utiliza un micro computador el cual se programa en Python, y es el encargado de recibir los datos de entradas, que en este caso son los datos meteorológicos y los del sensor de humedad. Una vez que los datos son recibidos el micro computador los analiza y si se requiere un riego envía una señal la válvula solenoide que permitirá el paso del agua. También se utilizará un sensor de flujo para medir la cantidad de agua que se esta utilizando y así entregar reportes al usuario.
 
 Cabe destacar que este sistema no solo es útil para los jardines, sino que también se puede utilizar para los huertos y/o predios agrícolas que utilizan sistemas de riego automáticos.
 
 \subsection{Trabajo relacionado}
-Los trabajos que hoy en día son utilizados para resolver este problema cumplen su propósito general, que es el de automatizar el riego, pero en esta solución aun se requiere la intervención de las personas para su funcionamiento, como lo son los sistemas que utilizan temporizadores~\cite{temporizador}. Estos trabajos utilizan temporizadores que se activan cada cierto intervalo de tiempo sin tomar en cuenta variables importantes como lo son la humedad del suelo. También existen trabajos en los que se mide la humedad del suelo~\cite{temporizadorSensorHumedad} pero aun no se logra darle al agua de riego el uso óptimo, ya que no toma en cuenta los datos meteorológicos y en caso que se aproxime una lluvia el sistema igual hará el riego.
+Los trabajos que hoy en día son utilizados para resolver este problema cumplen su propósito general, que es el de automatizar el riego, pero en esta solución aun se requiere la intervención de las personas para su funcionamiento, como lo son los sistemas que utilizan temporizadores~\cite{temporizador}. Estos dispositivos, se activan cada ciertointervalo de tiempo sin tomar en cuenta variables importantes como lo son la humedad del suelo. También existen trabajos en los que se mide la humedad del suelo~\cite{temporizadorSensorHumedad} pero aun no se logra darle al agua de riego el uso óptimo, ya que no toma en cuenta los datos meteorológicos y en caso que se aproxime una lluvia el sistema igual hará el riego.
 
-En el mercado tenemos la opción de automatizar nuestro riego pero son opciones que tienen un costo muy elevado, estas soluciones las podemos encontrar en las tiendas de retail.
+En el mercado tenemos la opción de adquirir estos dispositivos para automatizar nuestro riego pero son soluciones que tienen un costo muy elevado. Estos dispositivos se pueden encontrar en las tiendas de retail.
 
 Por otro lado tampoco indican el consumo de agua que se ha utilizado en el riego y tampoco tienen sistema de prevención en caso de condiciones climáticas extremas, como puede ser el frío extremo que nos ayuden a mantener en buen estado nuestro jardín.
 
 \subsection{Definición del problema}
-A muchas personas les gusta mantener un jardín verde, pero generalmente no tienen el tiempo para regar y mantener su jardín como les gustaría. Por otro lado tenemos todos los problemas que genera el cambio climático, como lo son las temperaturas extremas y siendo uno de los principales afectados los recursos hídricos~\cite{cambioClimatico}. Con la implementación de este proyecto, se busca que la mantención del jardín de un hogar sea de una forma autónoma e inteligente, es decir, que no necesite la intervención de personas para su funcionamiento y que en lo posible no utilice mas agua de la debida.
+A muchas personas les gusta mantener un jardín verde, pero generalmente no tienen el tiempo para regar y mantener su jardín como les gustaría. Por otro lado tenemos todos los problemas que genera el cambio climático, como lo son las temperaturas extremas y siendo uno de los principales afectados los recursos hídricos~\cite{cambioClimatico}, por otro lado, el método más utilizado es el riego por surcos~\cite{surcos}. Con la implementación de este proyecto, se busca que la mantención del jardín de un hogar sea de una forma autónoma e inteligente, es decir, que no necesite la intervención de personas para su funcionamiento y que en lo posible no utilice mas agua de la debida.
 
 Otro problema es el causado por las temperaturas extremas, que pueden producir mucho daño en el jardín, llegando a extremos en el que se pierde todo. Pero ¿Cuánto agua he utilizado? ¿Cuánto dinero  he gastado en el agua para riego? ¿Qué cantidad de riegos ha tenido mi jardín? son preguntas que las personas se hacen y no tienen respuesta.
 
 \subsection{Propuesta de solución}
-Como solución al problema, se creara un prototipo de riego automático e inteligente. Esto se hará utilizando un micro computador y sensores de humedad. Lo distinto que tendrá este sistema de otros, es que para determinar si se debe hacer un riego o no, tomará en cuenta datos meteorológicos obtenidos desde Internet, y en caso de que se pronostique una lluvia, no se hará el riego. El sistema contara con un GPS para determinar la posición en la que se encuentra el jardín a regar y obtener los datos meteorológicos. También contará con un sistema preventivo que ayude al cuidado del jardín, por ejemplo cuando se detecte que habrá una helada y ésta puede producir algún tipo daño, el sistema podrá enviar un mensaje al usuario o podrá activar el sistema de riego para así prevenir daños.
+Como solución al problema, se creara un prototipo de riego automático e inteligente. Esto se hará utilizando un micro computador y sensores de humedad. Lo distinto que tendrá este sistema de otros, es que para determinar si se debe hacer un riego o no, tomará en cuenta datos meteorológicos obtenidos desde Internet, y en caso de que se pronostique una lluvia, no se hará el riego. El sistema contara con un GPS para determinar la posición en la que se encuentra el jardín a regar y obtener los datos de lluvia. También contará con un sistema preventivo que ayude al cuidado del jardín, por ejemplo cuando se detecte que habrá una helada y ésta puede producir algún tipo daño, el sistema podrá enviar un mensaje al usuario o podrá activar el sistema de riego para así prevenir daños.
 
 El sistema almacenará toda la información recopilada por los sensores guardándola en un único servidor, con lo que los usuarios utilizando un usuario y una contraseña podrán consultar los datos estadísticos a través de una aplicación web o una móvil. Este servidor que tendrá la base de datos, también será utilizado en caso que de el micro computador deje de funcionar, ya que éste estará constante mente enviando una señal al servidor para saber si el sistema esta funcionando o no, para así informar a los usuarios de que el sistema esta fallando, asegurando un funcionamiento a lo largo del tiempo.
 
@@ -75,7 +75,6 @@ Todo esto hará que el sistema sea inteligente al momento de generar un riego, sa
 \section{Hipótesis}
 \begin{itemize}
 \item El prototipo es realizable con la tecnología existente.
-\item El uso de este sistema disminuirá el consumo de agua utilizado en el riego del jardín.
 \item Las personas dejarán de preocuparse por el riego de su jardín.
 \item El uso de este sistema cuidará el jardín en todas las estaciones del año.
 \item La utilización del modelo de riego disminuirá el consumo de agua.
@@ -84,22 +83,24 @@ Todo esto hará que el sistema sea inteligente al momento de generar un riego, sa
 \section{Objetivos}
 \paragraph{Objetivo general}
 \begin{itemize}
-\item El objetivo es automatizar el riego de un jardín utilizando un sistema inteligente.
+\item El objetivo es automatizar el riego de un jardín utilizando un sistema inteligente de bajo costo para el uso eficiente del agua.
 \end{itemize}
 
 \paragraph{Objetivos específicos}
 \begin{itemize}
-\item Generar un modelo de riego con los datos obtenidos.
-\item Quitar la intervención humana en el riego del jardín.
-\item Mantener a los usuarios informados con datos estadísticos.
-\item Tener un sistema preventivo en caso de condiciones climáticas extremas o el sistema deje de funcionar.
+\item Diseñar un prototipo funcional de la idea a desarrollar.
+\item Generar un modelo de riego con los datos obtenidos, para utilizar eficientemente el agua.
+\item Diseñar un protoripo de aplicación web y/o móvil que les permita a los usuarios monitorear y controlar el riego.
+\item Alertar a los usuarios en caso de que existan condiciones climaticas que generen escarcha y puedan dañar el cesped.
 \end{itemize}
 
 \section{Alcances}
 \begin{itemize}
-\item En este trabajo se espera implementar un prototipo funcional de la idea a desarrollar.
-\item Este trabajo se limita a el control del riego, el sistema de riego (cañerías, aspersores, etc.) deben estar instalados.
-\item En los datos estadísticos, se espera entregar al usuario al menos el consumo de agua utilizado en el riego.
+\item Este trabajo se limita a el control y monitoreo del riego, el sistema de riego (cañerías, aspersores, etc.) deben estar instalados.
+\item El modelo de riego será básico y se podrá mejorar con más tiempo y personas especialistas en agricultura.
+\item En el monitoreo los usuario podrán ver la humedad y la cantidad de agua utilizada en el riego.
+\item En el control, los usuarios podrán activar y desactivar el sistema de riego.
+\item Se diseñará una aplicación web y/o móvil que permita a los usuarios visualizar la humedad del suelo y la cantidad de agua utilizada, y además tendra la funciona de activar y desactivar el riego.
 \end{itemize}
 
 \section{Metodología}
@@ -467,7 +468,7 @@ En ambos métodos se utiliza un exceso de agua, y además si a esto le sumamos que
 
 El año 2013 fue uno de los años más secos desde 1866. Existen déficit de precipitaciones que van desde un 20\% llegando incluso hasta un 60\% entre las zonas de Copiapó y Talca al sur, estas son zonas de gran producción agrícola y además entre los lugares mencionados son los que han tenido mayor inversión para poder satisfacer la demanda de agua dulce a las personas~\cite{sequia}. 
 
-Es por ello, que es muy importante y de suma urgencia idear nuevas técnicas de riego sustentables en las que se obtenga el mayor provecho del agua.
+Es por ello, que es muy importante y de suma urgencia idear nuevas técnicas de riego sustentables en las que se obtenga el mayor provecho del agua que permita mantener el nivel de producción agricula en Chile o incluso aumentarlo.
 
 
 \section{Problemas identificados}
