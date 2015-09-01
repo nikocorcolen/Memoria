@@ -138,44 +138,6 @@ Todo esto hará que el sistema sea inteligente al momento de generar un riego, sa
 \item Enviar notificaciones a los usuarios.
 \end{itemize}
 
-\section{Plan de trabajo}
-\paragraph{Etapa 1:} Desarrollar el objetivo 2 (27/04-19/06)
-\begin{itemize}
-\item Aprender a utilizar micro computador (27/04-08/05)
-\item Estudiar Python (11/05-15/05)
-\item Escribir contexto del proyecto (18/05-27/05)
-\item Utilizar la interfaz GPIO (28/05-13/06)
-\item Activar y desactivar una válvula solenoide (15/06-19/06)
-\end{itemize}
-
-\paragraph{Etapa 2:} Desarrollar el objetivo 1 (22/06-término)
-\begin{itemize}
-\item Entrega final del análisis del problema (22/06-01/07)
-\item Entrega final del informa de memoria (13/07-22-07)
-\item Generar un modelo de riego (02/07-21/08)
-\item Obtener datos de los sensores (24/08-28/08)
-\item Obtener la posición geográfica GPS (31/08-04/09)
-\item Obtener datos climatológicos desde Internet (07/09-11/09)
-\item Hacer pruebas al modelo de riego generado (11/09-02/10)
-\end{itemize}
-
-\paragraph{Etapa 3:} Desarrollar el objetivo 4 (05/10-09/10)
-\begin{itemize}
-\item Analizar los datos meteorológicos (05/10-09/10)
-\item Enviar notificaciones a los usuarios (05/10-09/10)
-\end{itemize}
-
-\paragraph{Etapa 4:} Desarrollar el objetivo 3 (12/10-30/10)
-\begin{itemize}
-\item Leer datos desde un sensor de flujo de agua (12/10-14/10)
-\item Configurar base de datos (15/10-16/10)
-\item Establecer conexión entre el micro computador y la base de datos (15/10-16/10)
-\item Enviar datos a la base de datos (15/10-16/10)
-\item Generar el gráfico (19/10-21/10)
-\item Hacer una aplicación web o móvil que se conecte a la base de datos para que los usuarios consulten las estadísticos. (19/10-30/10)
-\end{itemize}
-
-
 %% contenido del segundo capítulo
 \chapter{Marco teórico}
 
@@ -464,9 +426,11 @@ Estas áreas verdes no requieren de mucho cuidado, principalmente se necesita cor
 \item Riego por aspersores: generalmente funcionan automáticamente todos los días durante un periodo de tiempo determinado.
 \end{itemize}
 
-En ambos métodos se utiliza un exceso de agua, y además si a esto le sumamos que por lo general se utiliza agua potable se traduce en un gran desperdicio y más aún que existe escasez de agua en el país.
+Ambos métodos utilizan en exceso el agua, además a esto le sumamos que por lo general se utiliza agua potable, se traduce en un gran desperdicio y más aún cuando existe escasez de agua en el país.
 
 El año 2013 fue uno de los años más secos desde 1866. Existen déficit de precipitaciones que van desde un 20\% llegando incluso hasta un 60\% entre las zonas de Copiapó y Talca al sur, estas son zonas de gran producción agrícola y además entre los lugares mencionados son los que han tenido mayor inversión para poder satisfacer la demanda de agua dulce a las personas~\cite{sequia}. 
+
+Los dispositivos utilizados hoy en día no concideran el tipo de suelo en el cual se realizará el riego, esto es importante porque cada suelo tiene una capacidad de absorción distinta. Esta información es importante porque al no aplicar la cantidad justa de agua, se daña el suelo como por ejemplo la erosión~\cite{erosion}, además del agua desperdiciada.
 
 Es por ello, que es muy importante y de suma urgencia idear nuevas técnicas de riego sustentables en las que se obtenga el mayor provecho del agua que permita mantener el nivel de producción agricula en Chile o incluso aumentarlo.
 
@@ -484,12 +448,12 @@ Según Chuck Ingels~\cite{problemas}, asesor agrícola de Extensión Cooperativa de
 
 \section{Información disponible}
 
-Para los problemas anteriormente mencionados existe información que puede ser utilizada para darles solución, los podemos ver a continuación:
+Para los problemas anteriormente mencionados existe información que será utilizado para planificar y determinar un riego, los podemos ver a continuación:
 
 \begin{itemize}
-\item Datos climatológicos: serán utilizados para saber cuando comenzará una lluvia y así evitar el riego antes o después de una lluvia.
-\item Tipo de suelo: existe información con los tipos de suelo de todo Chile. Con esta información se podrá aplicar un mejor riego evitando el escurrimiento de agua.
-\item Humedad del suelo:se puede determinar la humedad actual que tiene el suelo, para aplicar justo el agua necesaria para el césped.
+\item Pronóstico del tiempo: será utilizado para saber la probabilidad de lluvia en la zona en la que se encuentra el dispositivo.
+\item Tipo de suelo: indica el tipo de suelo en el que el dispositivo será utilizado.
+\item Humedad del suelo: indica la humedad del sulo utilizando sensores de humedad.
 \end{itemize}
 
 \section{Prototipo básico del dispositivo}
