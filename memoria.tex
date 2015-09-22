@@ -4,7 +4,7 @@
 %% datos generales y para la tapa
 \titulo{Dispositivo de riego inteligente de bajo costo para el uso eficiente del agua}
 \author{Nicolás Gastón Maturana Barrios}
-\supervisor{Benjamin Ingram}
+\supervisor{Benjamín Ingram}
 \informantes
 	{Profesor Informante 1}
 	{Profesor Informante 2}
@@ -44,14 +44,14 @@ Aquí va el resumen (en Castellano)...
 \chapter{Introducción}
 \section{Descripción de la propuesta}
 \subsection{Contexto del proyecto}
-El proyecto consiste en desarrollar un sistema de riego autónomo e inteligente ideal para las personas que viajan mucho y les gusta mantener sus jardines en buen estado. Lo que se busca es reducir la intervención humana, aumentar la eficiencia en el uso del agua, ahorrar dinero y entregar datos estadísticos a los usuarios. El sistema básicamente cociste en sensores de humedad del suelo, un micro computador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el cesped en buen estado, le envía una señal a la raspberry la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
+El proyecto consiste en desarrollar un sistema de riego autónomo e inteligente ideal para las personas que viajan mucho y les gusta mantener sus jardines en buen estado. Lo que se busca es reducir la intervención humana, aumentar la eficiencia en el uso del agua, ahorrar dinero y entregar datos estadísticos a los usuarios. El sistema básicamente cociste en sensores de humedad del suelo, un micro computador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el césped en buen estado, le envía una señal a la raspberry la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
 
 Para el proyecto se utiliza un micro computador el cual se programa en Python, y es el encargado de recibir los datos de entradas, que en este caso son los datos meteorológicos y los del sensor de humedad. Una vez que los datos son recibidos el micro computador los analiza y si se requiere un riego envía una señal la válvula solenoide que permitirá el paso del agua. También se utilizará un sensor de flujo para medir la cantidad de agua que se esta utilizando y así entregar reportes al usuario.
 
 Cabe destacar que este sistema no solo es útil para los jardines, sino que también se puede utilizar para los huertos y/o predios agrícolas que utilizan sistemas de riego automáticos.
 
 \subsection{Trabajo relacionado}
-Los trabajos que hoy en día son utilizados para resolver este problema cumplen su propósito general, que es el de automatizar el riego, pero en esta solución aun se requiere la intervención de las personas para su funcionamiento, como lo son los sistemas que utilizan temporizadores~\cite{temporizador}. Estos dispositivos, se activan cada ciertointervalo de tiempo sin tomar en cuenta variables importantes como lo son la humedad del suelo. También existen trabajos en los que se mide la humedad del suelo~\cite{temporizadorSensorHumedad} pero aun no se logra darle al agua de riego el uso óptimo, ya que no toma en cuenta los datos meteorológicos y en caso que se aproxime una lluvia el sistema igual hará el riego.
+Los trabajos que hoy en día son utilizados para resolver este problema cumplen su propósito general, que es el de automatizar el riego, pero en esta solución aun se requiere la intervención de las personas para su funcionamiento, como lo son los sistemas que utilizan temporizadores~\cite{temporizador}. Estos dispositivos, se activan cada cierto intervalo de tiempo sin tomar en cuenta variables importantes como lo son la humedad del suelo. También existen trabajos en los que se mide la humedad del suelo~\cite{temporizadorSensorHumedad} pero aun no se logra darle al agua de riego el uso óptimo, ya que no toma en cuenta los datos meteorológicos y en caso que se aproxime una lluvia el sistema igual hará el riego.
 
 En el mercado tenemos la opción de adquirir estos dispositivos para automatizar nuestro riego pero son soluciones que tienen un costo muy elevado. Estos dispositivos se pueden encontrar en las tiendas de retail.
 
@@ -60,7 +60,7 @@ Por otro lado tampoco indican el consumo de agua que se ha utilizado en el riego
 \subsection{Definición del problema}
 A muchas personas les gusta mantener un jardín verde, pero generalmente no tienen el tiempo para regar y mantener su jardín como les gustaría. Por otro lado tenemos todos los problemas que genera el cambio climático, como lo son las temperaturas extremas y siendo uno de los principales afectados los recursos hídricos~\cite{cambioClimatico}, por otro lado, el método más utilizado es el riego por surcos~\cite{surcos}. Con la implementación de este proyecto, se busca que la mantención del jardín de un hogar sea de una forma autónoma e inteligente, es decir, que no necesite la intervención de personas para su funcionamiento y que en lo posible no utilice mas agua de la debida.
 
-Otro problema es el causado por las temperaturas extremas, que pueden producir mucho daño en el jardín, llegando a extremos en el que se pierde todo. Pero ¿Cuánto agua he utilizado? ¿Cuánto dinero  he gastado en el agua para riego? ¿Qué cantidad de riegos ha tenido mi jardín? son preguntas que las personas se hacen y no tienen respuesta.
+Otro problema es el causado por las temperaturas extremas, que pueden producir mucho daño en el jardín, llegando a extremos en el que se pierde todo. Pero ¿Cuánta agua he utilizado? ¿Cuánto dinero  he gastado en el agua para riego? ¿Qué cantidad de riegos ha tenido mi jardín? son preguntas que las personas se hacen y no tienen respuesta.
 
 \subsection{Propuesta de solución}
 Como solución al problema, se creara un prototipo de riego automático e inteligente. Esto se hará utilizando un micro computador y sensores de humedad. Lo distinto que tendrá este sistema de otros, es que para determinar si se debe hacer un riego o no, tomará en cuenta datos meteorológicos obtenidos desde Internet, y en caso de que se pronostique una lluvia, no se hará el riego. El sistema contara con un GPS para determinar la posición en la que se encuentra el jardín a regar y obtener los datos de lluvia. También contará con un sistema preventivo que ayude al cuidado del jardín, por ejemplo cuando se detecte que habrá una helada y ésta puede producir algún tipo daño, el sistema podrá enviar un mensaje al usuario o podrá activar el sistema de riego para así prevenir daños.
@@ -83,59 +83,53 @@ Todo esto hará que el sistema sea inteligente al momento de generar un riego, sa
 \section{Objetivos}
 \paragraph{Objetivo general}
 \begin{itemize}
-\item El objetivo es automatizar el riego de un jardín utilizando un sistema inteligente de bajo costo para el uso eficiente del agua.
+\item El objetivo es diseñar un dispositivo inteligente de bajo costo que será utilizado en los jardines para automatizar y monitorear el riego.
 \end{itemize}
 
 \paragraph{Objetivos específicos}
 \begin{itemize}
-\item Diseñar un prototipo funcional de la idea a desarrollar.
-\item Generar un modelo de riego con los datos obtenidos, para utilizar eficientemente el agua.
-\item Diseñar un protoripo de aplicación web y/o móvil que les permita a los usuarios monitorear y controlar el riego.
-\item Alertar a los usuarios en caso de que existan condiciones climaticas que generen escarcha y puedan dañar el cesped.
+\item Diseñar un prototipo del dispositivo (Hardware).
+\item Diseñar un modelo para el riego (Software).
+\item Diseñar un prototipo de aplicación web y/o móvil para los usuarios.
+\item Implementar un sistema de alertas para condiciones climáticas extremas.
 \end{itemize}
 
 \section{Alcances}
 \begin{itemize}
-\item Este trabajo se limita a el control y monitoreo del riego, el sistema de riego (cañerías, aspersores, etc.) deben estar instalados.
-\item El modelo de riego será básico y se podrá mejorar con más tiempo y personas especialistas en agricultura.
+\item El sistema de riego (cañerías, aspersores, etc.) debe estar previamente instalado.
+\item El modelo de riego será básico y se podrá mejorar con más tiempo y personas especializadas en riego.
 \item En el monitoreo los usuario podrán ver la humedad y la cantidad de agua utilizada en el riego.
-\item En el control, los usuarios podrán activar y desactivar el sistema de riego.
-\item Se diseñará una aplicación web y/o móvil que permita a los usuarios visualizar la humedad del suelo y la cantidad de agua utilizada, y además tendra la funciona de activar y desactivar el riego.
+\item Se diseñará una aplicación web y/o móvil que permita a los usuarios visualizar la humedad del suelo y la cantidad de agua utilizada, y además tendrá la funciona de activar y desactivar el riego.
 \end{itemize}
 
 \section{Metodología}
 
-\paragraph{Objetivo 1:} ``Generar un modelo de riego con los datos obtenidos"\\
+\paragraph{Objetivo 1:} ``Diseñar un prototipo del dispositivo (Hardware)"\\
 \begin{itemize}
-\item Generar un modelo de riego con los datos de entradas disponibles.
-\item Obtener datos de los sensores utilizando el microcomputador.
-\item Obtener la posición geográfica utilizando el GPS.
-\item Obtener datos climatológicos desde internet utilizando el microcomputador.
-\item Hacer pruebas al modelo de riego generado.
+\item Determinar las piezas necesarias para construir el dispositivo.
+\item Leer documentación de las piezas.
+\item Juntar todas las partes para formar el dispositivo.
+\item Probar el dispositivo armado.
 \end{itemize}
 
-\paragraph{Objetivo 2:} ``Quitar la intervención humana en el riego del jardín"\\
+\paragraph{Objetivo 2:} ``Diseñar un modelo para el riego (Software)"\\
 \begin{itemize}
-\item Aprender a utilizar el micro computador (Raspberry Pi).
-\item Estudiar Python.
-\item Aprende a utilizar la interfaz GPIO de Raspberry Pi.
-\item Aprender a activar y desactivar una válvula solenoide desde el micro computador.
+\item Determinar las variables que se utilizarán.
+\item Desarrollo del modelo (Desarrollo de software).
+\item Probar el modelo en el dispositivo.
 \end{itemize}
 
-\paragraph{Objetivo 3:} ``Mantener a los usuarios informados con datos estadísticos"\\
+\paragraph{Objetivo 3:} ``Diseñar un prototipo de aplicación web y/o móvil para los usuarios"\\
 \begin{itemize}
-\item Leer datos desde un sensor de flujo de agua.
-\item Configurar base de datos para el sistema.
-\item Establecer conexión entre el micro computador y la base de datos.
-\item Enviar datos a la base de datos.
-\item Generar el gráfico.
-\item Hacer una aplicación web o móvil que se conecte a la base de datos para que los usuarios consulten las estadísticos.
+\item Diseñar mockup de aplicación web y/o móvil.
+\item Desarrollo de la aplicación.
+\item Pruebas de la aplicación.
 \end{itemize}
 
-\paragraph{Objetivo 4:} ``Tener un sistema preventivo en caso de condiciones climáticas extremas"\\
+\paragraph{Objetivo 4:} ``Implementar un sistema de alertas para condiciones climáticas extremas"\\
 \begin{itemize}
-\item Analizar los datos meteorológicos.
-\item Enviar notificaciones a los usuarios.
+\item Determinar y analizar las variables que son utilizadas para predecir una helada.
+\item Implementar un sistema de notificación para los usuarios.
 \end{itemize}
 
 %% contenido del segundo capítulo
@@ -293,6 +287,18 @@ Raspberry Pi tiene la capacidad de interactuar con el mundo exterior, y se ha ut
 \label{rasp}
 \end{figure}
 
+\subsection{Arduino}
+Arduino~\cite{arduiino} es una plataforma de prototipos electrónica de código abierto (open-source) basada en hardware y software flexibles y fáciles de usar. Está pensado para artistas, diseñadores, como hobby y para cualquiera interesado en crear objetos o entornos interactivos.
+Arduino puede sentir el entorno mediante la recepción de entradas desde una variedad de sensores y puede afectar a su alrededor mediante el control de luces, motores y otros artefactos. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{arduino.png}
+\caption{Arduino}
+\label{arduino}
+\end{figure}
+
+
 \subsection{Servidor de base de datos}
 Un servidor de bases de datos se utiliza para almacenar, recuperar y administrar los datos de una base de datos. El servidor gestiona las actualizaciones de datos, permite el acceso simultáneo de muchos servidores o usuarios web y garantiza la seguridad y la integridad de los datos. Y cuando hablamos de datos, podemos estar hablando sobre millones de elementos a los que acceden al mismo tiempo miles de usuarios.
 
@@ -360,9 +366,10 @@ Un cargador es un dispositivo utilizado para suministrar corriente eléctrica a u
 \centering
 \includegraphics[width=4cm]{cargador.jpg}
 \caption{Cargador}
+\label{cargador}
 \end{figure}
 
-\newpage
+
 
 \section{Software}
 \subsection{Raspbian}
@@ -375,7 +382,7 @@ Instalador: "\url{https://www.raspbian.org/RaspbianInstaller}"
 \subsection{Python}
 Python es un claro  y poderoso lenguaje de programación orientado a objetos, comparable con Perl, Ruby o Java.
 
-Algunas de las caracteristicas de Python son:
+Algunas de las características de Python son:
 
 \begin{itemize}
 \item Python ideal para el desarrollo de prototipos y otras tareas de programación, sin comprometer la capacidad de mantenimiento.
@@ -388,7 +395,7 @@ Algunas de las caracteristicas de Python son:
 \url{https://wiki.python.org/moin/BeginnersGuide/Overview}
 
 \subsubsection{Librería GPIO}
-Una de las características de gran alcance de la Raspberry Pi es la fila de GPIO~\cite{gpio} (Entrada/Salida de Propósito General) alfileres a lo largo del borde de la placa, junto a la salida de vídeo socket amarilla como se puede apreciar en la Figura 12:
+Una de las características de gran alcance de la Raspberry Pi es la fila de GPIO~\cite{gpio} (Entrada/Salida de Propósito General) alfileres a lo largo del borde de la placa, junto a la salida de vídeo socket amarilla como se puede apreciar en la Figura \ref{gpio}:
 
 \begin{figure}[h]
 \centering
@@ -397,7 +404,7 @@ Una de las características de gran alcance de la Raspberry Pi es la fila de GPIO
 \label{gpio}
 \end{figure}
 
-Estos pines son una interfaz física entre el la Raspberry y el mundo exterior. Al nivel más simple, se puede pensar en ellos como interruptores que puede activar o desactivar ya sean las entradas como las salidas. Diecisiete de los veinte y seis pines son GPIO; los otros son pines de alimentación o de tierra como se ve en la Figura 13:
+Estos pines son una interfaz física entre el la Raspberry y el mundo exterior. Al nivel más simple, se puede pensar en ellos como interruptores que puede activar o desactivar ya sean las entradas como las salidas. Diecisiete de los veinte y seis pines son GPIO; los otros son pines de alimentación o de tierra como se ve en la Figura \ref{giop1}:
 
 \begin{figure}[h]
 \centering
@@ -413,7 +420,7 @@ Puede programar los pines de maneras asombrosas para interactuar con el mundo re
 %% contenido del tercer capítulo
 \chapter{Análisis del problema}
 
-El presente capítulo tiene por objetivo dar a conocer la problemática existente relacionada a la mantención de césped, mencionando también los métodos utilizados, los problemas que estos tienen y mostrar un prototipo de como sulucionar uno los problemas que se mencionarán.
+El presente capítulo tiene por objetivo dar a conocer la problemática existente relacionada a la mantención de césped, mencionando también los métodos utilizados, los problemas que estos tienen y mostrar un prototipo de como solucionar uno los problemas que se mencionarán.
 
 \section{Descripción del problema}
 
@@ -422,7 +429,7 @@ La mantención de jardines y áreas verdes es una actividad muy común hoy en día e
 Estas áreas verdes no requieren de mucho cuidado, principalmente se necesita cortar y regar el césped que es en la actividad que estamos enfocados, entonces ¿Cómo se riega el césped hoy en día en nuestro país? principalmente se utilizan dos métodos:
 
 \begin{itemize}
-\item Riego manual: la persona encargada del riego, riega hasta que concidere que el césped se encuentra lo suficientemente húmedo.
+\item Riego manual: la persona encargada del riego, riega hasta que considere que el césped se encuentra lo suficientemente húmedo.
 \item Riego por aspersores: generalmente funcionan automáticamente todos los días durante un periodo de tiempo determinado.
 \end{itemize}
 
@@ -430,9 +437,9 @@ Ambos métodos utilizan en exceso el agua, además a esto le sumamos que por lo ge
 
 El año 2013 fue uno de los años más secos desde 1866. Existen déficit de precipitaciones que van desde un 20\% llegando incluso hasta un 60\% entre las zonas de Copiapó y Talca al sur, estas son zonas de gran producción agrícola y además entre los lugares mencionados son los que han tenido mayor inversión para poder satisfacer la demanda de agua dulce a las personas~\cite{sequia}. 
 
-Los dispositivos utilizados hoy en día no concideran el tipo de suelo en el cual se realizará el riego, esto es importante porque cada suelo tiene una capacidad de absorción distinta. Esta información es importante porque al no aplicar la cantidad justa de agua, se daña el suelo como por ejemplo la erosión~\cite{erosion}, además del agua desperdiciada.
+Los dispositivos utilizados hoy en día no consideran el tipo de suelo en el cual se realizará el riego, esto es importante porque cada suelo tiene una capacidad de absorción distinta. Esta información es importante porque al no aplicar la cantidad justa de agua, se daña el suelo como por ejemplo la erosión~\cite{erosion}, además del agua desperdiciada.
 
-Es por ello, que es muy importante y de suma urgencia idear nuevas técnicas de riego sustentables en las que se obtenga el mayor provecho del agua que permita mantener el nivel de producción agricula en Chile o incluso aumentarlo.
+Es por ello, que es muy importante y de suma urgencia idear nuevas técnicas de riego sustentables en las que se obtenga el mayor provecho del agua que permita mantener el nivel de producción agrícola en Chile o incluso aumentarlo.
 
 
 \section{Problemas identificados}
@@ -453,41 +460,142 @@ Para los problemas anteriormente mencionados existe información que será utiliza
 \begin{itemize}
 \item Pronóstico del tiempo: será utilizado para saber la probabilidad de lluvia en la zona en la que se encuentra el dispositivo.
 \item Tipo de suelo: indica el tipo de suelo en el que el dispositivo será utilizado.
-\item Humedad del suelo: indica la humedad del sulo utilizando sensores de humedad.
+\item Humedad del suelo: indica la humedad del suelo utilizando sensores de humedad.
 \end{itemize}
 
-\section{Prototipo básico del dispositivo}
+Existe más información que puede ser incluida para mejorar la calidad del riego aplicado al suelo, pero para en este trabajo solo se considera las variables antes mencionadas.
 
-A continuación se muestran algunas imágenes de un prototipo básico del dispositivo que tiene algunas funcionalidades.
+%contenido cuarto capitulo
+\chapter{Desalloro}
 
-La Figura \ref{prot2} se peude ver el micro computador funcionando, el cual esta conectado a Internet por cable de red y el sensor de humedad conectado a la interfaz GPIO. De fondo en la pantalla se esta ejecutando el programa que lee los datos del sensor de humedad, como en esta caso la tierra se encuentra seca, el programa muestra un 1, que significa que se debe regar.
+En este capitulo se mostrarán los pasos necesarios para construir y hacer funcionar el dispositivo de riego. Primero veremos todo lo relacionado con el hardware juntado todas las partes, luego se trabajará en el desarrollo del modelo que corresponde a la parte de software del dispositivo. También se mostrará un algo breve del desarrollo de la aplicación web y finalmente veremos las variables necesarias para determinar un helada y como se hará para notificar a los usuarios.
+
+\section{Hardware}
+
+Raspberry es una plataforma muy útil para el desarrollo de aplicaciones domóticas y de control. Sin embargo. Raspberry tiene una limitación en cuanto a entradas/salidas disponibles y no puede trabajar con modulación por ancho de pulsos.
+
+Una solución a este problema puede ser utilizar un Beaglebone black o se puede combinar el Raspberry con Arduino y dejar todo el control de hardware al Arduino y solo utilizar la Raspberry como controlador. En esta sección se mostrará como conectar la Raspberry con un Arduino a través de USB a través de comunicación serie.
+
+\subsection{Arduino}
+
+\subsubsection{Programación Arduino}
+
+Lo primero que se hará es crear un programa para Arduino que leerá la información de uin sensor de humedad y la información que envía un sensor de flujo utilizando el puerto serie del Arduino. El programa que utilizamos se muestra a continuación, para ello se debe instalar el IDE de Arduino desde el siguiente enlace:
+
+\url{https://www.arduino.cc/en/Main/Software}
+
+Instalado el programa, conectar al Arduino a la computadora, ejecutar el programa y ya se esta listo para trabajar.
+
+A continuación se mostrará el código con el cual se puede leer información desde distintos tipos de sensores.\\
+
+Declaración de variables:\\
+
+volatile int  frecuencia\_sensor;  \textit{// Mide los pulsos de flujo}
+
+unsigned int  litrosHora;          \textit{// Calcula los litros por hora}  
+
+unsigned int humedad\_sensor;        \textit{// Mide la humedad del suelo}
+
+unsigned char pinFlujo = 2;  \textit{// Pin de flujo (Pin 2)}
+
+unsigned char pinHumedad = A0;  \textit{// Pin de humedad (Pin A0)}
+
+unsigned long tiempoActual;
+
+unsigned long tiempoCiclo;\\
+
+Función setup:\\
+
+void setup()\{
+
+	pinMode(pinFlujo, INPUT); \textit{// pinFlujo se declara como entrada}
+
+	Serial.begin(9600); \textit{ // Permite la comunicación con la Raspberry}
+
+	attachInterrupt(0, flujo, RISING); \textit{// Setup Interrupt }
+
+	sei();                            \textit{// Enable interrupts } 
+
+	tiempoActual = millis();
+
+	tiempoCiclo = tiempoActual;
+
+\}\\
+
+Función loop:\\
+
+void loop() \{
+
+	humedad\_sensor = analogRead(pinHumedad);  \textit{// Entrada analógica}
+
+	Serial.print(humedad\_sensor); \textit{// Envía el valor a la Raspberry}
+
+	Serial.println(" Humedad"); \textit{// Parámetro opcional}
+
+	tiempoActual = millis(); \textit{//Mide el tiempo actual}
+
+	\textit{  //Cada segundo, calcula e imprime litros por hora}
+
+	if(tiempoActual >= (tiempoCiclo + 1000))\{
+
+		litrosHora = (frecuencia\_sensor * 60 / 7.5); \textit{// Formula litro por hora }
+
+		frecuencia\_sensor = 0;                  \textit{ // Resetea el contador}
+
+		Serial.print(litrosHora);            \textit{// Envío a Raspberry litro por hora}
+
+		Serial.println(" L/hour");  		\textit{// Envío parámetro opcional}
+
+	\}
+
+\}\\
+
+
+Una vez escrito el código en el IDE, se verifica y se sube al Arduino. Es importante destacar que para enviar información a las Raspberry se utiliza la linea de código Serial.println("mensaje").
+
+\subsubsection{Conexión de sensores}
+
+Los sensores que se utilizarán son de humedad e suelo y flujo de agua.
+
+
+\subsection{Raspberry}
+
+Para configurar la Raspberry lo primero que hay que hacer es instalar las librerías para el control del puerto serie desde Python. Para hacer esto ejecutamos el siguiente comando desde la consola en nuestra Raspberry:
+
+\textit{sudo apt-get install python-serial}
+
+Con esto instalado ya esta lista la Raspberry para comunicarse al Arduino utilizando el puerto serie. Lo hay que determinar es que puerto utiliza el Arduino cuando esta conectado al Raspberry. Para saber el puerto primero se conecta el Arduino a la Raspberry  por USB y luego se ejecuta el siguiente comando:
+
+\textit{ls /dev/tty*}
+
+Una vez ejecutado el comando se verá un listado de diferentes dispositivos. El Arduino en este caso aparece en el último lugar llamado /dev/ttyUSB0 como se ve el la Figura \ref{resultado}:
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=10cm]{prot2.jpg}
-\caption{Prototipo funcionando con tierra seca}
-\label{prot2}
+\includegraphics[width=10cm]{USBArduino.png}
+\caption{Arduino en Raspberry}
+\label{resultado}
 \end{figure}
 
-\newpage
-
-En la Figura \ref{prot2} la diferencia es que la tierra esta húmeda, por lo que el programa muestra un 0 que significa que no se debe regar.
+Una vez que el Arduino esta identificado ya podemos comenzar a comunicarnos mediante un programa en Python. En este caso se mostrará un ejemplo de como recibir la información en la Raspberry enviada desde el Arduino, en la Figura \ref{raspardu} se puede ver el código utilizado.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=10cm]{prot1.jpg}
-\caption{Prototipo funcionando con tierra húmeda}
-\label{prot2}
+\includegraphics[width=10cm]{RaspberryArduino.png}
+\caption{Comunicación Raspberry Arduino}
+\label{raspardu}
 \end{figure}
 
-La Figura \ref{climatologicos} muestra los datos entregados por el servicio web meteorológico, entregándole como parámetro las coordenadas de la posición con un GPS.
+
+Con este programa en Python ya se puede recibir datos desde el Arduino en la Raspberry, para probarlo se ejecuta el programa con la siguiente linea de código \textit{sudo python nombre\_programa.py} y se pueden ver los resultados obtenido en la Figura \ref{raciboDatos}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=13cm]{climaGps.png}
-\caption{Datos climatológicos}
-\label{climatologicos}
+\includegraphics[width=10cm]{ReciboDatos.png}
+\caption{Recibo de datos desde Arduino en Raspberry}
+\label{raciboDatos}
 \end{figure}
+
 
 
 %% ambiente glosario
