@@ -40,7 +40,7 @@ Un riego eficaz sólo es posible con un seguimiento periódico de las condiciones 
 
 Lo que se busca en este proyecto es aumentar la eficiencia en los recursos hídricos de la zona en la que el dispositivo esté instalado entregando información relevante, que permita disminuir costos y mantener las áreas verdes a pesar del actual cambio climático que vive el planeta.
 
-Esto se puede lograr un dispositivo de riego de bajo costo, de fácil instalación, que no necesite configuraciones, autónomo e inteligente, que permita monitorear y controlar el riego de los jardines o áreas verdes manteniéndolos en condiciones ideales de humedad con el fin de ayudar al crecimiento y desarrollo saludable del césped.
+Esto se puede lograr con un dispositivo de riego de bajo costo, de fácil instalación, que no necesite configuraciones, autónomo e inteligente, que permita monitorear y controlar el riego de los jardines o áreas verdes manteniéndolos en condiciones ideales de humedad con el fin de ayudar al crecimiento y desarrollo saludable del césped.
 
 Se les ofrecerá a los usuarios monitorear y controlar el riego, entregándoles información que les puede ser de gran utilidad, como por ejemplo, el agua utilizada en un día, todo esto a través de una aplicación web y/o móvil.
 
@@ -52,7 +52,7 @@ Se les ofrecerá a los usuarios monitorear y controlar el riego, entregándoles in
 \chapter{Introducción}
 \section{Descripción de la propuesta}
 \subsection{Contexto del proyecto}
-El proyecto consiste en desarrollar un sistema de riego autónomo e inteligente ideal para el uso en áreas verdes que utilizan sistemas de riego como puede por aspersión. Lo que se busca es reducir la intervención humana, aumentar la eficiencia en el uso del agua, ahorrar dinero y entregar datos estadísticos a los usuarios.
+El proyecto consiste en desarrollar un sistema de riego autónomo e inteligente ideal para el uso en áreas verdes que utilizan sistemas de riego como por ejemplo, por aspersión. Lo que se busca es reducir la intervención humana, aumentar la eficiencia en el uso del agua, ahorrar dinero y entregar datos estadísticos a los usuarios.
 
 El sistema básicamente cociste en sensores de humedad del suelo, un micro computador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el césped en buen estado, le envía una señal a la raspberry la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
 
@@ -78,7 +78,7 @@ Primero es la escasez de agua que existe hoy en día en gran parte de nuestro paí
 
 Segundo, se utilizan técnicas de riego pobres en la agricultura (riego áreas verdes), es por ello que es muy importante y de suma urgencia idear nuevas técnicas de riego sustentables en las que se obtenga el mayor provecho del agua sin afectar la calidad del riego.
 
-Por último la falta de tecnologías innovadores y baratas aplicadas al riego para el uso domestico. Chile es un país con mucha agricultura de debe tener las tecnologías que ayuden a la producción y a la vez sean amigables con el medio ambiente.
+Por último la falta de tecnologías innovadores y baratas aplicadas al riego para el uso domestico.
 
 \subsection{Propuesta de solución}
 La solución al problema consiste en desarrollar un dispositivo de riego inteligente, automático, autónomo y de bajo costo que permita monitorear y controlar el riego de un un jardín o área verde.
@@ -89,7 +89,7 @@ Para el hardware se utilizarán piezas que se venden en el mercado y son de fácil
 
 Cuando y como aplicar un riego es muy importante ya que de esta manera se está utilizando eficientemente el agua evitando escurrimiento, evaporación, salinización y otros problemas asociados al exceso de agua en el riego.
 
-La conexión a internet se hará utilizando dispositivos 3G que tienen una amplia cobertura a través de todo el país gracias a la iniciativa del gobierno ?Proyecto Bicentenario? que entrega acceso al 90\% de las localidades rurales.
+La conexión a internet se hará utilizando dispositivos 3G que tienen una amplia cobertura a través de todo el país gracias a la iniciativa del gobierno ``Proyecto Bicentenario" que entrega acceso al 90\% de las localidades rurales.
 
 El dispositivo al estar conectado a internet permitirá monitorear en línea la información que se recoge a través de los sensores, por ejemplo temperatura del lugar, humedad del suelo, cantidad de agua utilizada y además se podrá controlar el riego para el caso de los usuario no agricultores.
 
@@ -127,8 +127,9 @@ Una variable que se considerará, distinguirá y hará diferente este dispositivo d
 \begin{itemize}
 \item El sistema de riego (cañerías, aspersores, etc.) debe estar previamente instalado.
 \item El modelo de riego será básico y se podrá mejorar con más tiempo y personas especializadas en riego.
-\item En el monitoreo los usuario podrán ver la humedad y la cantidad de agua utilizada en el riego.
+\item En el monitoreo los usuario podrán ver la humedad del suelo y la cantidad de agua utilizada en el riego.
 \item Se diseñará una aplicación web y/o móvil que permita a los usuarios visualizar la humedad del suelo y la cantidad de agua utilizada, y además tendrá la funciona de activar y desactivar el riego.
+\item El dispositivo no se podrá configurar por parte del usuario.
 \end{itemize}
 
 \section{Metodología}
@@ -166,11 +167,11 @@ Una variable que se considerará, distinguirá y hará diferente este dispositivo d
 
 \section{Programación del riego}
 
-La programación del riego, es la planificación de cuándo y qué cantidad de agua aplicar con el fin de mantener el crecimiento saludable de las plantas durante la estación de crecimiento. Es una práctica de gestión diaria esencial.
+La programación del riego, es la planificación de cuándo y qué cantidad de agua aplicar con el fin de mantener el crecimiento saludable del césped. Es una práctica de gestión diaria esencial.
 
 El momento adecuado del riego es una decisión crucial para la aplicación: 
 \begin{itemize}
-\item Satisfacer las necesidades de agua del cultivo para evitar la pérdida de rendimiento debido a la escasez de agua.
+\item Satisfacer las necesidades de agua, para evitar daños debido a la escasez de agua.
 \item Maximizar la eficiencia del uso del agua de riego y conservar los recursos hídricos locales.
 \end{itemize}
 
@@ -230,32 +231,6 @@ Wunderground no da la posibilidad de consultar el clima dado las coordenadas de 
 Para obtener más información y/o registrarse para utilizar el servicio se puede hacer en la siguiente url: 
 
 \url{http://www.wunderground.com/weather/api/d/docs?d=index}\\
-
-La estructura de la url para realizar la consulta de la siguiente:
-
-\url{http://api.wunderground.com/api/e7d949410a7481dc/forecast10day/lang:SP/q/-34.40819094134256,-71.00087251514196.json}
-
-\begin{itemize}
-\item \url{http://api.wunderground.com/api/} es la dirección donde se hace la consulta.
-\item \url{e7d949410a7481dc} es la llave que se obtiene al registrarse.
-\item \url{forecast10day} retorna datos meteorológicos de los siguientes 10 días.
-\item \url{lang:SP} se utiliza para obtener los datos en español.
-\item \url{q/-34.40819094134256,-71.00087251514196} son las coordenadas del lugar que se quieren obtener los datos.
-\item \url{.json} es el formato en el que se devuelve la información, también puede ser .xml.
-\end{itemize}
-
-Los datas obtenidos se pueden apreciar en la Figura \ref{response}:
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=10cm]{response.png}
-\caption{Respuesta del servicio wunderground al hacer una consulta}
-\label{response}
-\end{figure}
-
-\newpage
-
-De toda la información que entrega el servicio web wunderground, lo único que nos interesa hasta el momento, es el campo pop, que significa probabilidad de precipitación, que esta representada en porcentaje.
 
 \section{Trabajos relacionados}
 
@@ -326,7 +301,6 @@ Arduino puede sentir el entorno mediante la recepción de entradas desde una vari
 \caption{Arduino}
 \label{arduino}
 \end{figure}
-
 
 \subsection{Servidor de base de datos}
 Un servidor de bases de datos se utiliza para almacenar, recuperar y administrar los datos de una base de datos. El servidor gestiona las actualizaciones de datos, permite el acceso simultáneo de muchos servidores o usuarios web y garantiza la seguridad y la integridad de los datos. Y cuando hablamos de datos, podemos estar hablando sobre millones de elementos a los que acceden al mismo tiempo miles de usuarios.
@@ -399,7 +373,6 @@ Un cargador es un dispositivo utilizado para suministrar corriente eléctrica a u
 \end{figure}
 
 
-
 \section{Software}
 \subsection{Raspbian}
 Raspbian~\cite{raspbian} es un sistema operativo libre basado en Debían optimizado para el hardware Raspberry Pi. Un sistema operativo es el conjunto de programas básicos y utilidades que hacen que Raspberry Pi funcione. Sin embargo, Raspbian ofrece más que un sistema operativo; viene con más de 35.000 paquetes, software pre-compilado en un formato que hace más fácil la instalación en su Raspberry Pi.
@@ -453,7 +426,7 @@ El presente capítulo tiene por objetivo dar a conocer la problemática existente 
 
 \section{Descripción del problema}
 
-La mantención de jardines y áreas verdes es una actividad muy común hoy en día en Chile, más aún cuando existen propuestas  del propio estado de Chile por promover esta iniciativa, aumentando la inversión y ampliando cada vez más los parques en diferentes comunas de Chile.
+La mantención de jardines y áreas verdes es una actividad muy común hoy en día en Chile, más aún cuando existen propuestas del propio estado de Chile por promover esta iniciativa, aumentando la inversión y ampliando cada vez más los parques en diferentes comunas de Chile.
 
 Estas áreas verdes no requieren de mucho cuidado, principalmente se necesita cortar y regar el césped que es en la actividad que estamos enfocados, entonces ¿Cómo se riega el césped hoy en día en nuestro país? principalmente se utilizan dos métodos:
 
@@ -487,12 +460,12 @@ Según Chuck Ingels~\cite{problemas}, asesor agrícola de Extensión Cooperativa de
 Para los problemas anteriormente mencionados existe información que será utilizado para planificar y determinar un riego, los podemos ver a continuación:
 
 \begin{itemize}
-\item Pronóstico del tiempo: será utilizado para saber la probabilidad de lluvia en la zona en la que se encuentra el dispositivo.
-\item Tipo de suelo: indica el tipo de suelo en el que el dispositivo será utilizado.
+\item Pronóstico del tiempo: se cuenta con esta información que permite saber en tiempo actual las condiciones climáticas de un punto en particular.
+\item Tipo de suelo: indica el tipo de suelo en el que el dispositivo esta siendo utilizado.
 \item Humedad del suelo: indica la humedad del suelo utilizando sensores de humedad.
 \end{itemize}
 
-Existe más información que puede ser incluida para mejorar la calidad del riego aplicado al suelo, pero para en este trabajo solo se considera las variables antes mencionadas.
+Existe más información que puede ser incluida para mejorar la calidad del riego aplicado al suelo, pero para en este trabajo solo se considera las variables mencionadas anteriormente.
 
 %contenido cuarto capitulo
 \chapter{Desalloro}
@@ -625,6 +598,31 @@ Con este programa en Python ya se puede recibir datos desde el Arduino en la Ras
 \label{raciboDatos}
 \end{figure}
 
+\section{Software}
+
+\subsection{Información meteorológica}
+
+La estructura de la url para realizar la consulta de la siguiente:
+
+\url{http://api.wunderground.com/api/e7d949410a7481dc/forecast10day/lang:SP/q/-34.40819094134256,-71.00087251514196.json}
+
+\begin{itemize}
+\item \url{http://api.wunderground.com/api/} es la dirección donde se hace la consulta.
+\item \url{e7d949410a7481dc} es la llave que se obtiene al registrarse y es necesaria para utilizar el servicio.
+\item \url{forecast10day} retorna datos meteorológicos de los siguientes 10 días.
+\item \url{lang:SP} se utiliza para obtener los datos en español.
+\item \url{q/-34.40819094134256,-71.00087251514196} son las coordenadas del lugar que se quieren obtener los datos.
+\item \url{.json} es el formato en el que se devuelve la información, también puede ser .xml.
+\end{itemize}
+
+Los datas obtenidos se pueden apreciar en la Figura \ref{response}:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{response.png}
+\caption{Respuesta del servicio wunderground al hacer una consulta}
+\label{response}
+\end{figure}
 
 
 %% ambiente glosario
@@ -632,13 +630,6 @@ Con este programa en Python ya se puede recibir datos desde el Arduino en la Ras
   \item[El primer término:] Este es el significado del primer término, realmente no se bien lo que significa pero podría haberlo averiguado si hubiese tenido un poco mas de tiempo.
   \item[El segundo término:] Este si se lo que significa pero me da lata escribirlo...
 \end{glosario}
-
-%% ambiente glosario
-\begin{glosario}
-  \item[El primer término:] Este es el significado del primer término, realmente no se bien lo que significa pero podría haberlo averiguado si hubiese tenido un poco mas de tiempo.
-  \item[El segundo término:] Este si se lo que significa pero me da lata escribirlo...
-\end{glosario}
-
 
 %% genera las referencias
 \bibliography{refs}
