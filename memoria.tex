@@ -492,7 +492,7 @@ A continuación se mostrará el código con el cual se puede leer información desde
 
 Declaración de variables:\\
 
-volatile int  frecuencia\_sensor;  \textit{// Mide los pulsos de flujo}
+volatile int  frecuencia\_sensor;  \textit{// Mide los pulsos de sensor de flujo}
 
 unsigned int  litrosHora;          \textit{// Calcula los litros por hora}  
 
@@ -528,7 +528,7 @@ Función loop:\\
 
 void loop() \{
 
-	humedad\_sensor = analogRead(pinHumedad);  \textit{// Entrada analógica}
+	humedad\_sensor = analogRead(pinHumedad);  \textit{// Entrada analógica, sensor de humedad}
 
 	Serial.print(humedad\_sensor); \textit{// Envía el valor a la Raspberry}
 
@@ -557,8 +557,14 @@ Una vez escrito el código en el IDE, se verifica y se sube al Arduino. Es import
 
 \subsubsection{Conexión de sensores}
 
-Los sensores que se utilizarán son de humedad e suelo y flujo de agua.
+Como se ha mencionado anteriormente, los sensores que se utilizarán son de humedad de suelo y flujo de caudal, y se  ha mostrado el código necesario para que estos funcionen. De acuerdo a ese código se es que se realizó la conexión de los sensores al Arduino, se puede apreciar claramente en la Figura \ref{conexion}:
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{conexiones.jpg}
+\caption{Conexión sensores en Arduino}
+\label{conexion}
+\end{figure}
 
 \subsection{Raspberry}
 
@@ -581,13 +587,14 @@ Una vez ejecutado el comando se verá un listado de diferentes dispositivos. El A
 
 Una vez que el Arduino esta identificado ya podemos comenzar a comunicarnos mediante un programa en Python. En este caso se mostrará un ejemplo de como recibir la información en la Raspberry enviada desde el Arduino, en la Figura \ref{raspardu} se puede ver el código utilizado.
 
+\newpage
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm]{RaspberryArduino.png}
 \caption{Comunicación Raspberry Arduino}
 \label{raspardu}
 \end{figure}
-
 
 Con este programa en Python ya se puede recibir datos desde el Arduino en la Raspberry, para probarlo se ejecuta el programa con la siguiente linea de código \textit{sudo python nombre\_programa.py} y se pueden ver los resultados obtenido en la Figura \ref{raciboDatos}
 
@@ -597,6 +604,41 @@ Con este programa en Python ya se puede recibir datos desde el Arduino en la Ras
 \caption{Recibo de datos desde Arduino en Raspberry}
 \label{raciboDatos}
 \end{figure}
+
+\subsection{GPS}
+
+El GPS es una parte importante del dispositivo, ya que determina la posición en la que se aplicará el riego, gracias a esto se puede determinar el tipo de suelo en el que el dispositivo se encuentra y realizar un riego especial a cada lugar.
+
+El GPS se conectará a la Raspberry ya que utiliza conexión USB.
+
+Pasos para el funcionamiento del GPS en la Raspberry:
+
+\begin{itemize}
+\item Conectar el GPS a un puerto USB de la Raspberry.
+\item En la terminal de Raspberry ejecutar \textit{ls /dev/tty*} como se ve en la Figura \ref{lsgps}:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{lsgps.png}
+\caption{GPS en Raspberry, /dev/ttyUSB1}
+\label{lsgps}
+\end{figure}
+
+\item \textit{sudo gpsd -N -D3 /dev/ttyUSB1} 
+\item \textit{sudo nano gps.py}
+\item En el archivo creado anteriormente copiar el código del siguiente link \url{https://gist.github.com/wolfg1969/4653340#file-gpsddata-py}
+\item Ejecutar \textit{sudo python gps.py} con esto obtenemos como resultado lo que se aprecia en la Figura \ref{datosgps}:
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{datosgps.png}
+\caption{Datos GPS}
+\label{datosgps}
+\end{figure}
+
+\end{itemize}
+
+
+\newpage
 
 \section{Software}
 
@@ -624,6 +666,9 @@ Los datas obtenidos se pueden apreciar en la Figura \ref{response}:
 \label{response}
 \end{figure}
 
+\subsection{Modelo de riego}
+
+Modelo de riego...
 
 %% ambiente glosario
 \begin{glosario}
