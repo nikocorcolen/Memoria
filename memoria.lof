@@ -5,34 +5,38 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Como y cuando regar}}{15}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Permeabilidad seg\'un textura del suelo}}{17}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Objetos y posibles valores para el ejemplo del cajero autom\'atico}}{19}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Ejemplos de reglas para sacar dinero de un cajero autom\'atico}}{32}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Arquitectura servicio web}}{33}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Comparaci\'on servicio meteorol\'ogico de Google v/s Wunderground para la localidad rural de Corcol\'en}}{33}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Tabla Comparativa}}{34}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Raspberry Pi modelo B+}}{34}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Arduino}}{34}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Sensor de humedad}}{34}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Sensor de flujo de agua}}{35}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Rel\'e de estado solido}}{35}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces V\'alvula solenoide}}{35}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces M\'odulo GPS USB}}{36}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces M\'odem 3G}}{36}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Cargador}}{36}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces GPIO Raspberry Pi}}{36}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Pines GPIO}}{37}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ejemplos de reglas para sacar dinero de un cajero autom\'atico}}{19}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Arquitectura servicio web}}{21}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Comparaci\'on servicio meteorol\'ogico de Google v/s Wunderground para la localidad rural de Corcol\'en}}{23}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Tabla Comparativa}}{26}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Raspberry Pi modelo B+}}{27}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Arduino}}{27}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Sensor de humedad}}{29}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Sensor de flujo de agua}}{30}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Rel\'e de estado solido}}{31}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces V\'alvula solenoide}}{31}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces M\'odulo GPS USB}}{32}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces M\'odem 3G}}{32}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Cargador}}{33}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces GPIO Raspberry Pi}}{34}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Pines GPIO}}{35}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Conexi\'on sensores en Arduino}}{43}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Arduino en Raspberry}}{44}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Comunicaci\'on Raspberry Arduino}}{45}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Recibo de datos desde Arduino en Raspberry}}{46}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces GPS en Raspberry, /dev/ttyUSB1}}{47}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Datos GPS}}{48}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Respuesta del servicio wunderground al hacer una consulta}}{49}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Objetos y posibles valores para determinar un riego}}{50}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Variables predefinidas para la reglas del modelo}}{50}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Reglas modelo, cuando y como regar}}{51}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces \'Arbol reglas modelo de riego}}{51}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Conexi\'on sensores en Arduino}}{41}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Arduino en Raspberry}}{42}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comunicaci\'on Raspberry Arduino}}{43}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Recibo de datos desde Arduino en Raspberry}}{44}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces GPS en Raspberry, /dev/ttyUSB1}}{45}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Datos GPS}}{46}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Respuesta del servicio wunderground al hacer una consulta}}{47}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Objetos y posibles valores para determinar un riego}}{48}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Variables predefinidas para la reglas del modelo}}{48}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Reglas modelo, cuando y como regar}}{49}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \'Arbol reglas modelo de riego}}{49}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Registro almacenado en la base de datos}}{51}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Registros almacenados en la base de datos}}{53}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Humedad del suelo en tiempo real}}{54}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Consumo de agua mensual}}{54}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

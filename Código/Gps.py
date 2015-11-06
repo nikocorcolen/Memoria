@@ -38,15 +38,8 @@ if __name__ == '__main__':
 
       os.system('clear')
       # print
-      # print ' GPS reading'
-      # print '----------------------------------------'
-      # print 'latitude    ' , gpsd.fix.latitude
-      # print 'longitude   ' , gpsd.fix.longitude
-      # print
-      # print 'sats        ' ,len( gpsd.satellites)
 
       if gpsd.fix.latitude != 0.0 and  not (math.isnan(gpsd.fix.latitude)):
-        print 'hola mundo'
         mydata=[('id',getserial()),('lat',gpsd.fix.latitude),('lon',gpsd.fix.longitude)]
         mydata=urllib.urlencode(mydata)
         path='http://bri2.utalca.cl/~nmaturana/insertCoor.php'
