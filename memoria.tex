@@ -2,7 +2,7 @@
 %% inicio, la clase del documento es iccmemoria.cls
 \documentclass{iccmemoria}
 %% datos generales y para la tapa
-\titulo{Dispositivo de riego inteligente de bajo costo para el uso eficiente del agua}
+\titulo{Prototipo de riego inteligente de bajo costo para el uso eficiente del agua}
 \author{Nicolás Gastón Maturana Barrios}
 \supervisor{Benjamín Ingram}
 \informantes
@@ -54,7 +54,7 @@ Se les ofrecerá a los usuarios monitorear y controlar el riego, entregándoles in
 \subsection{Contexto del proyecto}
 El proyecto consiste en desarrollar un sistema de riego autónomo e inteligente ideal para el uso en áreas verdes que utilizan sistemas de riego como por ejemplo, por aspersión. Lo que se busca es reducir la intervención humana, aumentar la eficiencia en el uso del agua, ahorrar dinero y entregar datos estadísticos a los usuarios.
 
-El sistema básicamente cociste en sensores de humedad del suelo, un micro computador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el césped en buen estado, le envía una señal a la raspberry la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
+El sistema básicamente cociste en sensores de humedad del suelo, un micro computador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el césped en buen estado, le envía una señal a la Raspberry la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
 
 Para el proyecto se utiliza un micro computador el cual se programa en Python, y es el encargado de recibir los datos de entradas, que en este caso son los datos meteorológicos y los del sensor de humedad. Una vez que los datos son recibidos el micro computador los analiza y si se requiere un riego envía una señal la válvula solenoide que permitirá el paso del agua. También se utilizará un sensor de flujo para medir la cantidad de agua que se esta utilizando y así entregar reportes al usuario.
 
@@ -68,7 +68,7 @@ También existen trabajos en los que se mide la humedad del suelo~\cite{temporiza
 
 Por otro lado tampoco indican el consumo de agua que se ha utilizado en el riego y tampoco tienen sistema de prevención en caso de condiciones climáticas extremas, como puede ser el frío extremo que nos ayuden a mantener en buen estado nuestro jardín.
 
-Estos dispositivos se pueden encontrar en tiendas de Retail a costos elevados.
+Estos dispositivos se pueden encontrar en tiendas de retail a costos elevados.
 
 \subsection{Definición del problema}
 
@@ -98,8 +98,6 @@ Otro punto importante consiste en alarmas, que alertarán a los usuarios cuando e
 Como se espera que esto funcione de forma autónoma y utilice eficientemente el agua, no se realizarán riegos cuando exista alguna probabilidad de lluvia, por ejemplo si se espera para mañana una lluvia y los sensores de humedad indican que es necesario regar, el sistema no regará ese día o regará utilizando menos agua, esta es una característica que les será de mayor utilidad a los usuarios no agricultores ya que a ellos los que se quieren despreocupar totalmente del riego de áreas verdes.
 
 Una variable que se considerará, distinguirá y hará diferente este dispositivo de otros existentes, es que al estar consciente de su ubicación actual podrá determinar el tipo de suelo en el que se encuentra, con esto se mejorará el impacto del riego en cada tipo de suelo, ya que permitirá saber la capacidad de absorción  que éste tiene. Con esta información se podrá saber qué tipo de riego aplica mejor con el fin de utilizar el agua  lo más inteligente y eficientemente posible.
-
-
 
 \section{Hipótesis}
 \begin{itemize}
@@ -165,9 +163,18 @@ Una variable que se considerará, distinguirá y hará diferente este dispositivo d
 %% contenido del segundo capítulo
 \chapter{Marco teórico}
 
+En este capitulo se hablará acerca en que consiste la programación del riego, los distintos tipos de suelos; que afectan en como se debe realizar un riego. Se describirá que es un servicio web y se verá el servicio que se utilizará para este proyecto mencionando las características por la cual fue escogido, finalmente se hará un breve análisis de los trabajos relacionados que existen actualmente en el mercado con una tabla comparativa y se verán los componentes tanto de hardware como de software.
+
 \section{Programación del riego}
 
-La programación del riego, es la planificación de cuándo y qué cantidad de agua aplicar con el fin de mantener el crecimiento saludable del césped. Es una práctica de gestión diaria esencial.
+La programación del riego como se ve en la Figura \ref{comoregar}, es la planificación de cuándo y qué cantidad de agua aplicar con el fin de mantener el crecimiento saludable del césped. Es una práctica de gestión diaria esencial.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=7cm]{comoregar.PNG}
+	\caption{Como y cuando regar}
+	\label{comoregar}
+\end{figure}
 
 El momento adecuado del riego es una decisión crucial para la aplicación: 
 \begin{itemize}
@@ -200,14 +207,87 @@ Cada uno de estos tipos de suelos presentan una propiedad llamada permeabilidad;
 Por regla general, como se muestra en la Figura \ref{permeabilidad}, mientras más fina sea la textura del suelo, más lenta sera la permeabilidad:
 
 \begin{figure}[h]
-	\begin{center}
-		\includegraphics[width=6cm]{permeabilidad.PNG}
-	\end{center}
+	\centering
+	\includegraphics[width=10cm]{permeabilidad.PNG}
 	\caption{Permeabilidad según textura del suelo}
 	\label{permeabilidad}
 \end{figure}
 
+\subsection{Como regar los suelos}
+
+\subsubsection{Suelo arenoso}
+
+Para un suelo arenoso, se debe aplicar agua con más frecuencia que los suelos limosos o arcillosos. El agua drena rápidamente a través de la arena, por lo que no estarán disponibles cuando las plantas lo necesitan, por lo que hay que regar con poca cantidad pero con más frecuencia.
+
+\subsubsection{Suelo limoso}
+
+Para un suelo limoso, se debe puede aplicar agua constantemente durante un periodo de tiempo determinado. El agua drena con una velocidad moderada.
+
+\subsubsection{Suelo arcilloso}
+
+Los suelos arcillosos drenan mal el agua, debido a la pequeñez de sus partículas. Por ello se encharcan. Se debe aplicar agua con menor frecuencia que los suelos limosos y arenosos.
+
+\section{Sistema basado en reglas}
+
+En la vida diaria encontramos muchas situaciones complejas las que se rigen por reglas deterministas: sistemas de control de tráfico, sistemas de seguridad, transacciones bancarias, entro otros. Los sistemas basados en reglas~\cite{sistemaReglas} son una herramienta eficiente para tratar estos problemas. 
+
+Las reglas deterministas componen la más sencilla de las metodologías utilizadas en sistemas expertos. La base de conocimiento contiene las variables y el conjunto de reglas que definen el problema, y el motor de inferencia obtiene las conclusiones aplicando la lógica clásica a estas reglas. Por regla se entiende una proposición lógica que relaciona dos o más objetos e incluye dos partes, la premisa y la conclusión. Cada una de estas partes consiste en una expresión lógica con una o más afirmaciones objeto-valor conectadas mediante los operadores lógicos \textit{y}, \textit{o}, o \textit{no}. Una regla se escribe normalmente como ``Si premisa, entonces conclusión". 
+
+Como ejemplo de problema determinista que puede ser formulado usando un conjunto de reglas, considérese una situación en la que un usuario (por ejemplo, un cliente) desea sacar dinero de su cuenta corriente mediante un cajero automático (CA). En cuanto el usuario introduce la tarjeta en el CA, la maquina la lee y la verifica. Si la tarjeta no es verificada con éxito (por ejemplo, porque no es legible), el CA devuelve la tarjeta al usuario con el mensaje de error correspondiente. En otro caso, el CA pide al usuario su número de identificación personal (NIP). Si el número fuese incorrecto, se dan tres oportunidades de corregirlo. Si el NIP es correcto, el CA pregunta al usuario cuánto dinero desea sacar. Para que el pago se autorice, la cantidad solicitada no debe exceder de una cierta cantidad limite diaria, además de haber suficiente dinero en su cuenta. 
+
+En este caso se tienen siete objetos, y cada objeto puede tomar uno y sólo un valor de entre sus posibles valores. La Figura \ref{valores} muestra estos objetos y sus posibles valores.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=9cm]{valores.png}
+\caption{Objetos y posibles valores para el ejemplo del cajero automático}
+\label{valores}
+\end{figure}
+
+\pagebreak
+
+La Figura \ref{reglas} muestra siete reglas que gobiernan la estrategia que el CA debe seguir cuando un usuario intenta sacar dinero de su cuenta.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=11cm]{reglas.png}
+\caption{ Ejemplos de reglas para sacar dinero de un cajero automático}
+\label{reglas}
+\end{figure}
+
+Tal como se ha mencionado, hay dos tipos de elementos: los datos (hechos o evidencia) y el conocimiento (el conjunto de reglas almacenado en la base de conocimiento).
+
+Para obtener conclusiones, los expertos utilizan diferentes tipos de reglas y estrategias de inferencia y control.
+
+\begin{itemize}
+\item Modus Ponens
+\item Modus Tollens
+\end{itemize}
+
+y las estrategias de inferencia
+
+\begin{itemize}
+\item Encadenamiento de reglas
+\item Encadenamiento de reglas orientado a un objetivo
+\end{itemize}
+
+\subsection{Modus Ponens}
+El Modus Ponens es quizás la regla de inferencia más comúnmente utilizada. Se
+utiliza para obtener conclusiones simples. En ella, se examina la premisa de la regla, y si es cierta, la conclusión pasa a formar parte del conocimiento. Por ejemplo, suponga que se tiene la regla, ``Si A es cierto, entonces B es cierto" y que se sabe además que ``A es cierto". La regla Modus Ponens concluye que ``B es cierto." 
+
+\subsection{Estrategias de inferencia}
+
+Una de las estrategias de inferencia más utilizadas para obtener conclusiones compuestas es el llamado encadenamiento de reglas. Esta estrategia puede utilizarse cuando las premisas de ciertas reglas coinciden con las conclusiones de otras. Cuando se encadenan las reglas, los hechos pueden utilizarse para dar lugar a nuevos hechos. Esto se repite sucesivamente hasta que no pueden obtenerse más conclusiones. El tiempo que consume este proceso hasta su terminación depende, por una parte, de los hechos conocidos, y, por otra, de las reglas que se activan.
+
+Una de las estrategias de inferencia más utilizadas para obtener conclusiones compuestas es el encadenamiento de reglas.
+Esta estrategia puede utilizarse cuando las premisas de ciertas reglas coinciden con las conclusiones de otras. Cuando se encadenan las reglas, los hechos pueden utilizarse para dar lugar a nuevos hechos, este proceso se repite sucesivamente hasta que no pueden obtenerse más conclusiones. Existen dos tipos de encadenamiento: progresivo y regresivo.
+
+\subsubsection{Encadenamiento progresivo}
+
+Este tipo de encadenamiento se produce cuando el objetivo propuesto hace que se ejecute una regla, y la conclusión obtenida permite que se ejecute otra, y así sucesivamente hasta llegar a una respuesta, positiva o negativa. El punto final se detecta cuando no se pueden producir más encadenamientos. 
+
 \section{Servicios web meteorológicos}
+
 \subsection{¿Qué es un servicio web?}
 Los servicios web son sistemas de software que permiten el intercambio de datos y funcionalidad entre aplicaciones sobre una red. Esta soportado en diferentes 
 estándares que garantizan la interoperabilidad de los servicios~\cite{webService}.
@@ -216,7 +296,7 @@ En la Figura \ref{rest}, se puede apreciar la arquitectura de un servicio web, s
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=5cm]{rest.jpg}
+\includegraphics[width=9cm]{rest.jpg}
 \caption{Arquitectura servicio web}
 \label{rest}
 \end{figure}
@@ -228,11 +308,26 @@ Weather Underground es un servicio que entrega información meteorológica que ha 
 
 Wunderground no da la posibilidad de consultar el clima dado las coordenadas de la posición en la que un punto se encuentra, estas coordenadas pueden ser obtenidas de forma automática utilizando un GPS o ingresándolas manualmente. Para utilizar el servicio, es necesario registrarse para obtener un llave que se utiliza para realizar las consultas meteorológicas.
 
-Para obtener más información y/o registrarse para utilizar el servicio se puede hacer en la siguiente url: 
+Las características de este servicio web y las razones por las que se decidió utilizarlo son las siguientes:
 
-\url{http://www.wunderground.com/weather/api/d/docs?d=index}\\
+\begin{itemize}
+\item Las consulta para obtener la información meteorológica son gratuitas.
+\item Se adecua perfectamente a las necesidades del proyecto, tanto en los datos requeridos como en la forma de solicitar éstos.
+\item Se pueden realizar hasta 24 consultas por día.
+\item Los resultados obtenidos son bastante parecidos entre lo que entrega Google y Wunderground como se puede ver en la Figura: \ref{climacorcolen} y para fines de este proyecto es suficiente (Suponiendo que Google entrega resultados confiables).
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{meteorologia.png}
+	\caption{Comparación servicio meteorológico de Google v/s Wunderground para la localidad rural de Corcolén}
+	\label{climacorcolen}
+	\end{figure}
+\end{itemize}
+
+
+Para obtener más información y/o registrarse para utilizar el servicio visitar la página web.\footnote{http://www.wunderground.com/weather/api/d/docs?d=index}\\
 
 \section{Trabajos relacionados}
+A continuación se mencionan algunos de los dispositivos que se utilizan actualmente para automatizar el riego de los jardines.
 
 \subsection{Cultivar}
 Cultivar está desarrollando y fabricando por Raincloud~\cite{raincloud}. Raincloud administra de forma conveniente e inteligente la gestión del agua, con un sistema de riego conectado a la web que permite monitorear en todo momento es estado del sistema. Raincloud vincula los dispositivos móviles permitiendo activar válvulas de agua y consultar sensores de humedad utilizando Wi-Fi.\\
@@ -250,7 +345,7 @@ Desventajas:
 \begin{itemize}
 \item Necesita configuración previa.
 \item Se necesita Wi-Fi en el hogar para su óptimo funcionamiento.
-\item Tiene un costo muy elevado. \$500 dolares.
+\item Tiene un costo muy elevado. \$344.000 dolares.
 \item No toma en cuenta datos meteorológicos.
 \end{itemize}
 
@@ -273,16 +368,53 @@ Desventajas:
 \begin{itemize}
 \item No utiliza sensores de humedad de suelo.
 \item Se necesita Wi-Fi en el hogar para su óptimo funcionamiento.
-\item Tiene un costo muy elevado. \$249 / \$299 dolares.
+\item Tiene un costo muy elevado. \$180.000 pesos aproximadamente.
 \end{itemize}
+
+\subsection{Rain Bird}
+El Programador 6 Estaciones Digital Rain Bird~\cite{rainbird} (temporizador)logra, gracias a su particular panel con diversas opciones, controlar y personalizar tu sistema de riego. Si bien tiene claras opciones para potenciar el jardín, este producto exterioriza sus habilidades para centrarse en distintos planos y superficies. Con el fin de que tu zonas verdes comprendan el mismo cuidado que el interior de tu casa, este producto te da total control de lo que desees lograr, entregándote oportunidades específicas de acción que se ajustan a las necesidades diarias.
+
+Entre las características del Programador 6 Estaciones Digital Rain Bird se puede encontrar su tablero altamente definido que te da la posibilidad, de manera sencilla, de regular y hacer mejor uso del suministro de agua, debido al despliegue uniforme y sistemático de las acciones de los riegos. Al poseer un esquema de operación para tu el jardín, podrás lograr una constancia en los procesos de crecimiento de tu extensa flora, demostrando que la sencillez de este producto es una cualidad para considerar. 
+
+Ventajas:
+\begin{itemize}
+\item Programación basada en zonas, que permite asignar programas independientes a cada zona.
+\item Puede funcionar de forma automática. 
+\end{itemize}
+
+Desventajas:
+\begin{itemize}
+\item No utiliza sensores de humedad de suelo.
+\item No tiene control remoto.
+\item No entrega información del consumo de agua.
+\item No tiene información meteorológica, por lo que puede hacer un riego cuando este lloviendo.
+\item Tiene un costo muy elevado. \$65.990 pesos.
+\end{itemize}
+
+
+\subsection{Tabla comparativa}
+En la Figura: \ref{tablaComparativa} se muestra las características de cada uno de los dispositivos que actualmente se utilizan en el mercado y además se incluye el trabajo que se esta realizando en esta memoria.
+Las características descritas en la tabla son necesarias para realizar un riego eficiente y se puede ver que los dispositivos incluyen algunas des estas, pero no están todas incluidas en uno solo y es lo que se espera lograr con este trabajo.
+
+También se puede apreciar que ningún dispositivo toma en cuenta el tipo de suelo que es regando, una variable a considerar si se desea maximizar el uso del agua.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{tablaComparativa.png}
+\caption{Tabla Comparativa}
+\label{tablaComparativa}
+\end{figure}
+
 
 \section{Hardware}
 Todas las partes físicas de un sistema que tiene componentes: eléctricos, electrónicos, electromecánicos y mecánicos. Para la construcción del sistema de riego se necesitarán una serie de componentes, sensores, actuadores y computadores para su correcto funcionamiento.
 
 \subsection{Raspberry pi}
-El Raspberry Pi~\cite{raspberry} es un microcomputador del tamaño de una tarjeta de crédito a bajo costo que se conecta a un monitor o un televisor, utiliza un teclado y un ratón estándar. Es un dispositivo que permite a las personas de todas las edades explorar la computación y aprender a programar en lenguajes como Python. Es capaz de hacer todo lo que espera de una computadora de escritorio, desde navegar por Internet y reproducir vídeos en alta definición, trabajar en hojas de cálculo, procesadores de texto, y jugar juegos.
+Raspberry Pi~\cite{raspberry} es un microcomputador del tamaño de una tarjeta de crédito a bajo costo que se conecta a un monitor o un televisor, utiliza un teclado y un ratón estándar. Es un dispositivo que permite a las personas de todas las edades explorar la computación y aprender a programar en lenguajes como Python. Es capaz de hacer todo lo que espera de una computadora de escritorio, desde navegar por Internet y reproducir vídeos en alta definición, trabajar en hojas de cálculo, procesadores de texto, y jugar juegos.
 
 Raspberry Pi tiene la capacidad de interactuar con el mundo exterior, y se ha utilizado en una amplia gama de proyectos digitales, máquinas de música y detectores en las estaciones meteorológicas.
+
+La función de la Raspberry es obtener toda la información de los sensores a través del arduino, obtener datos meteorológicos, obtener los tipos de suelo y utilizando toda esta información determinar cuando se debe realizar un riego, activando un relé. También envía la información de humedad de suelo y agua utilizada a un servidor.
 
 \begin{figure}[h]
 \centering
@@ -290,6 +422,8 @@ Raspberry Pi tiene la capacidad de interactuar con el mundo exterior, y se ha ut
 \caption{Raspberry Pi modelo B+}
 \label{rasp}
 \end{figure}
+
+\pagebreak
 
 \subsection{Arduino}
 Arduino~\cite{arduiino} es una plataforma de prototipos electrónica de código abierto (open-source) basada en hardware y software flexibles y fáciles de usar. Está pensado para artistas, diseñadores, como hobby y para cualquiera interesado en crear objetos o entornos interactivos.
@@ -307,12 +441,28 @@ Un servidor de bases de datos se utiliza para almacenar, recuperar y administrar
 
 Así como sus funciones básicas, el software de servidores de bases de datos ofrece herramientas para facilitar y acelerar la administración de bases de datos. Algunas funciones son la exportación de datos, la configuración del acceso de los usuarios y el respaldo de datos.
 
+Se utilizará PostgreSQL como sistema de gestión de base de datos que es libre y tiene un complemento llamado PostGIS que añade soporte de objetos geográficos a la base de datos, esta característica será utilizada en conjunto con el GPS determinar el tipo de suelo en el que el dispositivo se encuentra.
+
 \subsection{Servidor web}
 Básicamente, un servidor web sirve contenido estático a un navegador, carga un archivo y lo sirve a través de la red al navegador de un usuario. Este intercambio es mediado por el navegador y el servidor que hablan el uno con el otro mediante HTTP.
 
+Su función en este proyecto es almacenar todos los datos que envía el dispositivo. También se almacenará una aplicación web para que los usuarios puedan consultar información relacionada al riego.
+
 \subsection{Sensores de humedad}
-Un sensor de resistencia eléctrica~\cite{sensor}, estima indirectamente la tensión del suelo mediante la medición de la resistencia eléctrica utilizando alambre que va en un bloque de un material especial que mantiene su contenido de humedad en equilibrio con el suelo. La resistencia eléctrica dentro del bloque varía con el contenido de agua del suelo. 
-Estos requieren poca preparación antes de la instalación y no requieren mantenimiento durante la temporada.
+Existen varios tipos de sensores de humedad~\cite{sensor}
+
+\begin{itemize}
+\item Mecánicos: aprovechan los cambios de dimensiones que sufren cierto tipos de materiales en presencia de la humedad.
+\item Basados en sales higroscópicas: deducen el valor de la humedad en el ambiente a partir de una molécula cristalina que tiene mucha afinidad con la absorción de agua.
+\item Por conductividad: la presencia de agua en un ambiente permite que a través de unas rejillas de oro circule una corriente. Ya que el agua es buena conductora de corriente. Según la medida de corriente se deduce el valor de la humedad.
+\item Capacitivos: se basan sencillamente en el cambio de la capacidad que sufre un condensador en presencia de humedad.
+\item Infrarrojos: estos disponen de 2 fuentes infrarrojas que lo que hacen es absorber parte de la radiación que contiene el vapor de agua.
+\item Resistivos: aplican un principio de conductividad de la tierra. Es decir, cuanta más cantidad de agua hay en la muestra, más alta es la conductividad de la tierra.
+\end{itemize}
+
+En este proyecto se utilizarán sensores resistivos, ya que son baratos y se pueden encontrar en cualquier parte.
+
+La desventaja es que su tiempo de vida útil es corto.
 
 \begin{figure}[h]
 \centering
@@ -321,39 +471,67 @@ Estos requieren poca preparación antes de la instalación y no requieren mantenim
 \label{snsorHumedad}
 \end{figure}
 
-
 \subsection{Sensor de flujo de agua}
-El sensor de flujo de agua consiste en una válvula de cuerpo plástico, un rotor de agua y un sensor de efecto hall. Cuando el agua fluye a través del rotor, el rotor gira. Su velocidad cambia con diferentes ritmos de flujo. El sensor de efecto hall tiene como salida la señal de pulso correspondiente.
+Un sensor de flujo de agua consiste en una válvula de cuerpo plástico, un rotor de agua y un sensor de efecto hall. Cuando el agua fluye a través del rotor, el rotor gira. Su velocidad cambia con diferentes ritmos de flujo. El sensor de efecto hall tiene como salida la señal de pulso correspondiente.
+
+Será utilizado para medir la cantidad de agua utilizada en riego para que los usuarios manejen esta información.
 
 \begin{figure}[h]
 \centering
-\includegraphics[bb=0 0 640 480, width=5cm]{sensorFlujo.jpg}
+\includegraphics[width=6cm]{sensorFlujo.jpg}
 \caption{Sensor de flujo de agua}
 \label{sensorFlujo}
 \end{figure}
 
-\subsection{Válvula solenoide}
-Una válvula solenoide esta diseñada para controlar el paso de un fluido por un conducto o tubería. La válvula se mueve mediante una bobina solenoide. Generalmente no tiene más que dos posiciones: abierto y cerrado, o todo y nada. Las electroválvulas se usan en multitud de aplicaciones para controlar el flujo de todo tipo de fluidos.
+\pagebreak
+
+\subsection{Relé}
+
+Un relé de estado sólido es un dispositivo interruptor electrónico que conmuta el paso de la electricidad cuando una pequeña corriente es aplicada en sus terminales de control. Los relé de estado solido consisten en un sensor que responde a una entrada apropiada (señal de control), un interruptor electrónico de estado sólido que conmuta el circuito de carga, y un mecanismo de acoplamiento a partir de la señal de control que activa este interruptor sin partes mecánicas. El relé puede estar diseñado para conmutar corriente alterna o continua. Hace la misma función que el relé electromecánico, pero sin partes móviles.
+
+La principal ventaja de utilizar un relé de esta solido es que utilizan una menor tensión de trabajo, se activan desde 1,5V o menos lo que lo hace ideal para trabajar con la Raspberry, que sus salidas de corrientes son de 3V - 5V.
+
+El relé es utilizado como interruptor para activar la válvula solenoide. No se usa la Raspberry directamente ya que para activar la válvula se necesitan 12V.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=5cm]{valvulasolenoide.jpg}
+\includegraphics[width=5cm]{rele.jpg}
+\caption{Relé de estado solido}
+\label{rele}
+\end{figure}
+
+\pagebreak
+
+\subsection{Válvula solenoide}
+Una válvula solenoide esta diseñada para controlar el paso de un fluido por un conducto o tubería. La válvula se mueve mediante una bobina solenoide. Generalmente no tiene más que dos posiciones: abierto y cerrado, o todo y nada. Las electroválvulas se usan en multitud de aplicaciones para controlar el flujo de todo tipo de fluidos.
+
+La válvula se activa al aplicarle un voltaje de 12V.
+
+Se utilizará para permitir el paso del agua al sistema de riego del jardín.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=6cm]{valvulasolenoide.jpg}
 \caption{Válvula solenoide}
 \label{valvulasolenoide}
 \end{figure}
 
 \subsection{GPS}
-GPS~\cite{gps} es un sistema que tiene como objetivo la determinación de las coordenadas espaciales de puntos respecto de un sistema de referencia mundial. Los puntos pueden estar ubicados en cualquier lugar del planeta, pueden permanecer estáticos o en movimiento y las observaciones pueden realizarse en cualquier momento del día. Para la obtención de coordenadas el sistema se basa en la determinación simultánea de las distancias a cuatro satélites (como mínimo) de coordenadas conocidas. Estas distancias se obtienen a partir de las señales emitidas por los satélites, las que son recibidas por receptores especialmente diseñados. Las coordenadas de los satélites son provistas al receptor por el sistema. 
+GPS~\cite{gps} es un sistema que tiene como objetivo la determinación de las coordenadas espaciales de puntos respecto de un sistema de referencia mundial. Los puntos pueden estar ubicados en cualquier lugar del planeta, pueden permanecer estáticos o en movimiento y las observaciones pueden realizarse en cualquier momento del día. Para la obtención de coordenadas el sistema se basa en la determinación simultánea de las distancias a cuatro satélites (como mínimo) de coordenadas conocidas. Estas distancias se obtienen a partir de las señales emitidas por los satélites, las que son recibidas por receptores especialmente diseñados. Las coordenadas de los satélites son provistas al receptor por el sistema.
+
+El GPS se utilizará para determinar la ubicación exacta en la que el dispositivo se encuentra instalado, con esta información se determinará el tipo de suelo y aplicar el riego más conveniente.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=5cm]{gps.jpg}
+\includegraphics[width=6cm]{gps.jpg}
 \caption{Módulo GPS USB}
 \label{gps}
 \end{figure}
 
 \subsection{Módem 3G}
 Módem 3G es un terminal de red inalámbrica basada en la tecnología CDMA2000. Es la mejor opción para los usuarios que necesiten acceder a Internet desde cualquier lugar en cualquier momento. El módem está conectado al micro computador mediante una interfaz USB.
+
+El módem se utilizará para comunicar el dispositivo con el servidor donde se almacenarán los datos, consultar los datos meteorológicos y obtener el tipo de suelo.
 
 \begin{figure}[h]
 \centering
@@ -362,8 +540,12 @@ Módem 3G es un terminal de red inalámbrica basada en la tecnología CDMA2000. Es 
 \label{modem}
 \end{figure}
 
+\pagebreak
+
 \subsection{Cargador}
 Un cargador es un dispositivo utilizado para suministrar corriente eléctrica a un dispositivo, que en este caso se tratará de la Raspberry Pi. El cargador debe funcionar a 5V y entregar una corriente de 700mA.
+
+Será utilizado para entregarle energía a la Raspberry y pueda funcionar correctamente en conjunto con los sensores y válvulas.
 
 \begin{figure}[h]
 \centering
@@ -377,14 +559,12 @@ Un cargador es un dispositivo utilizado para suministrar corriente eléctrica a u
 \subsection{Raspbian}
 Raspbian~\cite{raspbian} es un sistema operativo libre basado en Debían optimizado para el hardware Raspberry Pi. Un sistema operativo es el conjunto de programas básicos y utilidades que hacen que Raspberry Pi funcione. Sin embargo, Raspbian ofrece más que un sistema operativo; viene con más de 35.000 paquetes, software pre-compilado en un formato que hace más fácil la instalación en su Raspberry Pi.
 
-Raspbian no tiene relación con la Fundación Raspberry Pi. Raspbian fue creado por un pequeño y dedicado equipo de desarrolladores que son fans del hardware Raspberry Pi.
-
-Instalador: "\url{https://www.raspbian.org/RaspbianInstaller}"
+Raspbian no tiene relación con la Fundación Raspberry Pi. Raspbian fue creado por un pequeño y dedicado equipo de desarrolladores que son fans del hardware Raspberry Pi\footnote{https://www.raspbian.org/RaspbianInstaller}.
 
 \subsection{Python}
 Python es un claro  y poderoso lenguaje de programación orientado a objetos, comparable con Perl, Ruby o Java.
 
-Algunas de las características de Python son:
+Algunas de las características de Python\footnote{https://wiki.python.org/moin/BeginnersGuide/Overview} son:
 
 \begin{itemize}
 \item Python ideal para el desarrollo de prototipos y otras tareas de programación, sin comprometer la capacidad de mantenimiento.
@@ -394,14 +574,12 @@ Algunas de las características de Python son:
 \item Tiene librerías que facilitan el uso de la interfaz GPIO de la Raspberry Pi.
 \end{itemize}
 
-\url{https://wiki.python.org/moin/BeginnersGuide/Overview}
-
 \subsubsection{Librería GPIO}
 Una de las características de gran alcance de la Raspberry Pi es la fila de GPIO~\cite{gpio} (Entrada/Salida de Propósito General) alfileres a lo largo del borde de la placa, junto a la salida de vídeo socket amarilla como se puede apreciar en la Figura \ref{gpio}:
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=7cm]{gpio.jpg}
+\includegraphics[width=9cm]{gpio.jpg}
 \caption{GPIO Raspberry Pi}
 \label{gpio}
 \end{figure}
@@ -410,7 +588,7 @@ Estos pines son una interfaz física entre el la Raspberry y el mundo exterior. A
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=7cm]{giop1.png}
+\includegraphics[width=9cm]{giop1.png}
 \caption{Pines GPIO}
 \label{giop1}
 \end{figure}
@@ -461,14 +639,15 @@ Para los problemas anteriormente mencionados existe información que será utiliza
 
 \begin{itemize}
 \item Pronóstico del tiempo: se cuenta con esta información que permite saber en tiempo actual las condiciones climáticas de un punto en particular.
-\item Tipo de suelo: indica el tipo de suelo en el que el dispositivo esta siendo utilizado.
+\item Ubicación del dispositivo: se puede determinar la ubicación del dispositivo utilizando un GPS, si se utiliza en lugares con acceso a Internet en los que no se utilice el módem 3G, se podría determina la ubicación a través de la dirección IP.
+\item Tipo de suelo: indica el tipo de suelo en el que el dispositivo esta siendo utilizado, esta información se obtiene utilizando la ubicación del dispositivo.
 \item Humedad del suelo: indica la humedad del suelo utilizando sensores de humedad.
 \end{itemize}
 
-Existe más información que puede ser incluida para mejorar la calidad del riego aplicado al suelo, pero para en este trabajo solo se considera las variables mencionadas anteriormente.
+Existe más información que puede ser incluida para mejorar la calidad del riego aplicado al suelo, pero para este trabajo solo se considera las variables mencionadas anteriormente.
 
 %contenido cuarto capitulo
-\chapter{Desalloro}
+\chapter{Desarrollo}
 
 En este capitulo se mostrarán los pasos necesarios para construir y hacer funcionar el dispositivo de riego. Primero veremos todo lo relacionado con el hardware juntado todas las partes, luego se trabajará en el desarrollo del modelo que corresponde a la parte de software del dispositivo. También se mostrará un algo breve del desarrollo de la aplicación web y finalmente veremos las variables necesarias para determinar un helada y como se hará para notificar a los usuarios.
 
@@ -482,78 +661,54 @@ Una solución a este problema puede ser utilizar un Beaglebone black o se puede c
 
 \subsubsection{Programación Arduino}
 
-Lo primero que se hará es crear un programa para Arduino que leerá la información de uin sensor de humedad y la información que envía un sensor de flujo utilizando el puerto serie del Arduino. El programa que utilizamos se muestra a continuación, para ello se debe instalar el IDE de Arduino desde el siguiente enlace:
-
-\url{https://www.arduino.cc/en/Main/Software}
+Lo primero que se hará es crear un programa para Arduino que leerá la información de uin sensor de humedad y la información que envía un sensor de flujo utilizando el puerto serie del Arduino. El programa que utilizamos se muestra a continuación, para ello se debe instalar el IDE de Arduino\footnote{https://www.arduino.cc/en/Main/Software}
 
 Instalado el programa, conectar al Arduino a la computadora, ejecutar el programa y ya se esta listo para trabajar.
 
 A continuación se mostrará el código con el cual se puede leer información desde distintos tipos de sensores.\\
 
-Declaración de variables:\\
-
-volatile int  frecuencia\_sensor;  \textit{// Mide los pulsos de sensor de flujo}
-
-unsigned int  litrosHora;          \textit{// Calcula los litros por hora}  
-
-unsigned int humedad\_sensor;        \textit{// Mide la humedad del suelo}
-
-unsigned char pinFlujo = 2;  \textit{// Pin de flujo (Pin 2)}
-
-unsigned char pinHumedad = A0;  \textit{// Pin de humedad (Pin A0)}
-
+\lstset{language=C, breaklines=true, basicstyle=\footnotesize}
+\begin{lstlisting}[frame=single]
+volatile int  frecuencia_sensor; // Mide los pulsos de flujo
+unsigned int  litrosHora; // Calcula los litros por hora  
+unsigned int humedad_sensor; // Mide la humedad del suelo                    
+unsigned char pinFlujo = 2; // Pin de flujo
+unsigned char pinFlujo = A0; // Pin de humedad
 unsigned long tiempoActual;
+unsigned long tiempoCiclo;
 
-unsigned long tiempoCiclo;\\
+void flujo () // Interruot function
+{ 
+  frecuencia_sensor++;
+}
 
-Función setup:\\
+void setup() {
+  pinMode(pinFlujo, INPUT);
+  Serial.begin(9600); 
+  attachInterrupt(0, flujo, RISING); // Setup Interrupt 
+  sei(); // Enable interrupts  
+  tiempoActual = millis();
+  tiempoCiclo = tiempoActual;
+}
 
-void setup()\{
+void loop() {
+  humedad_sensor = analogRead(pinFlujo); // Entrada analógica, sensor de humedad
+  Serial.print(humedad_sensor);  // Envía el valor a la Raspberry
+  Serial.println(" Humedad"); // Etiqueta el valor de la linea anterior
+  tiempoActual = millis(); //Mide el tiempo actual
+  //Cada segundo, calcula e imprime litros por hora
+  if(tiempoActual >= (tiempoCiclo + 1000))
+  {     
+    tiempoCiclo = tiempoActual; // Actualiza tiempoCiclo
+    litrosHora = (frecuencia_sensor * 60 / 7.5); // (Pulse frequency x 60 min) / 7.5Q = L/hour 
+    frecuencia_sensor = 0; // Resetea el contador
+    Serial.print(litrosHora); // Imprime litro por hora
+    Serial.println(" L/hour"); // Etiqueta el valor de la linea anterior
+  }
+}
+\end{lstlisting}
 
-	pinMode(pinFlujo, INPUT); \textit{// pinFlujo se declara como entrada}
-
-	Serial.begin(9600); \textit{ // Permite la comunicación con la Raspberry}
-
-	attachInterrupt(0, flujo, RISING); \textit{// Setup Interrupt }
-
-	sei();                            \textit{// Enable interrupts } 
-
-	tiempoActual = millis();
-
-	tiempoCiclo = tiempoActual;
-
-\}\\
-
-Función loop:\\
-
-void loop() \{
-
-	humedad\_sensor = analogRead(pinHumedad);  \textit{// Entrada analógica, sensor de humedad}
-
-	Serial.print(humedad\_sensor); \textit{// Envía el valor a la Raspberry}
-
-	Serial.println(" Humedad"); \textit{// Parámetro opcional}
-
-	tiempoActual = millis(); \textit{//Mide el tiempo actual}
-
-	\textit{  //Cada segundo, calcula e imprime litros por hora}
-
-	if(tiempoActual >= (tiempoCiclo + 1000))\{
-
-		litrosHora = (frecuencia\_sensor * 60 / 7.5); \textit{// Formula litro por hora }
-
-		frecuencia\_sensor = 0;                  \textit{ // Resetea el contador}
-
-		Serial.print(litrosHora);            \textit{// Envío a Raspberry litro por hora}
-
-		Serial.println(" L/hour");  		\textit{// Envío parámetro opcional}
-
-	\}
-
-\}\\
-
-
-Una vez escrito el código en el IDE, se verifica y se sube al Arduino. Es importante destacar que para enviar información a las Raspberry se utiliza la linea de código Serial.println("mensaje").
+Una vez escrito el código en el IDE, se verifica y se sube al Arduino. Es importante destacar que para enviar información a las Raspberry se utiliza la linea de código Serial.println(``mensaje").
 
 \subsubsection{Conexión de sensores}
 
@@ -561,10 +716,17 @@ Como se ha mencionado anteriormente, los sensores que se utilizarán son de humed
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=10cm]{conexiones.jpg}
+\includegraphics[width=12cm]{conexiones.jpg}
 \caption{Conexión sensores en Arduino}
 \label{conexion}
 \end{figure}
+
+VCC: Alimentación positiva del circuito.
+
+GND: Alimentación negativa del circuito.
+
+AO: Salida analógica del sensor o válvula.
+
 
 \subsection{Raspberry}
 
@@ -580,33 +742,35 @@ Una vez ejecutado el comando se verá un listado de diferentes dispositivos. El A
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=10cm]{USBArduino.png}
+\includegraphics[width=15cm]{USBArduino.png}
 \caption{Arduino en Raspberry}
 \label{resultado}
 \end{figure}
 
+\newpage
+
 Una vez que el Arduino esta identificado ya podemos comenzar a comunicarnos mediante un programa en Python. En este caso se mostrará un ejemplo de como recibir la información en la Raspberry enviada desde el Arduino, en la Figura \ref{raspardu} se puede ver el código utilizado.
 
-\newpage
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=10cm]{RaspberryArduino.png}
+\includegraphics[width=15cm]{RaspberryArduino.png}
 \caption{Comunicación Raspberry Arduino}
 \label{raspardu}
 \end{figure}
 
-Con este programa en Python ya se puede recibir datos desde el Arduino en la Raspberry, para probarlo se ejecuta el programa con la siguiente linea de código \textit{sudo python nombre\_programa.py} y se pueden ver los resultados obtenido en la Figura \ref{raciboDatos}
+\newpage
+
+Con este programa en Python ya se puede recibir datos desde el Arduino en la Raspberry, para probarlo se ejecuta el programa con la siguiente linea de código \textit{sudo python nombre\_programa.py}. Los resultados obtenido en la Figura \ref{raciboDatos}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=10cm]{ReciboDatos.png}
+\includegraphics[width=15cm]{ReciboDatos.png}
 \caption{Recibo de datos desde Arduino en Raspberry}
 \label{raciboDatos}
 \end{figure}
 
 \subsection{GPS}
-
 El GPS es una parte importante del dispositivo, ya que determina la posición en la que se aplicará el riego, gracias a esto se puede determinar el tipo de suelo en el que el dispositivo se encuentra y realizar un riego especial a cada lugar.
 
 El GPS se conectará a la Raspberry ya que utiliza conexión USB.
@@ -619,18 +783,20 @@ Pasos para el funcionamiento del GPS en la Raspberry:
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=10cm]{lsgps.png}
+\includegraphics[width=15cm]{lsgps.png}
 \caption{GPS en Raspberry, /dev/ttyUSB1}
 \label{lsgps}
 \end{figure}
 
 \item \textit{sudo gpsd -N -D3 /dev/ttyUSB1} 
 \item \textit{sudo nano gps.py}
-\item En el archivo creado anteriormente copiar el código del siguiente link \url{https://gist.github.com/wolfg1969/4653340#file-gpsddata-py}
+\item En el archivo creado anteriormente copiar el código del siguiente link:
+
+\url{https://gist.github.com/wolfg1969/4653340#file-gpsddata-py}
 \item Ejecutar \textit{sudo python gps.py} con esto obtenemos como resultado lo que se aprecia en la Figura \ref{datosgps}:
 \begin{figure}[h]
 \centering
-\includegraphics[width=10cm]{datosgps.png}
+\includegraphics[width=15cm]{datosgps.png}
 \caption{Datos GPS}
 \label{datosgps}
 \end{figure}
@@ -661,14 +827,78 @@ Los datas obtenidos se pueden apreciar en la Figura \ref{response}:
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=10cm]{response.png}
+\includegraphics[width=14cm]{response.png}
 \caption{Respuesta del servicio wunderground al hacer una consulta}
 \label{response}
 \end{figure}
 
 \subsection{Modelo de riego}
 
-Modelo de riego...
+La principal función del modelo de riego es determinar cuando hacer un riego en base a los datos que tiene disponible, también indicará que tipo de riego se debe hacer en base al tipo de suelo en el que el dispositivo se encuentra instalado. Esto se hará mediante un sistema basado en reglas que ya fue explicado anteriormente.
+
+¿Cuando se ejecutará el modelo? El modelo de riego se ejecutará cada mañana a las 6 a.m y el tiempo de riego será de 20 min. La hora fue escogida para evitar la evaporación del agua y daños que se le puedan dañar el césped.
+
+Los datos disponibles para determinar un riego son los que se aprecian en la Figura \ref{objetos}, también se pueden ver los valores asociados a cada objeto.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm]{objetos.png}
+\caption{ Objetos y posibles valores para determinar un riego}
+\label{objetos}
+\end{figure}
+
+\pagebreak
+
+A partir de estos datos se generaron reglas que determinan cuando realizar un riego.
+
+Para generalizar un poco las reglas del modelo a ha creado una tabla con las valores predefinidos como de ve en la Figura \ref{valoresReglas}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=6cm]{valoresReglas.png}
+\caption{ Variables predefinidas para la reglas del modelo}
+\label{valoresReglas}
+\end{figure}
+
+Estos valores se pueden modificar para mejorar la calidad del riego, esto se podría hacer consultando a un experto en al área de riego de suelo y dejarlos fijos sin que  vuelvan a cambiar. Otra opción es utilizar ``elicitation technique"; que es una técnica usada para obtener datos y reunir conocimiento o información desde las personas, por lo que al momento de que el dispositivo es instalado se pueden configurar estas variables, dejando a las personas que tomen la decisión que consideren más apropiada para su jardín, esto también podría ser modificado a través del tiempo para ir ajustándolo gradualmente y obtener el mayor beneficio posible (ahorro de agua v/s césped verde).
+
+Incluso el dispositivo podría aprender ajustando sus valores automáticamente como puede ser el caso de la probabilidad de lluvia. También se puede automatizar la humedad del suelo preguntándole periódicamente al usuario el estado del césped para ajustar el tiempo de riego.
+
+Estas reglas se pueden mejorar y aumentar su complejidad a medida que se agreguen nuevas variables al modelo, utilizando eficientemente el agua sin afectar la calidad del riego, en la Figura \ref{reglasModelo} se pueden apreciar las reglas que se definieron para el modelo de riego.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm]{reglasModelo.png}
+\caption{Reglas modelo, cuando y como regar}
+\label{reglasModelo}
+\end{figure}
+
+Gráficamente estas reglas se pueden ver como árbol tal como lo muestra la Figura \ref{arbol}, además queda claro que nunca se dará el caso en el que pueda haber como resultado dos tipos de riego diferentes, esto se debe a que el espacio de soluciones existentes es finito. El código fuente del modelo de riego se puede encontrar en el Anexo 1.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm]{arbol.png}
+\caption{Árbol reglas modelo de riego}
+\label{arbol}
+\end{figure}
+
+\subsection{Servicio web de suelo}
+
+Consulta tipo de suelo al servidor
+
+\subsection{Envío de datos}
+
+Envio de datos desde el dispositivo al servidor
+
+\chapter{Trabajo futuro}
+
+Este trabajo aparte de la investigación y escritura de este documento, desarrollo de un prototipo del dispositivo de riego incluyo también trabajo externo en un concurso de emprendimiento llevado a cabo por Fundación para la Innovación Agraria, el concurso llamado ``Proyectos de Emprendimiento Innovador: Jóvenes Innovadores". En este concurso el dispositivo quedo dentro de los 30 seleccionados los cuales tuvieron una capacitación en Santiago durante dos semanas con profesores de la Universidad de Oxford, en esas dos semana se vio principalmente gestión y financiamiento de proyectos, en los anexos X se puede ver el trabajo realizado durante estas dos semanas.
+
+Esto demuestra el potencial que esta idea tiene, sin duda quedan muchas cosas por mejorar 
+
+\chapter{Conclusión}
+
+La mejor memoria de la vida....
 
 %% ambiente glosario
 \begin{glosario}

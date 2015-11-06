@@ -14,6 +14,8 @@
 \RequirePackage{float}
 \RequirePackage{url}
 \RequirePackage{epstopdf}
+\RequirePackage{listings}
+
 
 
 \graphicspath{ {imagenes/} }
