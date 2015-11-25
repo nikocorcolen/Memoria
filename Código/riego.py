@@ -31,19 +31,27 @@ while True:
 	hora = datetime.datetime.now().time()
 	#Se prende desde las 6 a.m hasta las 23.59 p.m
 	if (hora >= datetime.time(6,00) and hora <= datetime.time(6,20)):
-		#if suelo == "arena":
-			#Reigo arenoso
-		#else if suelo == "limoso":
-			#Riego limoso
-		#else:
-			#Riego Arcilloso
 		entradas = arduino.readline()
 		datos = entradas.split(" ")
 		if len(datos) == 2:
 			humedad = datos[0]
-			caudal = datos[1]
-			
-		#suelo
+			if humedad < 512:
+				if suelo == "arena":
+					#Reigo arenoso
+					GPIO.output(17,GPIO.HIGH)
+					time.sleep(1200)#Riego por 20 min
+				else if suelo == "limoso":
+					#Riego limoso
+					GPIO.output(17,GPIO.HIGH)
+					time.sleep(1200)#Riego por 20 min
+				else:
+					#Riego Arcilloso
+					GPIO.output(17,GPIO.HIGH)
+					time.sleep(1200)#Riego por 20 min
+	else:
+		GPIO.output(17,GPIO.LOW)
+	time.sleep(60)
+
 	#GPIO.output(27,GPIO.HIGH)
 	#time.sleep(5)
 	#GPIO.output(27,GPIO.LOW)

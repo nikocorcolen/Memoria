@@ -1108,7 +1108,7 @@ Los dispositivos que se venden en la actualidad tienen un costo muy elevado o re
 
 Este dispositivo se puede ampliar al uso agrícola, uno de los grandes problemas identificados por el Gobierno es la falta de tecnología aplicada en la agricultura. Es dispositivo como se encuentra en este momento puede ser fácilmente utilizado para este fin, sin duda que se le pueden agregar más sensores y mejorar el modelo para cada tipo de cultivo.
 
-Este trabajo aparte de la investigación, escritura de este documento y desarrollo de un prototipo del dispositivo de riego incluyo también trabajo externo en un concurso de emprendimiento llevado a cabo por Fundación para la Innovación Agraria, el concurso llamado ``Proyectos de Emprendimiento Innovador: Jóvenes Innovadores''. En este concurso el dispositivo uno de los finalistas los cuales tuvieron una capacitación en Santiago durante dos semanas con profesores de la Universidad de Oxford, en esas dos semana se vio principalmente gestión y financiamiento de proyectos, en los anexos X se puede ver el trabajo realizado durante este periodo.
+Este trabajo aparte de la investigación, escritura de este documento y desarrollo de un prototipo del dispositivo de riego incluyo también trabajo externo en un concurso de emprendimiento llevado a cabo por Fundación para la Innovación Agraria, el concurso llamado ``Proyectos de Emprendimiento Innovador: Jóvenes Innovadores''. En este concurso el dispositivo uno de los finalistas los cuales tuvieron una capacitación en Santiago durante dos semanas con profesores de la Universidad de Oxford, en esas dos semana se vio principalmente gestión y financiamiento de proyectos, en el Anexo X se puede ver parte del trabajo realizado durante este periodo.
 
 Queda claro que es una idea muy viable, que en la actualidad existe un problema que no esta solucionado, existe el mercado potencial para hacer económicamente sustentable esta idea y con este trabajo se ha demostrado que se puede hacer algo bueno que genere un gran impacto en la sociedad.
 
@@ -1125,9 +1125,6 @@ También quedo pendiente el desarrollo de una aplicación móvil para los usuarios,
 
 El hardware que se utilizo se podría reemplazar, disminuyendo la cantidad de componentes que se utilizaron. Existe un microcomputador llamado ``beaglebone black'' que podría reemplazar a la Raspberry Pi y el Arduino disminuyendo la cantidad de componentes.
 
-
-hardware
-
 %% ambiente glosario
 \begin{glosario}
   \item[El primer término:] Este es el significado del primer término, realmente no se bien lo que significa pero podría haberlo averiguado si hubiese tenido un poco mas de tiempo.
@@ -1142,24 +1139,194 @@ hardware
 \appendixpart
 
 %% contenido del primer anexo
-\appendix{El Primer Anexo}
-Aquí va el texto del primer anexo...
+\appendix{Trabajo realizado en FIA}
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{outside.png}
+\caption{Exterior tríptico realizado en FIA}
+\label{outside}
+\end{figure}
 
-\section{La primera sección del primer anexo}
-Aquí va el texto de la primera sección del primer anexo...
+\pagebreak
 
-\section{La segunda sección del primer anexo}
-Aquí va el texto de la segunda sección del primer anexo...
-
-\subsection{La primera subsección de la segunda sección del primer anexo}
-
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{inside.png}
+\caption{Interior tríptico realizado en FIA}
+\label{inside}
+\end{figure}
 
 %% contenido del segundo anexo
-\appendix{El segundo Anexo}
-Aquí va el texto del segundo anexo...
+\appendix{Código fuente}
+\section{gps.py}
+\lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
+\begin{lstlisting}[frame=single,caption={gps.py},label=gpspy]
+#! /usr/bin/python
+# Written by Dan Mandle http://dan.mandle.me September 2012
+# License: GPL 2.0
+import os
+from gps import *
+from time import *
+from id import getserial
+import time
+import threading
+import sys
+import urllib2, urllib
 
-\section{La primera sección del segundo anexo}
-Aquí va el texto de la primera sección del segundo anexo...
+gpsd = None #seting the global variable
+os.system('clear') #clear the terminal (optional)
+
+class GpsPoller(threading.Thread):
+  def __init__(self):
+    threading.Thread.__init__(self)
+    global gpsd #bring it in scope
+    gpsd = gps(mode=WATCH_ENABLE) #starting the stream of info
+    self.current_value = None
+    self.running = True #setting the thread running to true
+
+  def run(self):
+    global gpsd
+    while gpsp.running:
+      gpsd.next() #this will continue to loop and grab EACH set of gpsd info to clear the buffer
+
+if __name__ == '__main__':
+  gpsp = GpsPoller() # create the thread
+  try:
+    gpsp.start() # start it up
+    while True:
+      #It may take a second or two to get good data
+      #print gpsd.fix.latitude,', ',gpsd.fix.longitude,'  Time: ',gpsd.utc
+      os.system('clear')
+      if gpsd.fix.latitude != 0.0 and  not (math.isnan(gpsd.fix.latitude)):
+        mydata=[('id',getserial()),('lat',gpsd.fix.latitude),('lon',gpsd.fix.longitude)]
+        mydata=urllib.urlencode(mydata)
+        path='http://bri2.utalca.cl/~nmaturana/insertCoor.php'
+        req=urllib2.Request(path, mydata)
+        req.add_header("Content-type", "application/x-www-form-urlencoded")
+        page=urllib2.urlopen(req).read()
+        print page
+        gpsd.running = False
+        sys.exit(0)
+      time.sleep(5) #set to whatever
+  except (KeyboardInterrupt, SystemExit): #when you press ctrl+c
+    print "\nKilling Thread..."
+    gpsp.running = False
+    gpsp.join() # wait for the thread to finish what it's doing
+  print "Done.\nExiting."
+\end{lstlisting}
+
+\pagebreak
+
+\section{riego.py}
+\lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
+\begin{lstlisting}[frame=single,caption={riego.py},label=riegopy]
+#! /usr/bin/python
+import datetime
+import time
+from id import getserial
+from clima import lluvia
+from serial import Serial
+import RPi.GPIO as GPIO
+import urllib, json
+
+#BCM -> maneja los pines por los numeros de GPIO17
+#BOARD -> maneja los pines por numero de secuencia 1, 2, 3...
+GPIO.setmode(GPIO.BCM)
+GPIO.cleanup()
+GPIO.setwarnings(False)
+GPIO.setup(27,GPIO.OUT)
+
+#probabilidad de lluvia
+#lluvia(latitud,longitud)
+
+#obtener serial
+#getserial()
+
+serial = getserial()
+url = "http://bri2.utalca.cl/~nmaturana/getCoordenada.php?id="+serial
+response = urllib.urlopen(url)
+data = json.loads(response.read())
+suelo = data["suelo"]
+
+arduino = Serial('/dev/ttyUSB0', 9600, timeout=1)
+
+while True:
+	hora = datetime.datetime.now().time()
+	#Se prende desde las 6 a.m hasta las 23.59 p.m
+	if (hora >= datetime.time(6,00) and hora <= datetime.time(6,20)):
+		entradas = arduino.readline()
+		datos = entradas.split(" ")
+		if len(datos) == 2:
+			humedad = datos[0]
+			if humedad < 512:
+				if suelo == "arena":
+					#Reigo arenoso
+					GPIO.output(17,GPIO.HIGH)
+					time.sleep(1200)#Riego por 20 min
+				else if suelo == "limoso":
+					#Riego limoso
+					GPIO.output(17,GPIO.HIGH)
+					time.sleep(1200)#Riego por 20 min
+				else:
+					#Riego Arcilloso
+					GPIO.output(17,GPIO.HIGH)
+					time.sleep(1200)#Riego por 20 min
+	else:
+		GPIO.output(17,GPIO.LOW)
+	time.sleep(60)
+\end{lstlisting}
+
+\pagebreak
+
+\section{clima.py}
+\lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
+\begin{lstlisting}[frame=single,caption={clima.py},label=climapy]
+#! /usr/bin/python
+import urllib2
+import json
+import time
+
+#f = urllib2.urlopen('http://api.wunderground.com/api/e7d949410a7481dc/forecast10day/lang:SP$
+#json_string = f.read()
+#parsed_json = json.loads(json_string)
+
+def lluvia(lat, lon):
+        f = urllib2.urlopen('http://api.wunderground.com/api/e7d949410a7481dc/forecast10day/lang:SP/q/'+ str(lat) +','+ str(lon)  +'.json')
+        json_string = f.read()
+        parsed_json = json.loads(json_string)
+        location = parsed_json['forecast']['txt_forecast']['forecastday'][0]['title']
+        temp_c = parsed_json['forecast']['txt_forecast']['forecastday'][0]['fcttext_metric']
+        pop = parsed_json['forecast']['txt_forecast']['forecastday'][0]['pop']
+        f.close()
+        return pop
+\end{lstlisting}
+
+\pagebreak
+
+\section{arduino.py}
+\lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
+\begin{lstlisting}[frame=single,caption={arduino.py},label=arduinopy]
+#! /usr/bin/python
+import urllib2, urllib
+from serial import Serial
+import datetime
+import time
+
+arduino = Serial('/dev/ttyUSB1', 9600, timeout=1)
+
+while True:
+        hora = datetime.datetime.now()
+        entradas = arduino.readline()
+        datos = entradas.split(" ")
+        if len(datos) == 2:
+                humedad = datos[0]
+                caudal = datos[1]
+                print "Huemdad: " + humedad
+                print "Caudal: " + caudal
+        print hora
+        time.sleep(5)
+
+\end{lstlisting}
 
 %% fin
 \end{document}
