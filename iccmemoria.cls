@@ -15,7 +15,7 @@
 \RequirePackage{url}
 \RequirePackage{epstopdf}
 \RequirePackage{listings}
-
+\RequirePackage{multirow}
 
 
 \graphicspath{ {imagenes/} }

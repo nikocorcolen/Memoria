@@ -2,7 +2,7 @@
 %% inicio, la clase del documento es iccmemoria.cls
 \documentclass{iccmemoria}
 %% datos generales y para la tapa
-\titulo{Prototipo de riego inteligente de bajo costo para el uso eficiente del agua}
+\titulo{Smart Irrigation: Prototipo de riego inteligente de bajo costo para el uso eficiente del agua}
 \author{Nicolás Gastón Maturana Barrios}
 \supervisor{Benjamín Ingram}
 \informantes
@@ -114,7 +114,7 @@ Una variable que se considerará, distinguirá y hará diferente este dispositivo d
 \paragraph{Objetivos específicos}
 \begin{itemize}
 \item Diseñar un prototipo del dispositivo (Hardware).
-\item Diseñar un modelo para el riego (Software).
+\item Diseñar un modelo que determinar cuando y como realizar un riego (Software).
 \item Diseñar un prototipo de aplicación web y/o móvil para los usuarios.
 \end{itemize}
 
@@ -137,7 +137,7 @@ Una variable que se considerará, distinguirá y hará diferente este dispositivo d
 \item Probar el dispositivo armado.
 \end{itemize}
 
-\paragraph{Objetivo 2:} ``Diseñar un modelo para el riego (Software)''\\
+\paragraph{Objetivo 2:} ``Diseñar un modelo que determinar cuando y como realizar un riego (Software)''\\
 \begin{itemize}
 \item Determinar las variables que se utilizarán.
 \item Desarrollo del modelo (Desarrollo de software).
@@ -216,7 +216,41 @@ Para un suelo limoso, se debe puede aplicar agua constantemente durante un perio
 
 \subsubsection{Suelo arcilloso}
 
-Los suelos arcillosos drenan mal el agua, debido a la pequeñez de sus partículas. Por ello se encharcan. Se debe aplicar agua con menor frecuencia que los suelos limosos y arenosos.
+Los suelos arcillosos drenan mal el agua, debido a la pequeñez de sus partículas. Por ello se encharcan. Se debe aplicar agua con menor frecuencia que los suelos limosos y arenosos.\\
+
+
+En la Figura \ref{infiltracion} se puede apreciar la reacción de cada tipo de suelo cuando se le aplica agua.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{suelo.png}
+	\caption{Variación en la infiltración por textura del suelo}
+	\label{infiltracion}
+\end{figure}
+
+\section{Problemas identificados}
+
+Según Chuck Ingels~\cite{problemas}, asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento y Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes, existen problemas en los sistemas de riego actuales que hoy en día son utilizados, ellos nombran principalmente cuatro problemas: 
+
+\begin{itemize}
+\item ``Apagar el sistema de riego por aspersores después de que llueve es el primer paso que se debe tomar para ahorrar agua''
+\item ``El riego de césped y jardines representa más de la mitad del agua usada en un hogar promedio''
+\item ``Ha llevado a cabo estudios sobre un problema común relacionado al riego de céspedes residenciales en California: el escurrimiento de agua''
+\item ``Mucha del agua que se aplica a los céspedes termina directamente en las alcantarillas. No solo se trata de agua desperdiciada; hemos descubierto también que el agua de escurrimientos arrastra contaminantes (incluyendo pesticidas y fertilizantes) hasta las alcantarillas y, eventualmente, a los canales y vías fluviales. El problema radica en que los sistemas de aspersores típicos aplican agua de forma más rápida que la que la tierra puede absorber, lo cual lleva al escurrimiento''
+\end{itemize}
+
+\section{Información disponible}
+
+Para los problemas anteriormente mencionados existe información que será utilizado para planificar y determinar un riego, los podemos ver a continuación:
+
+\begin{itemize}
+\item Pronóstico del tiempo: se cuenta con esta información que permite saber en tiempo actual las condiciones climáticas de un punto en particular.
+\item Ubicación del dispositivo: se puede determinar la ubicación del dispositivo utilizando un GPS, si se utiliza en lugares con acceso a Internet en los que no se utilice el módem 3G, se podría determina la ubicación a través de la dirección IP.
+\item Tipo de suelo: indica el tipo de suelo en el que el dispositivo esta siendo utilizado, esta información se obtiene utilizando la ubicación del dispositivo.
+\item Humedad del suelo: indica la humedad del suelo utilizando sensores de humedad.
+\end{itemize}
+
+Existe más información que puede ser incluida para mejorar la calidad del riego aplicado al suelo, pero para este trabajo solo se considera las variables mencionadas anteriormente.
 
 \section{Sistema basado en reglas}
 
@@ -277,7 +311,7 @@ Existen dos tipos de encadenamiento: progresivo y regresivo:
 
 \subsubsection{Encadenamiento progresivo}
 
-Este tipo de encadenamiento se produce cuando el objetivo propuesto hace que se ejecute una regla, y la conclusión obtenida permite que se ejecute otra, y así sucesivamente hasta llegar a una respuesta, positiva o negativa. El punto final se detecta cuando no se pueden producir más encadenamientos. 
+Este tipo de encadenamiento se produce cuando el objetivo propuesto hace que se ejecute una regla, y la conclusión obtenida permite que se ejecute otra, y así sucesivamente hasta llegar a una respuesta, positiva o negativa. El punto final se detecta cuando no se pueden producir más encadenamientos.
 
 \section{Servicios web meteorológicos}
 
@@ -296,7 +330,7 @@ En la Figura \ref{rest}, se puede apreciar la arquitectura de un servicio web, s
 
 \newpage
 
-Un servicio web REST, es un servicio implementado usando HTTP y que entrega como resultado un XML o un JSON de los cuales se puede obtener la información solicitada.
+Un servicio web REST, es un servicio implementado usando HTTP y que entrega como resultado en formato XML o JSON de los cuales se puede obtener la información solicitada.
 
 \subsection{Wunderground}
 Weather Underground es un servicio que entrega información meteorológica que ha desafiado las convenciones en torno a cómo la información del tiempo se comparte con el público desde 1993. Se ha creado con el fin de mejorar el acceso de las personas a los datos meteorológicos significativos de todo el mundo. Como servicio meteorológico primero de Internet, son considerados pioneros en su campo y están en constante búsqueda de nuevos conjuntos de datos y tecnologías que ayuden a compartir más datos con más gente.
@@ -549,6 +583,30 @@ Será utilizado para entregarle energía a la Raspberry para que pueda funcionar c
 \end{figure}
 
 
+
+\subsection{Costo componentes}
+En el Cuadro \ref{precios} se detallan los costos de cada componente necesario para la construcción, esto tiene un total de \$ 50.110 pesos que es lo que cuesta construir el prototipo.
+
+
+\begin{table}[h]
+\centering
+\caption{Tabla de precios}
+\label{precios}
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Componente}        & \multicolumn{1}{l|}{\textbf{Precio (pesos)}} \\ \hline
+Raspberry Pi               & \$         28.400                            \\
+Arduino                    & \$           3.500                           \\
+Sensor de Humedad de Suelo & \$              700                          \\
+Sensor de Flujo de Agua    & \$           2.700                           \\
+Relé de Estado Solido      & \$           3.500                           \\
+Valvula Solenoide          & \$           3.500                           \\
+Gps                        & \$           7.100                           \\
+Cargador                   & \$              710                          \\ \hline
+\textbf{Total}             & \textbf{\$          50.110}                  \\ \hline
+\end{tabular}
+\end{table}
+
 \section{Software}
 \subsection{Raspbian}
 Raspbian~\cite{raspbian} es un sistema operativo libre basado en Debían optimizado para el hardware Raspberry Pi. Raspbian no tiene relación con la Fundación Raspberry Pi, fue creado por un pequeño y dedicado equipo de desarrolladores que son fans del hardware Raspberry Pi\footnote{https://www.raspbian.org/RaspbianInstaller}.
@@ -591,55 +649,6 @@ Estos pines son una interfaz física entre el la Raspberry y el mundo exterior. A
 
 Se puede programar los pines de maneras asombrosas para interactuar con el mundo real. Las entradas no tienen que venir de un interruptor físico; podría ser la entrada de un sensor o una señal de otro ordenador o dispositivo, por ejemplo. La salida también puede hacer cualquier cosa, desde encender un LED con el envío de una señal o de datos a otro dispositivo. Si la Raspberry está en una red, puede controlar los dispositivos que están conectados a él desde cualquier lugar. Conectividad y control de los dispositivos físicos a través de Internet es algo muy poderoso y emocionante, y la Raspberry es ideal para esto.
 
-%% contenido del tercer capítulo
-\chapter{Análisis del problema}
-
-El presente capítulo tiene por objetivo dar a conocer la problemática existente relacionada a la mantención de césped, mencionando también los métodos utilizados, los problemas que estos tienen y mostrar un prototipo de como solucionar uno los problemas que se mencionarán.
-
-\section{Descripción del problema}
-
-La mantención de jardines y áreas verdes es una actividad muy común en Chile, más aún cuando existen propuestas del propio estado de Chile por promover esta iniciativa, aumentando la inversión y ampliando cada vez más los parques en diferentes comunas de Chile.
-
-Estas áreas verdes no requieren de mucho cuidado, principalmente se necesita cortar y regar el césped que es en la actividad que estamos enfocados, entonces ¿Cómo se riega el césped hoy en día en nuestro país? principalmente se utilizan dos métodos:
-
-\begin{itemize}
-\item Riego manual: la persona encargada del riego, riega hasta que considere que el césped se encuentra lo suficientemente húmedo.
-\item Riego por aspersores: generalmente funcionan automáticamente todos los días durante un periodo de tiempo determinado.
-\end{itemize}
-
-Ambos métodos utilizan en exceso el agua, además a esto le sumamos que por lo general se utiliza agua potable, se traduce en un gran desperdicio y más aún cuando existe escasez de agua en el país.
-
-El año 2013 fue uno de los años más secos desde 1866. Existen déficit de precipitaciones que van desde un 20\% llegando incluso hasta un 60\% entre las zonas de Copiapó y Talca al sur, estas son zonas de gran producción agrícola y además entre los lugares mencionados son los que han tenido mayor inversión para poder satisfacer la demanda de agua dulce a las personas~\cite{sequia}. 
-
-Los dispositivos utilizados hoy en día no consideran el tipo de suelo en el cual se realizará el riego, esto es importante porque cada suelo tiene una capacidad de absorción distinta. Esta información es importante porque al no aplicar la cantidad justa de agua, se daña el suelo como por ejemplo la erosión~\cite{erosion}, además del agua desperdiciada.
-
-Es por ello, que es muy importante y de suma urgencia idear nuevas técnicas de riego sustentables en las que se obtenga el mayor provecho del agua que permita mantener el nivel de producción agrícola en Chile o incluso aumentarlo.
-
-
-\section{Problemas identificados}
-
-Según Chuck Ingels~\cite{problemas}, asesor agrícola de Extensión Cooperativa de la Universidad de California en el condado de Sacramento y Loren Oki, especialista de Extensión Cooperativa en el Departamento de Botánica de UC Davis y especialista en horticultura de paisajes, existen problemas en los sistemas de riego actuales que hoy en día son utilizados, ellos nombran principalmente cuatro problemas: 
-
-\begin{itemize}
-\item ``Apagar el sistema de riego por aspersores después de que llueve es el primer paso que se debe tomar para ahorrar agua''
-\item ``El riego de césped y jardines representa más de la mitad del agua usada en un hogar promedio''
-\item ``Ha llevado a cabo estudios sobre un problema común relacionado al riego de céspedes residenciales en California: el escurrimiento de agua''
-\item ``Mucha del agua que se aplica a los céspedes termina directamente en las alcantarillas. No solo se trata de agua desperdiciada; hemos descubierto también que el agua de escurrimientos arrastra contaminantes (incluyendo pesticidas y fertilizantes) hasta las alcantarillas y, eventualmente, a los canales y vías fluviales. El problema radica en que los sistemas de aspersores típicos aplican agua de forma más rápida que la que la tierra puede absorber, lo cual lleva al escurrimiento''
-\end{itemize}
-
-\section{Información disponible}
-
-Para los problemas anteriormente mencionados existe información que será utilizado para planificar y determinar un riego, los podemos ver a continuación:
-
-\begin{itemize}
-\item Pronóstico del tiempo: se cuenta con esta información que permite saber en tiempo actual las condiciones climáticas de un punto en particular.
-\item Ubicación del dispositivo: se puede determinar la ubicación del dispositivo utilizando un GPS, si se utiliza en lugares con acceso a Internet en los que no se utilice el módem 3G, se podría determina la ubicación a través de la dirección IP.
-\item Tipo de suelo: indica el tipo de suelo en el que el dispositivo esta siendo utilizado, esta información se obtiene utilizando la ubicación del dispositivo.
-\item Humedad del suelo: indica la humedad del suelo utilizando sensores de humedad.
-\end{itemize}
-
-Existe más información que puede ser incluida para mejorar la calidad del riego aplicado al suelo, pero para este trabajo solo se considera las variables mencionadas anteriormente.
-
 %contenido cuarto capitulo
 \chapter{Desarrollo}
 
@@ -659,19 +668,19 @@ Lo primero que se hará es crear un programa para Arduino que leerá la informació
 
 Instalado el programa, conectar al Arduino a la computadora, ejecutar el programa y ya se esta listo para trabajar.
 
-A continuación se mostrará el código con el cual se puede leer información desde distintos tipos de sensores.\\
+En el Listing \ref{arduino} se muestra el código con el cual se puede leer información desde los distintos tipos de sensores utilizados.\\
 
 \lstset{language=C, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single]
-volatile int  frecuencia_sensor; // Mide los pulsos de flujo
-unsigned int  litrosHora; // Calcula los litros por hora  
-unsigned int humedad_sensor; // Mide la humedad del suelo                    
-unsigned char pinFlujo = 2; // Pin de flujo
-unsigned char pinFlujo = A0; // Pin de humedad
+\begin{lstlisting}[frame=single,caption={Código Arduino},label=arduino]
+volatile int  frecuencia_sensor;  // Mide los pulsos de flujo
+unsigned int  litrosHora;          // Calcula los litros por hora  
+unsigned int humedad_sensor;        // Mide la humedad del suelo                    
+unsigned char pinFlujo = 2;  // Pin de flujo
+unsigned char pinHumedad = A0;  // Pin de humedad
 unsigned long tiempoActual;
 unsigned long tiempoCiclo;
 
-void flujo () // Interruot function
+void flujo ()                  // Interruot function
 { 
   frecuencia_sensor++;
 }
@@ -680,24 +689,27 @@ void setup() {
   pinMode(pinFlujo, INPUT);
   Serial.begin(9600); 
   attachInterrupt(0, flujo, RISING); // Setup Interrupt 
-  sei(); // Enable interrupts  
+  sei();                            // Enable interrupts  
   tiempoActual = millis();
   tiempoCiclo = tiempoActual;
 }
 
 void loop() {
-  humedad_sensor = analogRead(pinFlujo); // Entrada analógica, sensor de humedad
-  Serial.print(humedad_sensor);  // Envía el valor a la Raspberry
-  Serial.println(" Humedad"); // Etiqueta el valor de la linea anterior
-  tiempoActual = millis(); //Mide el tiempo actual
+  humedad_sensor = analogRead(pinHumedad);
+  //Serial.print(humedad_sensor);
+  //Serial.println(" Humedad");
+  tiempoActual = millis();
   //Cada segundo, calcula e imprime litros por hora
   if(tiempoActual >= (tiempoCiclo + 1000))
   {     
-    tiempoCiclo = tiempoActual; // Actualiza tiempoCiclo
+    tiempoCiclo = tiempoActual;              // Actualiza tiempoCiclo
     litrosHora = (frecuencia_sensor * 60 / 7.5); // (Pulse frequency x 60 min) / 7.5Q = L/hour 
-    frecuencia_sensor = 0; // Resetea el contador
-    Serial.print(litrosHora); // Imprime litro por hora
-    Serial.println(" L/hour"); // Etiqueta el valor de la linea anterior
+    frecuencia_sensor = 0;                   // Resetea el contador
+    //Serial.print(litrosHora);            // Imprime litro por hora
+    //Serial.println(" L/hour");
+    //Serial.print(humedad_sensor);
+    //Serial.println(" Humedad");
+    Serial.println(String(humedad_sensor) + " " + String(litrosHora));
   }
 }
 \end{lstlisting}
@@ -736,7 +748,7 @@ Una vez ejecutado el comando se verá un listado de diferentes dispositivos. El A
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=15cm]{USBArduino.png}
+\includegraphics[width=14cm]{USBArduino.png}
 \caption{Arduino en Raspberry}
 \label{resultado}
 \end{figure}
@@ -748,18 +760,18 @@ Una vez que el Arduino esta identificado ya podemos comenzar a comunicarnos medi
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=15cm]{RaspberryArduino.png}
+\includegraphics[width=14cm]{RaspberryArduino.png}
 \caption{Comunicación Raspberry Arduino}
 \label{raspardu}
 \end{figure}
 
-\newpage
+\pagebreak
 
 Con este programa en Python ya se puede recibir datos desde el Arduino en la Raspberry, para probarlo se ejecuta el programa con la siguiente linea de código \textit{sudo python nombre\_programa.py}. Los resultados obtenido en la Figura \ref{raciboDatos}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=15cm]{ReciboDatos.png}
+\includegraphics[width=14cm]{ReciboDatos.png}
 \caption{Recibo de datos desde Arduino en Raspberry}
 \label{raciboDatos}
 \end{figure}
@@ -777,10 +789,12 @@ Pasos para el funcionamiento del GPS en la Raspberry:
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=15cm]{lsgps.png}
+\includegraphics[width=14cm]{lsgps.png}
 \caption{GPS en Raspberry, /dev/ttyUSB1}
 \label{lsgps}
 \end{figure}
+
+\pagebreak
 
 \item \textit{sudo gpsd -N -D3 /dev/ttyUSB1} 
 \item \textit{sudo nano gps.py}
@@ -788,17 +802,18 @@ Pasos para el funcionamiento del GPS en la Raspberry:
 
 \url{https://gist.github.com/wolfg1969/4653340#file-gpsddata-py}
 \item Ejecutar \textit{sudo python gps.py} con esto obtenemos como resultado lo que se aprecia en la Figura \ref{datosgps}:
+
 \begin{figure}[h]
 \centering
-\includegraphics[width=15cm]{datosgps.png}
+\includegraphics[width=14cm]{datosgps.png}
 \caption{Datos GPS}
 \label{datosgps}
 \end{figure}
 
+\pagebreak
+
 \end{itemize}
 
-
-\newpage
 
 \section{Software}
 
@@ -817,11 +832,11 @@ La estructura de la url para realizar la consulta de la siguiente:
 \item \url{.json} es el formato en el que se devuelve la información, también puede ser .xml.
 \end{itemize}
 
-Los datas obtenidos se pueden apreciar en la Figura \ref{response}:
+Los datas obtenidos se pueden apreciar en la Figura \ref{response} y la información más relevante es ``pop'' que informa de la probabilidad de lluvia que hay en el lugar.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=14cm]{response.png}
+\includegraphics[width=15cm]{response.png}
 \caption{Respuesta del servicio wunderground al hacer una consulta}
 \label{response}
 \end{figure}
@@ -830,49 +845,83 @@ Los datas obtenidos se pueden apreciar en la Figura \ref{response}:
 
 La principal función del modelo de riego es determinar cuando hacer un riego en base a los datos que tiene disponible, también indicará que tipo de riego se debe hacer en base al tipo de suelo en el que el dispositivo se encuentra instalado. Esto se hará mediante un sistema basado en reglas que ya fue explicado anteriormente.
 
-¿Cuando se ejecutará el modelo? El modelo de riego se ejecutará cada mañana a las 6 a.m y el tiempo de riego será de 20 min. La hora fue escogida para evitar la evaporación del agua y daños que se le puedan dañar el césped.
+¿Cuando se ejecutará el modelo? El modelo de riego se ejecutará cada mañana a las 6 a.m y el tiempo de riego será de 20 min. La hora fue escogida para evitar la evaporación del agua y daños que se le puedan dañar el césped a causa del sol. El código que realiza esta acción se ve en el Listing \ref{controlRiego}:
+
+\pagebreak
 
 \lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single,caption={Control de riego},label=controlRiego]
 while True:
 	hora = datetime.datetime.now().time()
 	if (hora>=datetime.time(6,00) and hora<=datetime.time(6,20)):
-		#Regar
+		if suelo == "arenoso":
+			#ReigoArenoso
+		else if suelo == "limoso":
+			#RiegoLimoso
+		else:
+			#RiegoArcilloso
 \end{lstlisting}
 
-Los datos disponibles para determinar un riego son los que se aprecian en la Figura \ref{objetos}, también se pueden ver los valores asociados a cada objeto.
 
-\begin{figure}[h]
+Los datos disponibles para determinar un riego son los que se aprecian en el Cuadro \ref{objetos}, también se pueden ver los valores asociados a cada objeto.
+
+\begin{table}[h]
 \centering
-\includegraphics[width=12cm]{objetos.png}
-\caption{ Objetos y posibles valores para determinar un riego}
+\caption{Objetos y posibles valores para determinar un riego}
 \label{objetos}
-\end{figure}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Objeto}        & \multicolumn{1}{l|}{\textbf{Conjunto de posibles valores}} \\ \hline
+Humedad de Suelo       & \{ 0 - 1024\}                                              \\
+Tipo de Suelo          & \{ Arcilloso, Limoso, Arenoso\}                            \\
+Probabilidad de lluvia & \{ 0 - 100 \}                                              \\
+Riego                  & \{ RiegoArcilloso, RiegoLimoso, RiegoArenoso, NoRegar\}   \\ \hline
+\end{tabular}
+\end{table}
 
 
 A partir de estos datos se generaron reglas que determinan cuando realizar un riego.
 
-Para generalizar un poco las reglas del modelo a ha creado una tabla con las valores predefinidos como de ve en la Figura \ref{valoresReglas}
+Para generalizar un poco las reglas del modelo a ha creado una tabla con las valores predefinidos como de ve en el Cuadro \ref{valoresReglas}:
 
-\begin{figure}[h]
+\begin{table}[h]
 \centering
-\includegraphics[width=6cm]{valoresReglas.png}
-\caption{ Variables predefinidas para la reglas del modelo}
+\caption{Variables predefinidas para la reglas del modelo}
 \label{valoresReglas}
-\end{figure}
+\begin{tabular}{|l|}
+\hline
+\textbf{Valores}                  \\ \hline
+Humedad = H = 512                 \\
+Probabilidad de lluvia = P = 70\% \\ \hline
+\end{tabular}
+\end{table}
 
-Estos valores se pueden modificar para mejorar la calidad del riego, esto se podría hacer consultando a un experto en al área de riego de suelo y dejarlos fijos sin que  vuelvan a cambiar. Otra opción es utilizar ``elicitation technique''; que es una técnica usada para obtener datos y reunir conocimiento o información desde las personas, por lo que al momento de que el dispositivo es instalado se pueden configurar estas variables, dejando a las personas que tomen la decisión que consideren más apropiada para su jardín, esto también podría ser modificado a través del tiempo para ir ajustándolo gradualmente y obtener el mayor beneficio posible (ahorro de agua v/s césped verde).
+
+Como esto es un prototipo, estos valores se pueden modificar para mejorar la calidad del riego, esto se podría hacer consultando a un experto en al área de riego de suelo y dejarlos fijos sin que  vuelvan a cambiar. Otra opción es utilizar ``elicitation technique''; que es una técnica usada para obtener datos y reunir conocimiento o información desde las personas, por lo que al momento de que el dispositivo es instalado se pueden configurar estas variables, dejando a las personas que tomen la decisión que consideren más apropiada para su jardín, esto también podría ser modificado a través del tiempo para ir ajustándolo gradualmente y obtener el mayor beneficio posible (ahorro de agua v/s césped verde).
 
 Incluso el dispositivo podría aprender ajustando sus valores automáticamente como puede ser el caso de la probabilidad de lluvia. También se puede automatizar la humedad del suelo preguntándole periódicamente al usuario el estado del césped para ajustar el tiempo de riego.
 
-Estas reglas se pueden mejorar y aumentar su complejidad a medida que se agreguen nuevas variables al modelo, utilizando eficientemente el agua sin afectar la calidad del riego, en la Figura \ref{reglasModelo} se pueden apreciar las reglas que se definieron para el modelo de riego.
+Estas reglas se pueden mejorar y aumentar su complejidad a medida que se agreguen nuevas variables al modelo, utilizando eficientemente el agua sin afectar la calidad del riego, en el Cuadro \ref{reglasModelo} se pueden apreciar las reglas que se definieron para el modelo de riego.
 
-\begin{figure}[h]
+
+\begin{table}[]
 \centering
-\includegraphics[width=13cm]{reglasModelo.png}
 \caption{Reglas modelo, cuando y como regar}
 \label{reglasModelo}
-\end{figure}
+\begin{tabular}{|lll|}
+\hline
+                       &                                                                                                                                                                                                                                                                                                                                                             &  \\ \cline{2-2}
+\multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{\textbf{Regar}}                                                                                                                                                                                                                                                                                                                         &  \\ \cline{2-2}
+\multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}If Humedad \textless H and Probabilidad \textless P and Suelo == ``Arcillo'' then RiegoArcilloso,\\ If Humedad \textless H and Probabilidad \textless P and Suelo == ``Limoso'' then RiegoLimoso,\\ If Humedad \textless H and Probabilidad \textless P and Suelo == ``Areno'' then RiegoArenoso\end{tabular}} &  \\ \cline{2-2}
+                       &                                                                                                                                                                                                                                                                                                                                                             &  \\ \cline{2-2}
+\multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{\textbf{NO regar (Alta probabilidad de lluvia)}}                                                                                                                                                                                                                                                                                        &  \\ \cline{2-2}
+\multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{If Humedad \textless H and Probabilidad \textgreater P then No regar}                                                                                                                                                                                                                                                                   &  \\ \cline{2-2}
+                       &                                                                                                                                                                                                                                                                                                                                                             &  \\ \cline{2-2}
+\multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{\textbf{NO regar (Humedad de suelo suficiente)}}                                                                                                                                                                                                                                                                                        &  \\ \cline{2-2}
+\multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{If Humedad \textgreater H then No regar}                                                                                                                                                                                                                                                                                                &  \\ \cline{2-2}
+                       &                                                                                                                                                                                                                                                                                                                                                             &  \\ \hline
+\end{tabular}
+\end{table}
 
 Gráficamente estas reglas se pueden ver como árbol tal como lo muestra la Figura \ref{arbol}, además queda claro que nunca se dará el caso en el que pueda haber como resultado dos tipos de riego diferentes, esto se debe a que el espacio de soluciones existentes es finito. El código fuente del modelo de riego se puede encontrar en el Anexo 1.
 
@@ -901,10 +950,10 @@ El programa en Python se ejecuta en la Raspberry y utilizando el GPS obtiene las
 
 El servicio web solo recibe como parámetros las coordenadas, es éste quien con la información recibida determina el tipo de suelo y recién es cuando se guarda la información en la base de datos.
 
-Parte del código utilizado en PHP es el siguiente:
+El código utilizado se ve en el Listing \ref{detectarSuelo}:
 
 \lstset{language=PHP, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single,caption={Servicio web que almacena el tipo de suelo},label=detectarSuelo]
 id = $_POST["id"];
 $lat = $_POST["lat"];
 $lon = $_POST["lon"];
@@ -916,29 +965,30 @@ $insert = "INSERT INTO coordenadas(id, lat, lon, suelo) VALUES('".$id."', '".$la
 $result = pg_query($dbconn3, $insert);
 \end{lstlisting}
 
-Solo recibe como parámetros las coordenadas y luego consulta por el tipo de suelo a una base de datos espacial\footnote{http://data.fao.org/map?entryId=446ed430-8383-11db-b9b2-000d939bc5d8} con la siguiente consulta SQL:
+
+Luego consulta por el tipo de suelo a una base de datos espacial\footnote{http://data.fao.org/map?entryId=446ed430-8383-11db-b9b2-000d939bc5d8} con la siguiente consulta SQL que se muestra en el Listing \ref{obtenerSuelo}:
 
 \lstset{language=SQL, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single,caption={Servicio web que obtiene el tipo de suelo},label=obtenerSuelo]
 SELECT domsoi FROM dsmw WHERE st_contains(geom,ST_GeomFromText('POINT(".$lon." ".$lat.")',4326))
 \end{lstlisting}
 
-Finalmente inserta un id (de la Raspberry), las coordenadas y el tipo de suelo a la base de datos. El resultado queda como en la Figura \ref{resultadoSuelo}
+Finalmente inserta un id (de la Raspberry Pi), las coordenadas y el tipo de suelo a la base de datos. El resultado queda como en la Figura \ref{resultadoSuelo1}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=13cm]{resultadoSuelo.png}
 \caption{Registro almacenado en la base de datos}
-\label{resultadoSuelo}
+\label{resultadoSuelo1}
 \end{figure}
 
 \subsubsection{Consultando tipo suelo}
-Cuando el modelo de riego necesita saber el tipo de suelo, consulta por el registro que se mostró anteriormente.
+Cuando el modelo de riego necesita saber el tipo de suelo, consulta por el registro que se mostró anteriormente, esto se hace desde la Raspberry Pi.
 
-El código en Python que lo haces es el que se muestra a continuación:
+El código en Python que lo haces es el que se en el Listing \ref{obtenerSueloRaspberry}:
 
 \lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single,caption={Obtener el tipo de suelo desde la Raspberry Pi},label=obtenerSueloRaspberry]
 serial = getserial()
 url = "http://bri2.utalca.cl/~nmaturana/getCoordenada.php?id="+serial
 response = urllib.urlopen(url)
@@ -946,10 +996,10 @@ data = json.loads(response.read())
 suelo = data["suelo"]
 \end{lstlisting}
 
-El servicio en PHP recibe como paramento el id del dispositivo y retorna el tipo de suelo.
+El servicio en PHP recibe como paramento el id del dispositivo y retorna el tipo de suelo se puede apreciar en el Listing \ref{obtenerSueloPHP}:
 
 \lstset{language=PHP, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single,caption={Servicio web que retorna el tipo de suelo},label=obtenerSueloPHP]
 $id = $_GET["id"];
 $result = pg_query($dbconn, "Select suelo from coordenadas where id = '".$id."'");
 $arr = pg_fetch_array($result, NULL, PGSQL_ASSOC);
@@ -962,10 +1012,10 @@ echo json_encode($arr);
 
 El envío de datos se hace en la Raspberry la que a su vez llama a un servicio web que almacena los datos en la base de datos.
 
-Los datos son enviados cada 30 segundos, como lo muestra el siguiente código:
+Los datos son enviados cada 30 segundos, como lo muestra en el Listing \ref{enviodedatos}:
 
 \lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single,caption={Envío de datos desde la Raspberry Pi hacia el servidor},label=enviodedatos]
 while True:
 	fecha = datetime.datetime.now()
 	entradas = arduino.readline()
@@ -981,10 +1031,10 @@ while True:
 	time.sleep(30)
 \end{lstlisting}
 
-La humedad y cantidad de agua utilizada se leen desde el Arduino y son pasadas al servicio web ``insertData.php'' que basicamente inserta la información recibida en la base de datos:
+La humedad y cantidad de agua utilizada se leen desde el Arduino y son pasadas al servicio web ``insertData.php'' que basicamente inserta la información recibida en la base de datos como se ve en la Listing \ref{insertPHP}:
 
 \lstset{language=PHP, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single,caption={insertData.php},label=insertPHP]
 $humedad = $_POST["humedad"];
 $caudal = $_POST["caudal"];
 $fecha = $_POST["fecha"];
@@ -1003,10 +1053,10 @@ Y el resultado de todo este proceso se ve en la Figura \ref{registros}. La prime
 
 \subsubsection{Consulta de datos}
 
-Estos datos son consultados por la aplicación web que utilizando JQUERY obtiene los datos. El siguiente código obtiene los datos de humedad del suelo:
+Estos datos son consultados por la aplicación web que utilizando JQUERY obtiene los datos. El Listing \ref{humedadPHP} obtiene los datos de humedad del suelo y los almacena en dps para luego mostrar esta información a los usuarios.
 
 \lstset{language=JAVA, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single,caption={JQuery humedad de suelo},label=humedadPHP]
 $.getJSON("http://bri2.utalca.cl/~nmaturana/getRegistros.php", function (result) {
 	yVal = parseInt(result["humedad"]);
  	dps.push({ x: xVal, y: yVal });
@@ -1014,10 +1064,10 @@ $.getJSON("http://bri2.utalca.cl/~nmaturana/getRegistros.php", function (result)
 });
 \end{lstlisting}
 
-El servicio web ``getRegistros.php'' retorna el ultimo registro insertado en la base de datos como se muestra a continuación:
+El servicio web ``getRegistros.php'' retorna el ultimo registro insertado en la base de datos como se muestra en el Listing \ref{getRegistros}:
 
 \lstset{language=PHP, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single,caption={getRegistros.php},label=getRegistros]
 $result = pg_query($dbconn, "SELECT * FROM registros ORDER BY fecha DESC LIMIT 1");
 $arr = pg_fetch_array($result, NULL, PGSQL_ASSOC);
 echo json_encode($arr);
@@ -1027,44 +1077,56 @@ echo json_encode($arr);
 
 \subsection{Aplicación web}
 
-La aplicación web que básicamente muestra la humedad actual del suelo y el consumo de agua mensual fue desarrollada utilizando PHP, HTML y JAVASCRIPT y se puede ver en las siguiente imágenes:
+La aplicación web que básicamente muestra la humedad actual del suelo y el consumo de agua mensual fue desarrollada utilizando PHP, HTML y JAVASCRIPT.\\
+
+La Figura \ref{resultadoSueloGrafico1} muestra la humedad registrada por el sensor de humedad y además indica la hora en el que el registro fue capturado.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=13cm]{graficoHumedad.png}
 \caption{Humedad del suelo en tiempo real}
-\label{resultadoSuelo}
+\label{resultadoSueloGrafico1}
 \end{figure}
+
+\pagebreak
+
+La Figura \ref{resultadoSueloGrafico2} muestra el consumo de agua durante los últimos seis meses como se muestra en la boleta de consumo de agua potable que llega nuestro hogar.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=13cm]{graficoAgua.png}
 \caption{Consumo de agua mensual}
-\label{resultadoSuelo}
+\label{resultadoSueloGrafico2}
 \end{figure}
-
-
-\chapter{Trabajo futuro}
-
-Este trabajo aparte de la investigación y escritura de este documento, desarrollo de un prototipo del dispositivo de riego incluyo también trabajo externo en un concurso de emprendimiento llevado a cabo por Fundación para la Innovación Agraria, el concurso llamado ``Proyectos de Emprendimiento Innovador: Jóvenes Innovadores''. En este concurso el dispositivo quedo dentro de los 30 seleccionados los cuales tuvieron una capacitación en Santiago durante dos semanas con profesores de la Universidad de Oxford, en esas dos semana se vio principalmente gestión y financiamiento de proyectos, en los anexos X se puede ver el trabajo realizado durante estas dos semanas.
-
-Esto demuestra el potencial que esta idea tiene, sin duda quedan muchas cosas por mejorar.
-
-En el modelo de riego recomiendo trabajar junto a un experto, además para hacer el dispositivo más inteligente sería ideal que se aplicara un técnica de inteligencia artificial y que fuera aprendiendo que variables de humedad, probabilidad de lluvia, entre otras se deberían utilizar.
-
-Como este trabajo de enfoco principalmente en el prototipo del dispositivo, el desarrollo de la aplicación para el usuario no fue la mejor, también se podría hacer algo mucho más lindo y atractivo para el usuario además de desarrollar una aplicación para celulares.
 
 
 \chapter{Conclusión}
 
-Se puede concluir que el desarrollo de este dispositivo puede generar un gran beneficio económico para las personas y a la vez ayuda a combatir el cambio climático que hoy nos afecta, al ser un dispositivo de bajo costo puede ser adquirido masivamente.
+Se puede concluir que el desarrollo de este dispositivo puede generar un beneficio económico para las personas y a la vez ayuda a combatir el cambio climático que hoy nos afecta, al ser un dispositivo de bajo costo puede ser adquirido masivamente.
 
 Los dispositivos que se venden en la actualidad tienen un costo muy elevado o requieren de mucha intervención de las personas, por lo que muchas veces se dejan de utilizar o no se utiliza correctamente.
 
 Este dispositivo se puede ampliar al uso agrícola, uno de los grandes problemas identificados por el Gobierno es la falta de tecnología aplicada en la agricultura. Es dispositivo como se encuentra en este momento puede ser fácilmente utilizado para este fin, sin duda que se le pueden agregar más sensores y mejorar el modelo para cada tipo de cultivo.
 
+Este trabajo aparte de la investigación, escritura de este documento y desarrollo de un prototipo del dispositivo de riego incluyo también trabajo externo en un concurso de emprendimiento llevado a cabo por Fundación para la Innovación Agraria, el concurso llamado ``Proyectos de Emprendimiento Innovador: Jóvenes Innovadores''. En este concurso el dispositivo uno de los finalistas los cuales tuvieron una capacitación en Santiago durante dos semanas con profesores de la Universidad de Oxford, en esas dos semana se vio principalmente gestión y financiamiento de proyectos, en los anexos X se puede ver el trabajo realizado durante este periodo.
+
 Queda claro que es una idea muy viable, que en la actualidad existe un problema que no esta solucionado, existe el mercado potencial para hacer económicamente sustentable esta idea y con este trabajo se ha demostrado que se puede hacer algo bueno que genere un gran impacto en la sociedad.
 
+
+\chapter{Trabajo futuro}
+
+Esta idea tiene un gran potencial y sin duda quedan muchas cosas por mejorar.
+
+En el modelo de riego recomiendo trabajar junto a un experto en el área, además para hacer el dispositivo más inteligente sería ideal que se aplicara un técnica de inteligencia artificial y que fuera aprendiendo que variables de humedad, probabilidad de lluvia, entre otras se debiera utilizar. El diseño del dispositivo se hizo de tal manera que se pueda ingresar un nuevo modelo de riego y que este funcione correctamente, por lo que se puede profundizar mucho más el tema y mejorar el funcionamiento del dispositivo en general.
+
+Este trabajo de enfoco principalmente en el diseño del prototipo del dispositivo y el modelo de riego, el desarrollo de la aplicación para el usuario no fue la mejor, solamente se muestran dos gráficos que entregan información a los usuarios, se le podría agregar mas funciones para que el usuario interactué más con el dispositivo.
+
+También quedo pendiente el desarrollo de una aplicación móvil para los usuarios, lo que haría mucho más interésate el uso del dispositivo.
+
+El hardware que se utilizo se podría reemplazar, disminuyendo la cantidad de componentes que se utilizaron. Existe un microcomputador llamado ``beaglebone black'' que podría reemplazar a la Raspberry Pi y el Arduino disminuyendo la cantidad de componentes.
+
+
+hardware
 
 %% ambiente glosario
 \begin{glosario}

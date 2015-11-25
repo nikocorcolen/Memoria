@@ -28,57 +28,56 @@
 \contentsline {subsubsection}{Suelo arenoso}{17}
 \contentsline {subsubsection}{Suelo limoso}{17}
 \contentsline {subsubsection}{Suelo arcilloso}{17}
-\contentsline {section}{\numberline {2.2}Sistema basado en reglas}{18}
-\contentsline {subsection}{\numberline {2.2.1}Modus Ponens}{20}
-\contentsline {subsection}{\numberline {2.2.2}Estrategias de inferencia}{20}
-\contentsline {subsubsection}{Encadenamiento progresivo}{21}
-\contentsline {section}{\numberline {2.3}Servicios web meteorol\'ogicos}{21}
-\contentsline {subsection}{\numberline {2.3.1}\IeC {\textquestiondown }Qu\'e es un servicio web?}{21}
-\contentsline {subsection}{\numberline {2.3.2}Wunderground}{22}
-\contentsline {section}{\numberline {2.4}Trabajos relacionados}{23}
-\contentsline {subsection}{\numberline {2.4.1}Cultivar}{23}
-\contentsline {subsection}{\numberline {2.4.2}Rachio IRO}{24}
-\contentsline {subsection}{\numberline {2.4.3}Rain Bird}{25}
-\contentsline {subsection}{\numberline {2.4.4}Tabla comparativa}{25}
-\contentsline {section}{\numberline {2.5}Hardware}{26}
-\contentsline {subsection}{\numberline {2.5.1}Raspberry pi}{26}
-\contentsline {subsection}{\numberline {2.5.2}Arduino}{27}
-\contentsline {subsection}{\numberline {2.5.3}Servidor de base de datos}{27}
-\contentsline {subsection}{\numberline {2.5.4}Servidor web}{28}
-\contentsline {subsection}{\numberline {2.5.5}Sensores de humedad}{28}
-\contentsline {subsection}{\numberline {2.5.6}Sensor de flujo de agua}{29}
-\contentsline {subsection}{\numberline {2.5.7}Rel\'e}{30}
-\contentsline {subsection}{\numberline {2.5.8}V\'alvula solenoide}{31}
-\contentsline {subsection}{\numberline {2.5.9}GPS}{31}
-\contentsline {subsection}{\numberline {2.5.10}M\'odem 3G}{32}
-\contentsline {subsection}{\numberline {2.5.11}Cargador}{33}
-\contentsline {section}{\numberline {2.6}Software}{33}
-\contentsline {subsection}{\numberline {2.6.1}Raspbian}{33}
-\contentsline {subsection}{\numberline {2.6.2}Python}{33}
-\contentsline {subsubsection}{Librer\IeC {\'\i }a GPIO}{34}
-\contentsline {chapter}{\numberline {3}An\'alisis del problema}{36}
-\contentsline {section}{\numberline {3.1}Descripci\'on del problema}{36}
-\contentsline {section}{\numberline {3.2}Problemas identificados}{37}
-\contentsline {section}{\numberline {3.3}Informaci\'on disponible}{38}
-\contentsline {chapter}{\numberline {4}Desarrollo}{39}
-\contentsline {section}{\numberline {4.1}Hardware}{39}
-\contentsline {subsection}{\numberline {4.1.1}Arduino}{39}
-\contentsline {subsubsection}{Programaci\'on Arduino}{39}
-\contentsline {subsubsection}{Conexi\'on de sensores}{41}
-\contentsline {subsection}{\numberline {4.1.2}Raspberry}{42}
-\contentsline {subsection}{\numberline {4.1.3}GPS}{44}
-\contentsline {section}{\numberline {4.2}Software}{46}
-\contentsline {subsection}{\numberline {4.2.1}Informaci\'on meteorol\'ogica}{46}
-\contentsline {subsection}{\numberline {4.2.2}Modelo de riego}{47}
-\contentsline {subsection}{\numberline {4.2.3}Servicio web de suelo}{50}
-\contentsline {subsubsection}{Determinando tipo suelo}{50}
-\contentsline {subsubsection}{Consultando tipo suelo}{51}
-\contentsline {subsection}{\numberline {4.2.4}Env\IeC {\'\i }o y consulta de datos, humedad y agua utilizada}{51}
+\contentsline {section}{\numberline {2.2}Problemas identificados}{18}
+\contentsline {section}{\numberline {2.3}Informaci\'on disponible}{19}
+\contentsline {section}{\numberline {2.4}Sistema basado en reglas}{19}
+\contentsline {subsection}{\numberline {2.4.1}Modus Ponens}{22}
+\contentsline {subsection}{\numberline {2.4.2}Estrategias de inferencia}{22}
+\contentsline {subsubsection}{Encadenamiento progresivo}{23}
+\contentsline {section}{\numberline {2.5}Servicios web meteorol\'ogicos}{23}
+\contentsline {subsection}{\numberline {2.5.1}\IeC {\textquestiondown }Qu\'e es un servicio web?}{23}
+\contentsline {subsection}{\numberline {2.5.2}Wunderground}{24}
+\contentsline {section}{\numberline {2.6}Trabajos relacionados}{25}
+\contentsline {subsection}{\numberline {2.6.1}Cultivar}{25}
+\contentsline {subsection}{\numberline {2.6.2}Rachio IRO}{26}
+\contentsline {subsection}{\numberline {2.6.3}Rain Bird}{27}
+\contentsline {subsection}{\numberline {2.6.4}Tabla comparativa}{27}
+\contentsline {section}{\numberline {2.7}Hardware}{28}
+\contentsline {subsection}{\numberline {2.7.1}Raspberry pi}{28}
+\contentsline {subsection}{\numberline {2.7.2}Arduino}{29}
+\contentsline {subsection}{\numberline {2.7.3}Servidor de base de datos}{29}
+\contentsline {subsection}{\numberline {2.7.4}Servidor web}{30}
+\contentsline {subsection}{\numberline {2.7.5}Sensores de humedad}{30}
+\contentsline {subsection}{\numberline {2.7.6}Sensor de flujo de agua}{31}
+\contentsline {subsection}{\numberline {2.7.7}Rel\'e}{32}
+\contentsline {subsection}{\numberline {2.7.8}V\'alvula solenoide}{33}
+\contentsline {subsection}{\numberline {2.7.9}GPS}{33}
+\contentsline {subsection}{\numberline {2.7.10}M\'odem 3G}{34}
+\contentsline {subsection}{\numberline {2.7.11}Cargador}{35}
+\contentsline {subsection}{\numberline {2.7.12}Costo componentes}{35}
+\contentsline {section}{\numberline {2.8}Software}{36}
+\contentsline {subsection}{\numberline {2.8.1}Raspbian}{36}
+\contentsline {subsection}{\numberline {2.8.2}Python}{36}
+\contentsline {subsubsection}{Librer\IeC {\'\i }a GPIO}{36}
+\contentsline {chapter}{\numberline {3}Desarrollo}{38}
+\contentsline {section}{\numberline {3.1}Hardware}{38}
+\contentsline {subsection}{\numberline {3.1.1}Arduino}{38}
+\contentsline {subsubsection}{Programaci\'on Arduino}{38}
+\contentsline {subsubsection}{Conexi\'on de sensores}{40}
+\contentsline {subsection}{\numberline {3.1.2}Raspberry}{41}
+\contentsline {subsection}{\numberline {3.1.3}GPS}{43}
+\contentsline {section}{\numberline {3.2}Software}{45}
+\contentsline {subsection}{\numberline {3.2.1}Informaci\'on meteorol\'ogica}{45}
+\contentsline {subsection}{\numberline {3.2.2}Modelo de riego}{46}
+\contentsline {subsection}{\numberline {3.2.3}Servicio web de suelo}{48}
+\contentsline {subsubsection}{Determinando tipo suelo}{49}
+\contentsline {subsubsection}{Consultando tipo suelo}{50}
+\contentsline {subsection}{\numberline {3.2.4}Env\IeC {\'\i }o y consulta de datos, humedad y agua utilizada}{51}
 \contentsline {subsubsection}{Env\IeC {\'\i }o de datos}{51}
 \contentsline {subsubsection}{Consulta de datos}{52}
-\contentsline {subsection}{\numberline {4.2.5}Aplicaci\'on web}{53}
-\contentsline {chapter}{\numberline {5}Trabajo futuro}{55}
-\contentsline {chapter}{\numberline {6}Conclusi\'on}{56}
+\contentsline {subsection}{\numberline {3.2.5}Aplicaci\'on web}{53}
+\contentsline {chapter}{\numberline {4}Conclusi\'on}{55}
+\contentsline {chapter}{\numberline {5}Trabajo futuro}{56}
 \contentsline {chapter}{Glosario}{57}
 \contentsline {chapter}{Bibliograf\'{\i }a}{58}
 \contentsline {chapter}{Anexos}{}

@@ -31,6 +31,12 @@ while True:
 	hora = datetime.datetime.now().time()
 	#Se prende desde las 6 a.m hasta las 23.59 p.m
 	if (hora >= datetime.time(6,00) and hora <= datetime.time(6,20)):
+		#if suelo == "arena":
+			#Reigo arenoso
+		#else if suelo == "limoso":
+			#Riego limoso
+		#else:
+			#Riego Arcilloso
 		entradas = arduino.readline()
 		datos = entradas.split(" ")
 		if len(datos) == 2:

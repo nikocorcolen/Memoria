@@ -3,12 +3,15 @@
  */
 $humedad = $_POST["humedad"];
 $caudal = $_POST["caudal"];
+$fecha = $_POST["fecha"];
 
 if(isset($_POST["humedad"]))
 {
   $dbconn3 = pg_connect("host=bri2.utalca.cl port=5432 dbname=Soilmap user=nmaturana password=nmaturana");
-
-  $insert = "INSERT INTO registros(humedad, caudal) VALUES('".$humedad."', '".$caudal."')";
+  $humedad = $_POST["humedad"];
+  $caudal = $_POST["caudal"];
+  $fecha = $_POST["fecha"];
+  $insert = "INSERT INTO registros(humedad, caudal, fecha) VALUES('".$humedad."', '".$caudal."', '".$fecha."')";
   $result = pg_query($dbconn3, $insert);
   //dump the result object
   var_dump($result);
