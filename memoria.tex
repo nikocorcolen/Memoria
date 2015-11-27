@@ -52,9 +52,9 @@ Se les ofrecerá a los usuarios monitorear y controlar el riego, entregándoles in
 \subsection{Contexto del proyecto}
 El proyecto consiste en desarrollar un sistema de riego autónomo e inteligente ideal para el uso en áreas verdes que utilizan sistemas de riego por ejemplo, por aspersión. Lo que se busca es reducir la intervención humana, aumentar la eficiencia en el uso del agua, ahorrar dinero y entregar datos estadísticos a los usuarios.
 
-El sistema básicamente cociste en sensores de humedad del suelo, un micro computador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el césped en buen estado, le enviará una señal a la Raspberry Pi la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
+El sistema básicamente cociste en sensores de humedad del suelo, un microcomputador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el césped en buen estado, le enviará una señal a la Raspberry Pi la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
 
-Para el proyecto se utiliza un micro computador el cual se programa en Python, y es el encargado de recibir los datos de entradas, que en este caso son los datos meteorológicos y los del sensor de humedad. Una vez que los datos son recibidos el micro computador los analiza y si se requiere un riego envía una señal la válvula solenoide que permitirá el paso del agua. También se utilizará un sensor de flujo para medir la cantidad de agua que se esta utilizando y así entregar reportes al usuario.
+Para el proyecto se utiliza un microcomputador el cual se programa en Python, y es el encargado de recibir los datos de entradas, que en este caso son los datos meteorológicos y los del sensor de humedad. Una vez que los datos son recibidos el microcomputador los analiza y si se requiere un riego envía una señal la válvula solenoide que permitirá el paso del agua. También se utilizará un sensor de flujo para medir la cantidad de agua que se esta utilizando y así entregar reportes al usuario.
 
 Cabe destacar que este sistema no solo es útil para los jardines, sino que también se puede utilizar para los huertos y/o predios agrícolas que utilizan sistemas de riego automáticos.
 
@@ -112,14 +112,14 @@ Una variable que se considerará, distinguirá y hará diferente este dispositivo d
 \paragraph{Objetivos específicos}
 \begin{itemize}
 \item Diseñar un prototipo del dispositivo (Hardware).
-\item Diseñar un modelo que determinar cuando y como realizar un riego (Software).
+\item Diseñar un modelo que determinar cuándo y cómo realizar un riego (Software).
 \item Diseñar un prototipo de aplicación web y/o móvil para los usuarios.
 \end{itemize}
 
 \section{Alcances}
 \begin{itemize}
 \item El sistema de riego (cañerías, aspersores, etc.) debe estar previamente instalado.
-\item El modelo de riego será básico y se podrá mejorar con más tiempo y personas especializadas en el área.
+\item El modelo de riego será básico y se podrá mejorar con más tiempo y personas especializadas en el área de riego.
 \item En el monitoreo los usuario podrán ver la humedad del suelo y la cantidad de agua utilizada en el riego.
 \item Se diseñará una aplicación web y/o móvil que permita a los usuarios visualizar la humedad del suelo y la cantidad de agua utilizada.
 \item El dispositivo no se podrá configurar por parte del usuario.
@@ -135,7 +135,7 @@ Una variable que se considerará, distinguirá y hará diferente este dispositivo d
 \item Probar el dispositivo armado.
 \end{itemize}
 
-\paragraph{Objetivo 2:} ``Diseñar un modelo que determinar cuando y como realizar un riego (Software)''\\
+\paragraph{Objetivo 2:} ``Diseñar un modelo que determinar cuándo y cómo realizar un riego (Software)''\\
 \begin{itemize}
 \item Determinar las variables que se utilizarán.
 \item Desarrollo del modelo (Desarrollo de software).
@@ -177,7 +177,7 @@ Existen varias herramientas que están disponibles para ayudar a un administrador
 
 Para la programación del riego se utilizarán sensores de humedad del suelo y datos obtenidos de alguna estación meteorológica que entregará la probabilidad de lluvia en el lugar, cuando sea posible y a causa de que existe probabilidad de lluvia, la cantidad de agua de riego aplicada debe ser algo menor que el déficit de agua en el suelo con el fin de proporcionar el resto con la lluvia que caerá en el lugar.
 
-Otra variable que se tendrá en cuenta, es el tipo de suelo en el que se encuentra ubicado el sistema de riego, ya que permitirá saber la capacidad de absorción  que éste tiene, con el conocimiento de esta información se podrá saber cuándo comenzar un riego con el fin de utilizar el agua de forma eficiente.
+Otra variable que se tendrá en cuenta, es el tipo de suelo en el que se encuentra ubicado el sistema de riego, ya que permitirá saber la capacidad de absorción  que éste tiene, con el conocimiento de esta información se podrá saber cuándo comenzar un riego con el fin de utilizar el agua eficientemente.
 
 
 \subsection{Textura del suelo}
@@ -254,7 +254,7 @@ Existe más información que puede ser incluida para mejorar la calidad del riego 
 
 En la vida diaria encontramos muchas situaciones complejas las que se rigen por reglas deterministas: sistemas de control de tráfico, sistemas de seguridad, transacciones bancarias, entro otros. Los sistemas basados en reglas~\cite{sistemaReglas} son una herramienta eficiente para tratar estos problemas. 
 
-Las reglas deterministas componen la más sencilla de las metodologías utilizadas en sistemas expertos. La base de conocimiento contiene las variables y el conjunto de reglas que definen el problema, y el motor de inferencia obtiene las conclusiones aplicando la lógica clásica a estas reglas. Por regla se entiende una proposición lógica que relaciona dos o más objetos e incluye dos partes, la premisa y la conclusión. Cada una de estas partes consiste en una expresión lógica con una o más afirmaciones objeto-valor conectadas mediante los operadores lógicos \textit{y}, \textit{o}, o \textit{no}. Una regla se escribe normalmente como ``Si premisa, entonces conclusión''. 
+Las reglas deterministas componen la más sencilla de las metodologías utilizadas en sistemas expertos. La base de conocimiento contiene las variables y el conjunto de reglas que definen el problema, y el motor de inferencia obtiene las conclusiones aplicando la lógica clásica a estas reglas. Por regla se entiende una proposición lógica que relaciona dos o más objetos e incluye dos partes, la premisa y la conclusión. Cada una de estas partes consiste en una expresión lógica con una o más afirmaciones objeto-valor conectadas mediante los operadores lógicos \textit{y}, \textit{o}, o \textit{no}. Una regla se escribe normalmente como: ``Si premisa, entonces conclusión''. 
 
 Como ejemplo de problema determinista que puede ser formulado usando un conjunto de reglas, considérese una situación en la que un usuario (por ejemplo, un cliente) desea sacar dinero de su cuenta corriente mediante un cajero automático (CA). En cuanto el usuario introduce la tarjeta en el CA, la maquina la lee y la verifica. Si la tarjeta no es verificada con éxito (por ejemplo, porque no es legible), el CA devuelve la tarjeta al usuario con el mensaje de error correspondiente. En otro caso, el CA pide al usuario su número de identificación personal (NIP). Si el número fuese incorrecto, se dan tres oportunidades de corregirlo. Si el NIP es correcto, el CA pregunta al usuario cuánto dinero desea sacar. Para que el pago se autorice, la cantidad solicitada no debe exceder de una cierta cantidad limite diaria, además de haber suficiente dinero en su cuenta. 
 
@@ -385,7 +385,7 @@ Ventajas:
 \begin{itemize}
 \item Se controla a través de un teléfono móvil o una computador.
 \item Puede funcionar de forma automática. 
-\item Se ajustara automáticamente a el clima.
+\item Se ajustará automáticamente a el clima.
 \item Consume la menor cantidad de agua posible.
 \item No necesita programarse.
 \item Entrega estadísticas del consumo de agua.
@@ -420,8 +420,8 @@ Desventajas:
 
 
 \subsection{Tabla comparativa}
-En la Figura: \ref{tablaComparativa} se muestra las características de cada uno de los dispositivos que actualmente se utilizan en el mercado y además se incluye el trabajo que se esta realizando en esta memoria.
-Las características descritas en la tabla son necesarias para realizar un riego eficiente y se puede ver que los dispositivos incluyen algunas des estas, pero no están todas incluidas en uno solo y es lo que se espera lograr con este trabajo.
+En la Figura: \ref{tablaComparativa} se muestra las características de cada uno de los dispositivos que actualmente se utilizan en el mercado y además se incluye el trabajo que se está realizando en esta memoria.
+Las características descritas en la tabla son necesarias para realizar un riego eficiente y se puede ver que los dispositivos incluyen algunas de éstas, pero no están todas incluidas en uno solo y es lo que se espera lograr con éste trabajo.
 
 También se puede apreciar que ningún dispositivo toma en cuenta el tipo de suelo que es regando, una variable a considerar si se desea maximizar el uso del agua.
 
@@ -467,11 +467,11 @@ Un servidor de bases de datos se utiliza para almacenar, recuperar y administrar
 
 Así como sus funciones básicas, el software de servidores de bases de datos ofrece herramientas para facilitar y acelerar la administración de bases de datos. Algunas funciones son la exportación de datos, la configuración del acceso de los usuarios y el respaldo de datos.
 
-Se utilizará PostgreSQL como sistema de gestión de base de datos que es libre y tiene un complemento llamado PostGIS que añade soporte de objetos geográficos a la base de datos, esta característica será utilizada en conjunto con el GPS determinar el tipo de suelo en el que el dispositivo se encuentra.
+Se utilizará PostgreSQL como sistema de gestión de base de datos que es libre y tiene un complemento llamado PostGIS que añade soporte de objetos geográficos a la base de datos, esta característica será utilizada en conjunto con el GPS para determinar el tipo de suelo en el que el dispositivo se encuentra.
 PostGIS permite saber si un punto se encuentra dentro de un polígono con la función ``contains'', con esta función se pudo determinar dentro de que polígono (que corresponde al tipo de suelo) se encontraba la coordenada.
 
 \subsection{Servidor web}
-Básicamente, un servidor web sirve contenido estático a un navegador, carga un archivo y lo sirve a través de la red al navegador de un usuario. Este intercambio es mediado por el navegador y el servidor que hablan el uno con el otro mediante HTTP.
+Un servidor web sirve contenido estático a un navegador, carga un archivo y lo sirve a través de la red al navegador de un usuario. Este intercambio es mediado por el navegador y el servidor que hablan el uno con el otro mediante HTTP.
 
 Su función en este proyecto es almacenar todos los datos que envía el dispositivo. También se almacenará una aplicación web para que los usuarios puedan consultar información relacionada al riego.
 
@@ -518,7 +518,7 @@ Un relé de estado sólido es un dispositivo interruptor electrónico que conmuta e
 
 La principal ventaja de utilizar un relé de esta solido es que utilizan una menor tensión de trabajo, se activan desde 1,5V o menos lo que lo hace ideal para trabajar con la Raspberry Pi, que sus salidas de corrientes son de 3V - 5V.
 
-El relé es utilizado como interruptor para activar la válvula solenoide. No se usa la Raspberry Pi directamente ya que para activar la válvula se necesitan 12V.
+El relé será utilizado como interruptor para activar la válvula solenoide. No se usa la Raspberry Pi directamente ya que para activar la válvula se necesitan 12V.
 
 \begin{figure}[h]
 \centering
@@ -556,7 +556,7 @@ El GPS se utilizará para determinar la ubicación exacta en la que el dispositivo
 \end{figure}
 
 \subsection{Módem 3G}
-Módem 3G es un terminal de red inalámbrica basada en la tecnología CDMA2000. Es la mejor opción para los usuarios que necesitan acceder a Internet desde cualquier lugar en cualquier momento. El módem está conectado al micro computador mediante una interfaz USB.
+Módem 3G es un terminal de red inalámbrica basada en la tecnología CDMA2000. Es la mejor opción para los usuarios que necesitan acceder a Internet desde cualquier lugar en cualquier momento. El módem está conectado al microcomputador mediante una interfaz USB.
 
 El módem se utilizará para comunicar el dispositivo con el servidor donde se almacenarán los datos, consultar los datos meteorológicos y obtener el tipo de suelo.
 
@@ -651,7 +651,7 @@ Se puede programar los pines de maneras asombrosas para interactuar con el mundo
 %contenido cuarto capitulo
 \chapter{Desarrollo}
 
-En este capitulo se mostrarán los pasos necesarios para construir y hacer funcionar el dispositivo de riego. Primero veremos todo lo relacionado con el hardware juntado todas las partes, luego se trabajará en el desarrollo del modelo que corresponde a la parte de software del dispositivo. También se mostrará brevemente el desarrollo de la aplicación web y finalmente veremos las variables necesarias para determinar un helada y como se hará para notificar a los usuarios.
+En este capitulo se mostrarán los pasos necesarios para construir y hacer funcionar el dispositivo de riego. Primero veremos todo lo relacionado con el hardware juntado todas las partes, luego se trabajará en el desarrollo del modelo que corresponde a la parte de software del dispositivo. También se mostrará brevemente el desarrollo de la aplicación web.
 
 \section{Hardware}
 
@@ -695,8 +695,6 @@ void setup() {
 
 void loop() {
   humedad_sensor = analogRead(pinHumedad);
-  //Serial.print(humedad_sensor);
-  //Serial.println(" Humedad");
   tiempoActual = millis();
   //Cada segundo, calcula e imprime litros por hora
   if(tiempoActual >= (tiempoCiclo + 1000))
@@ -704,10 +702,6 @@ void loop() {
     tiempoCiclo = tiempoActual;              // Actualiza tiempoCiclo
     litrosHora = (frecuencia_sensor * 60 / 7.5); // (Pulse frequency x 60 min) / 7.5Q = L/hour 
     frecuencia_sensor = 0;                   // Resetea el contador
-    //Serial.print(litrosHora);            // Imprime litro por hora
-    //Serial.println(" L/hour");
-    //Serial.print(humedad_sensor);
-    //Serial.println(" Humedad");
     Serial.println(String(humedad_sensor) + " " + String(litrosHora));
   }
 }
@@ -881,7 +875,7 @@ Riego                  & \{ RiegoArcilloso, RiegoLimoso, RiegoArenoso, NoRegar\}
 
 A partir de estos datos se generaron reglas que determinan cuando realizar un riego.
 
-Para generalizar un poco las reglas del modelo a ha creado una tabla con las valores predefinidos como de ve en el Cuadro \ref{valoresReglas}:
+Para generalizar un poco las reglas del modelo se ha creado una tabla con valores predefinidos como se ve en el Cuadro \ref{valoresReglas}:
 
 \begin{table}[h]
 \centering
@@ -903,9 +897,9 @@ Incluso el dispositivo podría aprender ajustando sus valores automáticamente com
 Estas reglas se pueden mejorar y aumentar su complejidad a medida que se agreguen nuevas variables al modelo, utilizando eficientemente el agua sin afectar la calidad del riego, en el Cuadro \ref{reglasModelo} se pueden apreciar las reglas que se definieron para el modelo de riego.
 
 
-\begin{table}[]
+\begin{table}[h]
 \centering
-\caption{Reglas modelo, cuando y como regar}
+\caption{Reglas modelo, cuándo y cómo regar}
 \label{reglasModelo}
 \begin{tabular}{|lll|}
 \hline
@@ -922,7 +916,7 @@ Estas reglas se pueden mejorar y aumentar su complejidad a medida que se agregue
 \end{tabular}
 \end{table}
 
-Gráficamente estas reglas se pueden ver como árbol tal como lo muestra la Figura \ref{arbol}, además queda claro que nunca se dará el caso en el que pueda haber como resultado dos tipos de riego diferentes, esto se debe a que el espacio de soluciones existentes es finito. El código fuente del modelo de riego se puede encontrar en el Anexo 1.
+Gráficamente estas reglas se pueden ver como árbol tal como lo muestra la Figura \ref{arbol}, además queda claro que nunca se dará el caso en el que pueda haber como resultado dos tipos de riego diferentes, esto se debe a que el espacio de soluciones existentes es finito. El código fuente del modelo de riego se puede encontrar en el Anexo \ref{modeloRiego}.
 
 \begin{figure}[h]
 \centering
@@ -931,6 +925,8 @@ Gráficamente estas reglas se pueden ver como árbol tal como lo muestra la Figura
 \label{arbol}
 \end{figure}
 
+\pagebreak
+
 \subsection{Servicio web de suelo}
 
 Para determinar el tipo de suelo en el que el dispositivo se encuentra, se creo un servicio web que dado las coordenadas geográficas entregará la información requerida.
@@ -938,14 +934,14 @@ Para determinar el tipo de suelo en el que el dispositivo se encuentra, se creo 
 El servicio consta de dos partes:
 
 \begin{itemize}
-\item El dispositivo determina el tipo de suelo y lo almacena en la base de datos.
-\item El dispositivo consulta el tipo de suelo para ser utilizado en el modelo der riego.
+\item El dispositivo determina el tipo de suelo utilizando una base de datos espacial y lo almacena en la base de datos.
+\item El dispositivo consulta el tipo de suelo para ser utilizado en el modelo de riego.
 \end{itemize}
 
 \subsubsection{Determinando tipo suelo}
 Para determinar el tipo de suelo y guardarlo en la base de datos se utilizan dos programas, uno en Python y un servicio web en PHP.
 
-El programa en Python se ejecuta en la Raspberry Pi y utilizando el GPS obtiene las coordenadas geográficas, se puede ver en el Anexo X. Cuando se tienen las coordenadas se llama al servicio web para que este lo guarde.
+El programa en Python se ejecuta en la Raspberry Pi y utilizando el GPS obtiene las coordenadas geográficas, se puede ver en el Anexo \ref{gps.py}. Cuando se tienen las coordenadas se llama al servicio web para que este lo guarde.
 
 El servicio web solo recibe como parámetros las coordenadas, es éste quien con la información recibida determina el tipo de suelo y recién es cuando se guarda la información en la base de datos.
 
@@ -1009,9 +1005,12 @@ echo json_encode($arr);
 
 \subsubsection{Envío de datos}
 
+
 El envío de datos se hace en la Raspberry Pi la que a su vez llama a un servicio web que almacena los datos en la base de datos.
 
-Los datos son enviados cada 30 segundos, como lo muestra en el Listing \ref{enviodedatos}:
+La base de datos tiene tiene dos tablas que almacenan la información que es enviada desde la Raspberry Pi. Una tabla de registros con columnas de ``humedad'', ``caudal'' y ``fecha''. La segunda tabla que es donde se almacena el tipo de suelo tiene las columnas ``latitud'', ``longitud'' y ``tipo\_suelo''.
+
+Los datos son enviados cada 1 segundo, como lo muestra en el Listing \ref{enviodedatos}:
 
 \lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
 \begin{lstlisting}[frame=single,caption={Envío de datos desde la Raspberry Pi hacia el servidor},label=enviodedatos]
@@ -1027,8 +1026,10 @@ while True:
 	req=urllib2.Request(path, mydata)
 	req.add_header("Content-type", "application/x-www-form-urlencoded")
 	page=urllib2.urlopen(req).read()
-	time.sleep(30)
+	time.sleep(1)
 \end{lstlisting}
+
+Al utilizar este código se detectó que no trabaja correctamente ya que se ejecutaban dos procesos distintos a las vez y se formaba un cuello de botella. Para solucionar esto se utilizó una cola sincronizada que trabaja en distintos hilos de ejecución, entonces se tiene un hilo de ejecución para el envío de datos al servidor y otro hilo para la consulta de datos desde la Raspberry Pi hacia el Arduino. El código fuente está en el Anexo \ref{servicio.py}.
 
 La humedad y cantidad de agua utilizada se leen desde el Arduino y son pasadas al servicio web ``insertData.php'' que basicamente inserta la información recibida en la base de datos como se ve en la Listing \ref{insertPHP}:
 
@@ -1049,6 +1050,8 @@ Y el resultado de todo este proceso se ve en la Figura \ref{registros}. La prime
 \caption{Registros almacenados en la base de datos}
 \label{registros}
 \end{figure}
+
+\pagebreak
 
 \subsubsection{Consulta de datos}
 
@@ -1082,14 +1085,14 @@ La Figura \ref{resultadoSueloGrafico1} muestra la humedad registrada por el sens
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=13cm]{graficoHumedad.png}
+\includegraphics[width=17cm]{graficoHumedad.png}
 \caption{Humedad del suelo en tiempo real}
 \label{resultadoSueloGrafico1}
 \end{figure}
 
 \pagebreak
 
-La Figura \ref{resultadoSueloGrafico2} muestra el consumo de agua durante los últimos seis meses como se muestra en la boleta de consumo de agua potable que llega nuestro hogar.
+La Figura \ref{resultadoSueloGrafico2} muestra el consumo de agua durante los últimos seis meses como habitualmente se muestra en la boleta de consumo de agua potable que llega al hogar.
 
 \begin{figure}[h]
 \centering
@@ -1101,7 +1104,7 @@ La Figura \ref{resultadoSueloGrafico2} muestra el consumo de agua durante los úl
 \chapter{Pruebas}
 
 El prototipo no se pudo probar directamente funcionando en un jardín, pero si se probaron los componentes que entregan la mayor parte de las funcionalidades y que algunas son las entradas para el modelo de riego, por lo que su correcto funcionamiento es fundamental.
-Si el dispositivo utiliza demasiada o muy poca agua en el riego significa que hay que ajustar el modelo que determina cuando y como regar.
+Si el dispositivo utiliza demasiada o muy poca agua en el riego significa que hay que ajustar el modelo que determina cuándo y cómo regar.
 
 \section{Sensor de caudal}
 
@@ -1302,7 +1305,7 @@ Esta idea tiene un gran potencial y sin duda quedan muchas cosas por mejorar.
 
 En el modelo de riego se recomienda trabajar junto a un experto en el área de riego, además para hacer el dispositivo más inteligente sería ideal que se aplicara una técnica de inteligencia artificial y que fuera aprendiendo variables de humedad, probabilidad de lluvia y entre otras que se debieran utilizar. El diseño del dispositivo se hizo de tal manera que se pueda ingresar un nuevo modelo de riego y que este funcione correctamente, por lo que se puede profundizar mucho más el tema y mejorar el funcionamiento del dispositivo en general.
 
-Este trabajo de enfoco principalmente en el diseño del prototipo del dispositivo y el modelo de riego, el desarrollo de la aplicación para el usuario no fue la mejor, solamente se muestran dos gráficos que les entrega información, se le podría agregar más funciones para que el usuario interactué con el dispositivo.
+Este trabajo se enfocó principalmente en el diseño del prototipo del dispositivo y el modelo de riego, el desarrollo de la aplicación para el usuario no fue la mejor, solamente se muestran dos gráficos que les entrega información, se le podría agregar más funciones para que el usuario interactúe con el dispositivo.
 
 Hay que mejorar el diseño de la base de datos, para que solo se guarde información que le sirva a la aplicación y no guardar registros que no son significativos.
 
@@ -1313,7 +1316,8 @@ Finalmente falta realizar pruebas de campo que permitan validar los reales benef
 %% ambiente glosario
 \begin{glosario}
   \item[QGis:]  Sistema de Información Geográfica (SIG) de código libre para plataformas GNU/Linux, Unix, Mac OS, Microsoft Windows y Android.
-  \item[GPS:] es un sistema que permite determinar en todo el mundo la posición de un objeto (una persona, un vehículo).
+  \item[Microcomputadora: ] Es una computadora pequeña, con un microprocesador como su Unidad Central de Procesamiento (CPU).
+  \item[Base de datos espacial: ] Es un sistema administrador de bases de datos que maneja datos existentes en un espacio o datos espaciales.
 \end{glosario}
 
 %% genera las referencias
@@ -1364,7 +1368,7 @@ Finalmente falta realizar pruebas de campo que permitan validar los reales benef
 
 %% contenido del segundo anexo
 \appendix{Código fuente}
-\section{gps.py}
+\section{gps.py}\label{gps.py}
 \lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
 \begin{lstlisting}[frame=single,caption={gps.py},label=gpspy]
 #! /usr/bin/python
@@ -1423,7 +1427,7 @@ if __name__ == '__main__':
 
 \pagebreak
 
-\section{riego.py}
+\section{riego.py}\label{modeloRiego}
 \lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
 \begin{lstlisting}[frame=single,caption={riego.py},label=riegopy]
 #! /usr/bin/python
@@ -1509,7 +1513,7 @@ def lluvia(lat, lon):
 
 \pagebreak
 
-\section{servicio.py}
+\section{servicio.py}\label{servicio.py}
 \lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
 \begin{lstlisting}[frame=single,caption={servicio.py},label=arduinopy]
 #! /usr/bin/python

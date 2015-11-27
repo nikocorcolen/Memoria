@@ -69,26 +69,26 @@
 \contentsline {section}{\numberline {3.2}Software}{45}
 \contentsline {subsection}{\numberline {3.2.1}Informaci\'on meteorol\'ogica}{45}
 \contentsline {subsection}{\numberline {3.2.2}Modelo de riego}{46}
-\contentsline {subsection}{\numberline {3.2.3}Servicio web de suelo}{48}
+\contentsline {subsection}{\numberline {3.2.3}Servicio web de suelo}{49}
 \contentsline {subsubsection}{Determinando tipo suelo}{49}
 \contentsline {subsubsection}{Consultando tipo suelo}{50}
 \contentsline {subsection}{\numberline {3.2.4}Env\IeC {\'\i }o y consulta de datos, humedad y agua utilizada}{51}
 \contentsline {subsubsection}{Env\IeC {\'\i }o de datos}{51}
-\contentsline {subsubsection}{Consulta de datos}{52}
-\contentsline {subsection}{\numberline {3.2.5}Aplicaci\'on web}{53}
-\contentsline {chapter}{\numberline {4}Pruebas}{55}
-\contentsline {section}{\numberline {4.1}Sensor de caudal}{55}
-\contentsline {section}{\numberline {4.2}Sensor de humedad}{56}
-\contentsline {section}{\numberline {4.3}Detecci\'on de suelo}{57}
-\contentsline {section}{\numberline {4.4}Pron\'ostico del clima}{59}
-\contentsline {chapter}{\numberline {5}Conclusi\'on}{61}
-\contentsline {chapter}{\numberline {6}Trabajo futuro}{63}
-\contentsline {chapter}{Glosario}{64}
-\contentsline {chapter}{Bibliograf\'{\i }a}{65}
+\contentsline {subsubsection}{Consulta de datos}{53}
+\contentsline {subsection}{\numberline {3.2.5}Aplicaci\'on web}{54}
+\contentsline {chapter}{\numberline {4}Pruebas}{56}
+\contentsline {section}{\numberline {4.1}Sensor de caudal}{56}
+\contentsline {section}{\numberline {4.2}Sensor de humedad}{57}
+\contentsline {section}{\numberline {4.3}Detecci\'on de suelo}{58}
+\contentsline {section}{\numberline {4.4}Pron\'ostico del clima}{60}
+\contentsline {chapter}{\numberline {5}Conclusi\'on}{62}
+\contentsline {chapter}{\numberline {6}Trabajo futuro}{64}
+\contentsline {chapter}{Glosario}{65}
+\contentsline {chapter}{Bibliograf\'{\i }a}{66}
 \contentsline {chapter}{Anexos}{}
-\contentsline {chapter}{A:\hspace {1em}Trabajo realizado en FIA}{68}
-\contentsline {chapter}{B:\hspace {1em}C\'odigo fuente}{73}
-\contentsline {section}{\numberline {B.1}gps.py}{73}
-\contentsline {section}{\numberline {B.2}riego.py}{75}
-\contentsline {section}{\numberline {B.3}clima.py}{77}
-\contentsline {section}{\numberline {B.4}servicio.py}{78}
+\contentsline {chapter}{A:\hspace {1em}Trabajo realizado en FIA}{69}
+\contentsline {chapter}{B:\hspace {1em}C\'odigo fuente}{74}
+\contentsline {section}{\numberline {B.1}gps.py}{74}
+\contentsline {section}{\numberline {B.2}riego.py}{76}
+\contentsline {section}{\numberline {B.3}clima.py}{78}
+\contentsline {section}{\numberline {B.4}servicio.py}{79}
