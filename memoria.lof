@@ -23,10 +23,10 @@
 \contentsline {figure}{\numberline {2.19}{\ignorespaces Pines GPIO}}{37}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Conexi\'on sensores en Arduino}}{40}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Arduino en Raspberry}}{41}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Comunicaci\'on Raspberry Arduino}}{42}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Recibo de datos desde Arduino en Raspberry}}{43}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces GPS en Raspberry, /dev/ttyUSB1}}{44}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arduino en Raspberry Pi}}{41}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Comunicaci\'on Raspberry Pi Arduino}}{42}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Recibo de datos desde Arduino en Raspberry Pi}}{43}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces GPS en Raspberry Pi, /dev/ttyUSB1}}{44}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Datos GPS}}{45}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Respuesta del servicio wunderground al hacer una consulta}}{46}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces \'Arbol reglas modelo de riego}}{49}
@@ -35,9 +35,18 @@
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Humedad del suelo en tiempo real}}{53}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Consumo de agua mensual}}{54}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Mapa de suelo}}{58}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Resultado consulta Suelo 1}}{58}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Resultado consulta Suelo 2}}{58}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Resultado consulta Suelo 3}}{59}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Clima Punta Arenas wunderground}}{59}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Clima Punta Arenas servicio web}}{60}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Clima Corcol\'en wunderground}}{60}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Clima Corcol\'en servicio web}}{60}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Exterior tr\IeC {\'\i }ptico realizado en FIA}}{61}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Interior tr\IeC {\'\i }ptico realizado en FIA}}{62}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Exterior tr\IeC {\'\i }ptico realizado en FIA}}{68}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Interior tr\IeC {\'\i }ptico realizado en FIA}}{69}
 \addvspace {10\p@ }

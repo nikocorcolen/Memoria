@@ -54,7 +54,7 @@ Se les ofrecerá a los usuarios monitorear y controlar el riego, entregándoles in
 \subsection{Contexto del proyecto}
 El proyecto consiste en desarrollar un sistema de riego autónomo e inteligente ideal para el uso en áreas verdes que utilizan sistemas de riego por ejemplo, por aspersión. Lo que se busca es reducir la intervención humana, aumentar la eficiencia en el uso del agua, ahorrar dinero y entregar datos estadísticos a los usuarios.
 
-El sistema básicamente cociste en sensores de humedad del suelo, un micro computador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el césped en buen estado, le enviará una señal a la Raspberry la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
+El sistema básicamente cociste en sensores de humedad del suelo, un micro computador y válvulas. Cuando un sensor detecte que la humedad del suelo no es la adecuada para mantener el césped en buen estado, le enviará una señal a la Raspberry Pi la que a su vez analiza datos meteorológicos y decide si es necesario o no hacer un riego. Con todo esto, se asegura que el jardín se encuentre en buen estado utilizando la menor cantidad de agua posible.
 
 Para el proyecto se utiliza un micro computador el cual se programa en Python, y es el encargado de recibir los datos de entradas, que en este caso son los datos meteorológicos y los del sensor de humedad. Una vez que los datos son recibidos el micro computador los analiza y si se requiere un riego envía una señal la válvula solenoide que permitirá el paso del agua. También se utilizará un sensor de flujo para medir la cantidad de agua que se esta utilizando y así entregar reportes al usuario.
 
@@ -443,7 +443,7 @@ Raspberry Pi~\cite{raspberry} es un microcomputador del tamaño de una tarjeta de
 
 Raspberry Pi tiene la capacidad de interactuar con el mundo exterior, y se ha utilizado en una amplia gama de proyectos digitales, máquinas de música y detectores en las estaciones meteorológicas.
 
-La función de la Raspberry es obtener toda la información de los sensores a través del arduino, obtener datos meteorológicos, obtener los tipos de suelo y utilizando toda esta información determinar cuándo se debe realizar un riego, activando un relé. También envía la información de humedad de suelo y agua utilizada a un servidor.
+La función de la Raspberry Pi es obtener toda la información de los sensores a través del arduino, obtener datos meteorológicos, obtener los tipos de suelo y utilizando toda esta información determinar cuándo se debe realizar un riego, activando un relé. También envía la información de humedad de suelo y agua utilizada a un servidor.
 
 \begin{figure}[h]
 \centering
@@ -470,6 +470,7 @@ Un servidor de bases de datos se utiliza para almacenar, recuperar y administrar
 Así como sus funciones básicas, el software de servidores de bases de datos ofrece herramientas para facilitar y acelerar la administración de bases de datos. Algunas funciones son la exportación de datos, la configuración del acceso de los usuarios y el respaldo de datos.
 
 Se utilizará PostgreSQL como sistema de gestión de base de datos que es libre y tiene un complemento llamado PostGIS que añade soporte de objetos geográficos a la base de datos, esta característica será utilizada en conjunto con el GPS determinar el tipo de suelo en el que el dispositivo se encuentra.
+PostGIS permite saber si un punto se encuentra dentro de un polígono con la función ``contains'', con esta función se pudo determinar dentro de que polígono (que corresponde al tipo de suelo) se encontraba la coordenada.
 
 \subsection{Servidor web}
 Básicamente, un servidor web sirve contenido estático a un navegador, carga un archivo y lo sirve a través de la red al navegador de un usuario. Este intercambio es mediado por el navegador y el servidor que hablan el uno con el otro mediante HTTP.
@@ -517,9 +518,9 @@ Será utilizado para medir la cantidad de agua utilizada en riego para que los us
 
 Un relé de estado sólido es un dispositivo interruptor electrónico que conmuta el paso de la electricidad cuando una pequeña corriente es aplicada en sus terminales de control. Los relé de estado solido consisten en un sensor que responde a una entrada apropiada (señal de control), un interruptor electrónico de estado sólido que conmuta el circuito de carga, y un mecanismo de acoplamiento a partir de la señal de control que activa este interruptor sin partes mecánicas. El relé puede estar diseñado para conmutar corriente alterna o continua. Hace la misma función que el relé electromecánico, pero sin partes móviles.
 
-La principal ventaja de utilizar un relé de esta solido es que utilizan una menor tensión de trabajo, se activan desde 1,5V o menos lo que lo hace ideal para trabajar con la Raspberry, que sus salidas de corrientes son de 3V - 5V.
+La principal ventaja de utilizar un relé de esta solido es que utilizan una menor tensión de trabajo, se activan desde 1,5V o menos lo que lo hace ideal para trabajar con la Raspberry Pi, que sus salidas de corrientes son de 3V - 5V.
 
-El relé es utilizado como interruptor para activar la válvula solenoide. No se usa la Raspberry directamente ya que para activar la válvula se necesitan 12V.
+El relé es utilizado como interruptor para activar la válvula solenoide. No se usa la Raspberry Pi directamente ya que para activar la válvula se necesitan 12V.
 
 \begin{figure}[h]
 \centering
@@ -573,7 +574,7 @@ El módem se utilizará para comunicar el dispositivo con el servidor donde se alm
 \subsection{Cargador}
 Un cargador es un dispositivo utilizado para suministrar corriente eléctrica a un dispositivo, que en este caso se tratará de la Raspberry Pi. El cargador debe funcionar a 5V y entregar una corriente de 700mA.
 
-Será utilizado para entregarle energía a la Raspberry para que pueda funcionar correctamente en conjunto con los sensores y válvulas.
+Será utilizado para entregarle energía a la Raspberry Pi para que pueda funcionar correctamente en conjunto con los sensores y válvulas.
 
 \begin{figure}[h]
 \centering
@@ -636,7 +637,7 @@ Una de las características de gran alcance de la Raspberry Pi es la fila de GPIO
 \label{gpio}
 \end{figure}
 
-Estos pines son una interfaz física entre el la Raspberry y el mundo exterior. Al nivel más simple, se puede pensar en ellos como interruptores que puede activar o desactivar ya sean las entradas como las salidas. Diecisiete de los veinte y seis pines son GPIO; los otros son pines de alimentación o de tierra como se ve en la Figura \ref{giop1}:
+Estos pines son una interfaz física entre el la Raspberry Pi y el mundo exterior. Al nivel más simple, se puede pensar en ellos como interruptores que puede activar o desactivar ya sean las entradas como las salidas. Diecisiete de los veinte y seis pines son GPIO; los otros son pines de alimentación o de tierra como se ve en la Figura \ref{giop1}:
 
 \begin{figure}[h]
 \centering
@@ -647,7 +648,7 @@ Estos pines son una interfaz física entre el la Raspberry y el mundo exterior. A
 
 ¿Qué se puede hacer con esto?\\
 
-Se puede programar los pines de maneras asombrosas para interactuar con el mundo real. Las entradas no tienen que venir de un interruptor físico; podría ser la entrada de un sensor o una señal de otro ordenador o dispositivo, por ejemplo. La salida también puede hacer cualquier cosa, desde encender un LED con el envío de una señal o de datos a otro dispositivo. Si la Raspberry está en una red, puede controlar los dispositivos que están conectados a él desde cualquier lugar. Conectividad y control de los dispositivos físicos a través de Internet es algo muy poderoso y emocionante, y la Raspberry es ideal para esto.
+Se puede programar los pines de maneras asombrosas para interactuar con el mundo real. Las entradas no tienen que venir de un interruptor físico; podría ser la entrada de un sensor o una señal de otro ordenador o dispositivo, por ejemplo. La salida también puede hacer cualquier cosa, desde encender un LED con el envío de una señal o de datos a otro dispositivo. Si la Raspberry Pi está en una red, puede controlar los dispositivos que están conectados a él desde cualquier lugar. Conectividad y control de los dispositivos físicos a través de Internet es algo muy poderoso y emocionante, y la Raspberry Pi es ideal para esto.
 
 %contenido cuarto capitulo
 \chapter{Desarrollo}
@@ -656,9 +657,9 @@ En este capitulo se mostrarán los pasos necesarios para construir y hacer funcio
 
 \section{Hardware}
 
-Raspberry es una plataforma muy útil para el desarrollo de aplicaciones domóticas y de control. Sin embargo. Raspberry tiene una limitación en cuanto a entradas/salidas disponibles y no puede trabajar con modulación por ancho de pulsos.
+Raspberry Pi es una plataforma muy útil para el desarrollo de aplicaciones domóticas y de control. Sin embargo. Raspberry Pi tiene una limitación en cuanto a entradas/salidas disponibles y no puede trabajar con modulación por ancho de pulsos.
 
-Una solución a este problema puede ser utilizar un Beaglebone black o se puede combinar el Raspberry con Arduino y dejar todo el control de hardware al Arduino y solo utilizar la Raspberry como controlador. En esta sección se mostrará como conectar la Raspberry con un Arduino a través de USB a través de comunicación serie.
+Una solución a este problema puede ser utilizar un Beaglebone black o se puede combinar el Raspberry Pi con Arduino y dejar todo el control de hardware al Arduino y solo utilizar la Raspberry Pi como controlador. En esta sección se mostrará como conectar la Raspberry Pi con un Arduino a través de USB a través de comunicación serie.
 
 \subsection{Arduino}
 
@@ -714,7 +715,7 @@ void loop() {
 }
 \end{lstlisting}
 
-Una vez escrito el código en el IDE, se verifica y se sube al Arduino. Es importante destacar que para enviar información a las Raspberry se utiliza la linea de código Serial.println(``mensaje'').
+Una vez escrito el código en el IDE, se verifica y se sube al Arduino. Es importante destacar que para enviar información a las Raspberry Pi se utiliza la linea de código Serial.println(``mensaje'').
 
 \subsubsection{Conexión de sensores}
 
@@ -734,13 +735,13 @@ GND: Alimentación negativa del circuito.
 AO: Salida analógica del sensor o válvula.
 
 
-\subsection{Raspberry}
+\subsection{Raspberry Pi}
 
-Para configurar la Raspberry lo primero que hay que hacer es instalar las librerías para el control del puerto serie desde Python. Para hacer esto ejecutamos el siguiente comando desde la consola en nuestra Raspberry:
+Para configurar la Raspberry Pi lo primero que hay que hacer es instalar las librerías para el control del puerto serie desde Python. Para hacer esto ejecutamos el siguiente comando desde la consola en nuestra Raspberry Pi:
 
 \textit{sudo apt-get install python-serial}
 
-Con esto instalado ya esta lista la Raspberry para comunicarse al Arduino utilizando el puerto serie. Lo que hay que determinar es que puerto utiliza el Arduino cuando esta conectado al Raspberry. Para saber el puerto primero se conecta el Arduino a la Raspberry  por USB y luego se ejecuta el siguiente comando:
+Con esto instalado ya esta lista la Raspberry Pi para comunicarse al Arduino utilizando el puerto serie. Lo que hay que determinar es que puerto utiliza el Arduino cuando esta conectado al Raspberry Pi. Para saber el puerto primero se conecta el Arduino a la Raspberry Pi por USB y luego se ejecuta el siguiente comando:
 
 \textit{ls /dev/tty*}
 
@@ -749,48 +750,48 @@ Una vez ejecutado el comando se verá un listado de diferentes dispositivos. El A
 \begin{figure}[h]
 \centering
 \includegraphics[width=14cm]{USBArduino.png}
-\caption{Arduino en Raspberry}
+\caption{Arduino en Raspberry Pi}
 \label{resultado}
 \end{figure}
 
 \newpage
 
-Una vez que el Arduino esta identificado ya podemos comenzar a comunicarnos mediante un programa en Python. En este caso se mostrará un ejemplo de como recibir la información en la Raspberry enviada desde el Arduino, en la Figura \ref{raspardu} se puede ver el código utilizado.
+Una vez que el Arduino esta identificado ya podemos comenzar a comunicarnos mediante un programa en Python. En este caso se mostrará un ejemplo de como recibir la información en la Raspberry Pi enviada desde el Arduino, en la Figura \ref{raspardu} se puede ver el código utilizado.
 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=14cm]{RaspberryArduino.png}
-\caption{Comunicación Raspberry Arduino}
+\caption{Comunicación Raspberry Pi Arduino}
 \label{raspardu}
 \end{figure}
 
 \pagebreak
 
-Con este programa en Python ya se puede recibir datos desde el Arduino en la Raspberry, para probarlo se ejecuta el programa con la siguiente linea de código \textit{sudo python nombre\_programa.py}. Los resultados obtenido en la Figura \ref{raciboDatos}
+Con este programa en Python ya se puede recibir datos desde el Arduino en la Raspberry Pi, para probarlo se ejecuta el programa con la siguiente linea de código \textit{sudo python nombre\_programa.py}. Los resultados obtenido en la Figura \ref{raciboDatos}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=14cm]{ReciboDatos.png}
-\caption{Recibo de datos desde Arduino en Raspberry}
+\caption{Recibo de datos desde Arduino en Raspberry Pi}
 \label{raciboDatos}
 \end{figure}
 
 \subsection{GPS}
 El GPS es una parte importante del dispositivo, ya que determina la posición en la que se aplicará el riego, gracias a esto se puede determinar el tipo de suelo en el que el dispositivo se encuentra y realizar un riego especial a cada lugar.
 
-El GPS se conectará a la Raspberry ya que utiliza conexión USB.
+El GPS se conectará a la Raspberry Pi ya que utiliza conexión USB.
 
-Pasos para el funcionamiento del GPS en la Raspberry:
+Pasos para el funcionamiento del GPS en la Raspberry Pi:
 
 \begin{itemize}
-\item Conectar el GPS a un puerto USB de la Raspberry.
-\item En la terminal de Raspberry ejecutar \textit{ls /dev/tty*} como se ve en la Figura \ref{lsgps}:
+\item Conectar el GPS a un puerto USB de la Raspberry Pi.
+\item En la terminal de Raspberry Pi ejecutar \textit{ls /dev/tty*} como se ve en la Figura \ref{lsgps}:
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=14cm]{lsgps.png}
-\caption{GPS en Raspberry, /dev/ttyUSB1}
+\caption{GPS en Raspberry Pi, /dev/ttyUSB1}
 \label{lsgps}
 \end{figure}
 
@@ -891,7 +892,7 @@ Para generalizar un poco las reglas del modelo a ha creado una tabla con las val
 \begin{tabular}{|l|}
 \hline
 \textbf{Valores}                  \\ \hline
-Humedad = H = 512                 \\
+Humedad = H = 700                 \\
 Probabilidad de lluvia = P = 70\% \\ \hline
 \end{tabular}
 \end{table}
@@ -946,7 +947,7 @@ El servicio consta de dos partes:
 \subsubsection{Determinando tipo suelo}
 Para determinar el tipo de suelo y guardarlo en la base de datos se utilizan dos programas, uno en Python y un servicio web en PHP.
 
-El programa en Python se ejecuta en la Raspberry y utilizando el GPS obtiene las coordenadas geográficas, se puede ver en el Anexo X. Cuando se tienen las coordenadas se llama al servicio web para que este lo guarde.
+El programa en Python se ejecuta en la Raspberry Pi y utilizando el GPS obtiene las coordenadas geográficas, se puede ver en el Anexo X. Cuando se tienen las coordenadas se llama al servicio web para que este lo guarde.
 
 El servicio web solo recibe como parámetros las coordenadas, es éste quien con la información recibida determina el tipo de suelo y recién es cuando se guarda la información en la base de datos.
 
@@ -1010,7 +1011,7 @@ echo json_encode($arr);
 
 \subsubsection{Envío de datos}
 
-El envío de datos se hace en la Raspberry la que a su vez llama a un servicio web que almacena los datos en la base de datos.
+El envío de datos se hace en la Raspberry Pi la que a su vez llama a un servicio web que almacena los datos en la base de datos.
 
 Los datos son enviados cada 30 segundos, como lo muestra en el Listing \ref{enviodedatos}:
 
@@ -1099,14 +1100,196 @@ La Figura \ref{resultadoSueloGrafico2} muestra el consumo de agua durante los úl
 \label{resultadoSueloGrafico2}
 \end{figure}
 
+\chapter{Pruebas}
+
+El prototipo no se puedo probar directamente funcionando en un jardín, pero si se probaron los componentes que entregan la mayor parte de las funcionalidades y que algunas son las entradas para el modelo de riego, por lo que su correcto funcionamiento es vital para el correcto funcionamiento.
+Si el dispositivo utiliza demasiada o muy poca agua en el riego significa que hay que ajustar el modelo que determina cuando y como regar.
+
+\section{Sensor de caudal}
+
+Las pruebas que se realizaron con el sensor de caudal se hicieron utilizando distintos caudales y cantidades de agua.
+
+Los pasos utilizados para las pruebas fueron los siguientes:
+
+\begin{itemize}
+\item Se lleno un recipiente de agua.
+\item El caudal recibido desde el sensor fue guardado en la base de datos junto con la hora.
+\item Se calculó el promedio del caudal almacenado en la base de datos.
+\item Se calculó el tiempo en minutos desde que comenzó hasta que terminó el envío de datos.
+\item Finalmente utilizando regla de tres simple de calculó la cantidad de agua que paso a través del sensor.
+
+\item AguaUtilizada = $\frac{TiempoEnMinutos \times CaudalPromedio}{60}$
+\end{itemize}
+
+Prueba de 1.5 Litros de agua:
+\begin{itemize}
+\item CaudalPromedio = 347
+\item TiempoEnMinutos = 0.25
+\item AguaUtilizada = $\frac{0.25 \times 347}{60}$ = 1.45 Litros
+\end{itemize}
+
+Prueba de 1.5 Litros de agua, caudal diferente:
+\begin{itemize}
+\item CaudalPromedio = 87
+\item TiempoEnMinutos = 1
+\item AguaUtilizada = $\frac{1 \times 87}{60}$ = 1.45 Litros
+\end{itemize}
+
+Prueba de 10 Litros de agua:
+\begin{itemize}
+\item CaudalPromedio = 646
+\item TiempoEnMinutos = 0.93
+\item AguaUtilizada = $\frac{0.93 \times 646}{60}$ = 10.04 Litros
+\end{itemize}
+
+Prueba de 10 Litros de agua, caudal diferente:
+\begin{itemize}
+\item CaudalPromedio = 320
+\item TiempoEnMinutos = 1.87
+\item AguaUtilizada = $\frac{1.87 \times 320}{60}$ = 10.01 Litros
+\end{itemize}
+
+Rango de error del sensor +/- 3\%\footnote{http://www.olimex.cl/pdf/Sensors/water\%20flow\%20sensor\%20datasheet.pdf}.
+
+\section{Sensor de humedad}
+
+Las pruebas que se realizaron con el sensor de humedad se hicieron utilizando dos macetas con tierra, una tenia tierra totalmente seca, otra tierra totalmente mojada.
+Según indica la documentación del sensor de humedad los rangos de humedad son los siguientes\footnote{https://www.dfrobot.com/wiki/index.php?title=Moisture\_Sensor\_(SKU:SEN0114)}:
+
+\begin{itemize}
+\item 0 - 300 : in water (mojada)
+\item 300 - 700 : humid soil (húmeda)
+\item 700 - 1024 : dry soil (seca)
+\end{itemize}
+
+Los pasos utilizados para las pruebas fueron los siguientes:
+
+\begin{itemize}
+\item Se llenó una maceta con tierra seca.
+\item Se llenó una maceta con tierra mojada.
+\item Se midió la humedad de la maceta con tierra.
+\item La humedad recibida desde el sensor fue guardada en la base de datos junto con la hora.
+\end{itemize}
+
+Prueba tierra seca:
+\begin{itemize}
+\item Humedad de Suelo = 1023
+\end{itemize}
+
+Prueba tierra mojada:
+\begin{itemize}
+\item Humedad de Suelo = 31
+\end{itemize}
+
+Rango de error del sensor +/- 5\%\footnote{https://www.dfrobot.com/wiki/index.php?title=Moisture\_Sensor\_(SKU:SEN0114)}.
+
+\section{Detección de suelo}
+
+Para las pruebas de detección de suelo se tomaron 3 coordenadas al azar de la región del Maule. Con estas coordenadas se consulto el tipo de suelo utilizando el servicio web creado para este propósito y se comparo contra el resultado obtenido al utilizar la herramienta QGis que permite visualizar directamente los datos.
+
+En la Figura \ref{mapasuelo} se muestran los puntos en los que se consultó por el tipo de suelo, además el mapa muestra el tipo de suelo en los que se encuentran.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm]{mapasuelo.png}
+\caption{Mapa de suelo}
+\label{mapasuelo}
+\end{figure}
+
+\pagebreak
+
+Coordenada -71.419,-35.158:
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm]{suelo1.png}
+\caption{Resultado consulta Suelo 1}
+\label{mapasuelo1}
+\end{figure}
+
+Coordenada -72.141,-35.287:
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm]{suelo2.png}
+\caption{Resultado consulta Suelo 2}
+\label{mapasuelo2}
+\end{figure}
+
+\pagebreak
+
+Coordenada -71.232,-34.965:
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm]{suelo3.png}
+\caption{Resultado consulta Suelo 3}
+\label{mapasuelo3}
+\end{figure}
+
+Como se puede apreciar, cada coordenada que fue consultada al servicio web coincide con la información que se tiene en QGis.
+
+Como solo se trabaja con tres tipos de suelos, la conversión se hace utilizando una clasificación de suelo\footnote{http://cals.arizona.edu/oals/soils/fao.html}.
+
+\section{Pronostico del clima}
+Para verificar que la información obtenida desde el servicio web que entrega la probabilidad de lluvia se consulto el clima directamente desde la interfaz de wunderground y luego se realizó una consulta al mismo lugar, los resultados fueron los siguientes:
+\\
+\\
+Prueba 1:
+\begin{itemize}
+\item Lugar: Punta Arenas.
+\item Resultado wunderground:
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=7cm]{puntaarenas1.png}
+	\caption{Clima Punta Arenas wunderground}
+	\label{puntaarenas1}
+	\end{figure}
+
+\pagebreak
+
+\item Resultado servicio web:
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=13cm]{puntaarenas.png}
+	\caption{Clima Punta Arenas servicio web}
+	\label{puntaarenas1}
+	\end{figure}
+\end{itemize}
+
+
+Prueba 2:
+\begin{itemize}
+\item Lugar: Corcolén.
+\item Resultado wunderground:
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=7cm]{corcolen.png}
+	\caption{Clima Corcolén wunderground}
+	\label{puntaarenas1}
+	\end{figure}
+
+\item Resultado servicio web:
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=13cm]{corcolen1.png}
+	\caption{Clima Corcolén servicio web}
+	\label{puntaarenas1}
+	\end{figure}
+\end{itemize}
 
 \chapter{Conclusión}
 
 Se puede concluir que el desarrollo de este dispositivo puede generar un beneficio económico para las personas y a la vez ayuda a combatir el cambio climático que hoy nos afecta, al ser un dispositivo de bajo costo puede ser adquirido masivamente.
 
+El dispositivo no fue probado funcionando directamente en un jardín, por lo que no se puede afirmar que realmente se esta utilizando menos al momento de realizar un riego, pero como se esta consiente de la probabilidad de lluvia al momento de regar, es aquí donde se esta haciendo un ahorro de agua y esto se hace automática e inteligentemente.
+
+Tampoco se puede afirmar que el detectar un tipo de suelo y aplicarle un determinado riego, reduzca la cantidad de agua utilizada sin afectar la calidad del césped. Para esto se necesita hacer pruebas de campo que permitan asegurar que el tipo de suelo afecta en la cantidad de agua utilizada.
+
+El hardware que se utilizo se podría reemplazar, disminuyendo la cantidad de componentes que se utilizaron y mejorando la eficiencia. Existe un microcomputador llamado ``beaglebone black''\footnote{http://beagleboard.org/BLACK} que podría reemplazar a la Raspberry Pi y el Arduino. En cuanto a los sensores no puedo afirmar nada acerca de su funcionamiento, ya que no fueron probados en condiciones de uso reales, pero durante las pruebas tuvieron un correcto funcionamiento.
+
 Los dispositivos que se venden en la actualidad tienen un costo muy elevado o requieren de mucha intervención de las personas, por lo que muchas veces se dejan de utilizar o no se utiliza correctamente.
 
 Este dispositivo se puede ampliar al uso agrícola, uno de los grandes problemas identificados por el Gobierno es la falta de tecnología aplicada en la agricultura. Es dispositivo como se encuentra en este momento puede ser fácilmente utilizado para este fin, sin duda que se le pueden agregar más sensores y mejorar el modelo para cada tipo de cultivo.
+
+En el desarrollo del modelo de riego que determina cuando y como regar se debería trabajar con un especialista en el área, Smart Irrigation es muy flexible en este sentido y es uno de los puntos a mejorar.
 
 Este trabajo aparte de la investigación, escritura de este documento y desarrollo de un prototipo del dispositivo de riego incluyo también trabajo externo en un concurso de emprendimiento llevado a cabo por Fundación para la Innovación Agraria, el concurso llamado ``Proyectos de Emprendimiento Innovador: Jóvenes Innovadores''. En este concurso el dispositivo uno de los finalistas los cuales tuvieron una capacitación en Santiago durante dos semanas con profesores de la Universidad de Oxford, en esas dos semana se vio principalmente gestión y financiamiento de proyectos, en el Anexo X se puede ver parte del trabajo realizado durante este periodo.
 
@@ -1115,20 +1298,23 @@ Queda claro que es una idea muy viable, que en la actualidad existe un problema 
 
 \chapter{Trabajo futuro}
 
+
 Esta idea tiene un gran potencial y sin duda quedan muchas cosas por mejorar.
 
 En el modelo de riego recomiendo trabajar junto a un experto en el área, además para hacer el dispositivo más inteligente sería ideal que se aplicara un técnica de inteligencia artificial y que fuera aprendiendo que variables de humedad, probabilidad de lluvia, entre otras se debiera utilizar. El diseño del dispositivo se hizo de tal manera que se pueda ingresar un nuevo modelo de riego y que este funcione correctamente, por lo que se puede profundizar mucho más el tema y mejorar el funcionamiento del dispositivo en general.
 
 Este trabajo de enfoco principalmente en el diseño del prototipo del dispositivo y el modelo de riego, el desarrollo de la aplicación para el usuario no fue la mejor, solamente se muestran dos gráficos que entregan información a los usuarios, se le podría agregar mas funciones para que el usuario interactué más con el dispositivo.
 
+Hay que mejorar el diseño de la base de datos, para que solo se guarde información que le sirva a la aplicación y no guardar registros que no aportan nada.
+
 También quedo pendiente el desarrollo de una aplicación móvil para los usuarios, lo que haría mucho más interésate el uso del dispositivo.
 
-El hardware que se utilizo se podría reemplazar, disminuyendo la cantidad de componentes que se utilizaron. Existe un microcomputador llamado ``beaglebone black'' que podría reemplazar a la Raspberry Pi y el Arduino disminuyendo la cantidad de componentes.
+Finalmente falta realizar pruebas reales que permitan validar los beneficios que ofrece el dispositivo.
 
 %% ambiente glosario
 \begin{glosario}
-  \item[El primer término:] Este es el significado del primer término, realmente no se bien lo que significa pero podría haberlo averiguado si hubiese tenido un poco mas de tiempo.
-  \item[El segundo término:] Este si se lo que significa pero me da lata escribirlo...
+  \item[QGis:]  Sistema de Información Geográfica (SIG) de código libre para plataformas GNU/Linux, Unix, Mac OS, Microsoft Windows y Android.
+  \item[GPS:] es un sistema que permite determinar en todo el mundo la posición de un objeto (una persona, un vehículo).
 \end{glosario}
 
 %% genera las referencias
@@ -1258,7 +1444,7 @@ while True:
 		datos = entradas.split(" ")
 		if len(datos) == 2:
 			humedad = datos[0]
-			if humedad < 512:
+			if humedad < 700:
 				if suelo == "arena":
 					#Reigo arenoso
 					GPIO.output(17,GPIO.HIGH)
@@ -1303,28 +1489,45 @@ def lluvia(lat, lon):
 
 \pagebreak
 
-\section{arduino.py}
+\section{servicio.py}
 \lstset{language=PYTHON, breaklines=true, basicstyle=\footnotesize}
-\begin{lstlisting}[frame=single,caption={arduino.py},label=arduinopy]
+\begin{lstlisting}[frame=single,caption={servicio.py},label=arduinopy]
 #! /usr/bin/python
 import urllib2, urllib
 from serial import Serial
 import datetime
 import time
+import Queue
+from threading import Thread
 
-arduino = Serial('/dev/ttyUSB1', 9600, timeout=1)
+q=Queue.Queue()
+
+def enviarBD():
+	while True:
+		mydata = q.get()
+		mydata = urllib.urlencode(mydata)
+		path = 'http://bri2.utalca.cl/~nmaturana/insertData.php'
+		req = urllib2.Request(path, mydata)
+		req.add_header("Content-type", "application/x-www-form-urlencoded")
+		page = urllib2.urlopen(req).read()
+		print page
+
+arduino = Serial('/dev/ttyUSB0', 9600, timeout=1)
+
+t = Thread(target=enviarBD)
+t.daemon=True
+t.start()
 
 while True:
-        hora = datetime.datetime.now()
-        entradas = arduino.readline()
-        datos = entradas.split(" ")
-        if len(datos) == 2:
-                humedad = datos[0]
-                caudal = datos[1]
-                print "Huemdad: " + humedad
-                print "Caudal: " + caudal
-        print hora
-        time.sleep(5)
+	fecha = datetime.datetime.now()
+	entradas = arduino.readline()
+	datos = entradas.split(" ")
+	if len(datos) == 2:
+		humedad = datos[0]
+		caudal = datos[1]
+		mydata=[('humedad',humedad),('caudal',caudal),('fecha',fecha)]
+		q.put(mydata)
+
 
 \end{lstlisting}
 
