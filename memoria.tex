@@ -14,8 +14,6 @@
 
 %% inicio de documento
 \begin{document}
-
-%% crea la tapa
 \maketitle
 
 %% dedicatoria
@@ -1102,7 +1100,7 @@ La Figura \ref{resultadoSueloGrafico2} muestra el consumo de agua durante los úl
 
 \chapter{Pruebas}
 
-El prototipo no se puedo probar directamente funcionando en un jardín, pero si se probaron los componentes que entregan la mayor parte de las funcionalidades y que algunas son las entradas para el modelo de riego, por lo que su correcto funcionamiento es vital para el correcto funcionamiento.
+El prototipo no se pudo probar directamente funcionando en un jardín, pero si se probaron los componentes que entregan la mayor parte de las funcionalidades y que algunas son las entradas para el modelo de riego, por lo que su correcto funcionamiento es fundamental.
 Si el dispositivo utiliza demasiada o muy poca agua en el riego significa que hay que ajustar el modelo que determina cuando y como regar.
 
 \section{Sensor de caudal}
@@ -1228,8 +1226,8 @@ Como se puede apreciar, cada coordenada que fue consultada al servicio web coinc
 
 Como solo se trabaja con tres tipos de suelos, la conversión se hace utilizando una clasificación de suelo\footnote{http://cals.arizona.edu/oals/soils/fao.html}.
 
-\section{Pronostico del clima}
-Para verificar que la información obtenida desde el servicio web que entrega la probabilidad de lluvia se consulto el clima directamente desde la interfaz de wunderground y luego se realizó una consulta al mismo lugar, los resultados fueron los siguientes:
+\section{Pronóstico del clima}
+Para verificar que la información obtenida desde el servicio web que entrega la probabilidad de lluvia, se consulto el clima directamente desde la interfaz de wunderground y luego se realizó una consulta al mismo lugar utilizando el servicio web creado, los resultados fueron los siguientes:
 \\
 \\
 Prueba 1:
@@ -1277,23 +1275,24 @@ Prueba 2:
 
 \chapter{Conclusión}
 
-Se puede concluir que el desarrollo de este dispositivo puede generar un beneficio económico para las personas y a la vez ayuda a combatir el cambio climático que hoy nos afecta, al ser un dispositivo de bajo costo puede ser adquirido masivamente.
+Se puede concluir que el desarrollo de este dispositivo puede generar un beneficio económico para las personas y a la vez ayudar a combatir el cambio climático que hoy nos afecta, al ser un dispositivo de bajo costo puede ser adquirido masivamente.
 
 El dispositivo no fue probado funcionando directamente en un jardín, por lo que no se puede afirmar que realmente se esta utilizando menos al momento de realizar un riego, pero como se esta consiente de la probabilidad de lluvia al momento de regar, es aquí donde se esta haciendo un ahorro de agua y esto se hace automática e inteligentemente.
 
-Tampoco se puede afirmar que el detectar un tipo de suelo y aplicarle un determinado riego, reduzca la cantidad de agua utilizada sin afectar la calidad del césped. Para esto se necesita hacer pruebas de campo que permitan asegurar que el tipo de suelo afecta en la cantidad de agua utilizada.
+Tampoco se puede afirmar que el detectar un tipo de suelo y aplicarle un determinado riego reduzca la cantidad de agua utilizada sin afectar la calidad del césped. Para esto se necesita hacer pruebas de campo que permitan asegurar que el tipo de suelo afecta en la cantidad de agua utilizada.
 
-El hardware que se utilizo se podría reemplazar, disminuyendo la cantidad de componentes que se utilizaron y mejorando la eficiencia. Existe un microcomputador llamado ``beaglebone black''\footnote{http://beagleboard.org/BLACK} que podría reemplazar a la Raspberry Pi y el Arduino. En cuanto a los sensores no puedo afirmar nada acerca de su funcionamiento, ya que no fueron probados en condiciones de uso reales, pero durante las pruebas tuvieron un correcto funcionamiento.
+El hardware que se utilizó se podría reemplazar, disminuyendo la cantidad de componentes que se utilizaron y mejorando la eficiencia. Existe un microcomputador llamado ``beaglebone black''\footnote{http://beagleboard.org/BLACK} que podría reemplazar a la Raspberry Pi y el Arduino. En cuanto a los sensores no se puede afirmar nada acerca de su funcionamiento, ya que no fueron probados en condiciones de uso reales, pero durante las pruebas tuvieron un correcto funcionamiento.
 
-Los dispositivos que se venden en la actualidad tienen un costo muy elevado o requieren de mucha intervención de las personas, por lo que muchas veces se dejan de utilizar o no se utiliza correctamente.
+Los dispositivos que se venden en la actualidad tienen un costo muy elevado o requieren de mucha intervención de personas, por lo que muchas veces se dejan de utilizar o no se utiliza correctamente.
 
-Este dispositivo se puede ampliar al uso agrícola, uno de los grandes problemas identificados por el Gobierno es la falta de tecnología aplicada en la agricultura. Es dispositivo como se encuentra en este momento puede ser fácilmente utilizado para este fin, sin duda que se le pueden agregar más sensores y mejorar el modelo para cada tipo de cultivo.
+Este dispositivo se puede ampliar al uso agrícola, uno de los grandes problemas identificados por el Gobierno es la falta de tecnología aplicada en la agricultura. Este dispositivo puede ser fácilmente utilizado para este fin, sin duda que se le pueden agregar más sensores y mejorar el modelo para cada tipo de cultivo.
 
-En el desarrollo del modelo de riego que determina cuando y como regar se debería trabajar con un especialista en el área, Smart Irrigation es muy flexible en este sentido y es uno de los puntos a mejorar.
+En el desarrollo del modelo de riego que determina cuándo y cómo regar se debería trabajar con un especialista en el área, Smart Irrigation es muy flexible en este sentido y es uno de los puntos a mejorar.
 
-Este trabajo aparte de la investigación, escritura de este documento y desarrollo de un prototipo del dispositivo de riego incluyo también trabajo externo en un concurso de emprendimiento llevado a cabo por Fundación para la Innovación Agraria, el concurso llamado ``Proyectos de Emprendimiento Innovador: Jóvenes Innovadores''. En este concurso el dispositivo uno de los finalistas los cuales tuvieron una capacitación en Santiago durante dos semanas con profesores de la Universidad de Oxford, en esas dos semana se vio principalmente gestión y financiamiento de proyectos, en el Anexo X se puede ver parte del trabajo realizado durante este periodo.
+Este trabajo aparte de la investigación, escritura del documento y desarrollo de un prototipo del dispositivo de riego también incluyó trabajo externo en un concurso de emprendimiento llevado a cabo por Fundación para la Innovación Agraria, el concurso llamado ``Proyectos de Emprendimiento Innovador: Jóvenes Innovadores''. En este concurso el dispositivo fue uno de los finalistas, los participantes tuvieron una capacitación en Santiago durante dos semanas con profesores de la Universidad de Oxford, en esas dos semana se vio principalmente gestión y financiamiento de proyectos. En el Anexo \ref{aped.fia} se puede ver parte del trabajo realizado durante este período.
 
-Queda claro que es una idea muy viable, que en la actualidad existe un problema que no esta solucionado, existe el mercado potencial para hacer económicamente sustentable esta idea y con este trabajo se ha demostrado que se puede hacer algo bueno que genere un gran impacto en la sociedad.
+Queda claro que es una idea muy viable, ya que en la actualidad existe un problema que no esta solucionado, el cual es el uso ineficiente del agua utilizada en el riego y la automatización de este proceso.
+Es relevante mencionar que existe un mercado potencial para hacer económicamente sustentable esta idea y que con su utilización se puede ayudar considerablemente al cuidado del agua y el medio ambiente.
 
 
 \chapter{Trabajo futuro}
@@ -1301,15 +1300,15 @@ Queda claro que es una idea muy viable, que en la actualidad existe un problema 
 
 Esta idea tiene un gran potencial y sin duda quedan muchas cosas por mejorar.
 
-En el modelo de riego recomiendo trabajar junto a un experto en el área, además para hacer el dispositivo más inteligente sería ideal que se aplicara un técnica de inteligencia artificial y que fuera aprendiendo que variables de humedad, probabilidad de lluvia, entre otras se debiera utilizar. El diseño del dispositivo se hizo de tal manera que se pueda ingresar un nuevo modelo de riego y que este funcione correctamente, por lo que se puede profundizar mucho más el tema y mejorar el funcionamiento del dispositivo en general.
+En el modelo de riego se recomienda trabajar junto a un experto en el área de riego, además para hacer el dispositivo más inteligente sería ideal que se aplicara una técnica de inteligencia artificial y que fuera aprendiendo variables de humedad, probabilidad de lluvia y entre otras que se debieran utilizar. El diseño del dispositivo se hizo de tal manera que se pueda ingresar un nuevo modelo de riego y que este funcione correctamente, por lo que se puede profundizar mucho más el tema y mejorar el funcionamiento del dispositivo en general.
 
-Este trabajo de enfoco principalmente en el diseño del prototipo del dispositivo y el modelo de riego, el desarrollo de la aplicación para el usuario no fue la mejor, solamente se muestran dos gráficos que entregan información a los usuarios, se le podría agregar mas funciones para que el usuario interactué más con el dispositivo.
+Este trabajo de enfoco principalmente en el diseño del prototipo del dispositivo y el modelo de riego, el desarrollo de la aplicación para el usuario no fue la mejor, solamente se muestran dos gráficos que les entrega información, se le podría agregar más funciones para que el usuario interactué con el dispositivo.
 
-Hay que mejorar el diseño de la base de datos, para que solo se guarde información que le sirva a la aplicación y no guardar registros que no aportan nada.
+Hay que mejorar el diseño de la base de datos, para que solo se guarde información que le sirva a la aplicación y no guardar registros que no son significativos.
 
 También quedo pendiente el desarrollo de una aplicación móvil para los usuarios, lo que haría mucho más interésate el uso del dispositivo.
 
-Finalmente falta realizar pruebas reales que permitan validar los beneficios que ofrece el dispositivo.
+Finalmente falta realizar pruebas de campo que permitan validar los reales beneficios que ofrece el dispositivo.
 
 %% ambiente glosario
 \begin{glosario}
@@ -1325,7 +1324,7 @@ Finalmente falta realizar pruebas reales que permitan validar los beneficios que
 \appendixpart
 
 %% contenido del primer anexo
-\appendix{Trabajo realizado en FIA}
+\appendix{Trabajo realizado en FIA}\label{aped.fia}
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm]{outside.png}
@@ -1339,6 +1338,27 @@ Finalmente falta realizar pruebas reales que permitan validar los beneficios que
 \centering
 \includegraphics[width=10cm]{inside.png}
 \caption{Interior tríptico realizado en FIA}
+\label{inside}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{smartirrigation.jpg}
+\caption{Resumen ejecutivo}
+\label{inside}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{0001.jpg}
+\caption{Presentación parte 1}
+\label{inside}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{0002.jpg}
+\caption{Presentación parte 2}
 \label{inside}
 \end{figure}
 

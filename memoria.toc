@@ -80,15 +80,15 @@
 \contentsline {section}{\numberline {4.1}Sensor de caudal}{55}
 \contentsline {section}{\numberline {4.2}Sensor de humedad}{56}
 \contentsline {section}{\numberline {4.3}Detecci\'on de suelo}{57}
-\contentsline {section}{\numberline {4.4}Pronostico del clima}{59}
+\contentsline {section}{\numberline {4.4}Pron\'ostico del clima}{59}
 \contentsline {chapter}{\numberline {5}Conclusi\'on}{61}
 \contentsline {chapter}{\numberline {6}Trabajo futuro}{63}
 \contentsline {chapter}{Glosario}{64}
 \contentsline {chapter}{Bibliograf\'{\i }a}{65}
 \contentsline {chapter}{Anexos}{}
 \contentsline {chapter}{A:\hspace {1em}Trabajo realizado en FIA}{68}
-\contentsline {chapter}{B:\hspace {1em}C\'odigo fuente}{70}
-\contentsline {section}{\numberline {B.1}gps.py}{70}
-\contentsline {section}{\numberline {B.2}riego.py}{72}
-\contentsline {section}{\numberline {B.3}clima.py}{74}
-\contentsline {section}{\numberline {B.4}servicio.py}{75}
+\contentsline {chapter}{B:\hspace {1em}C\'odigo fuente}{73}
+\contentsline {section}{\numberline {B.1}gps.py}{73}
+\contentsline {section}{\numberline {B.2}riego.py}{75}
+\contentsline {section}{\numberline {B.3}clima.py}{77}
+\contentsline {section}{\numberline {B.4}servicio.py}{78}
