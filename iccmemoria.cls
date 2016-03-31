@@ -40,7 +40,7 @@
 \def\appendixpartname{Anexos}
 
 \def\supervisor#1{\def\@supervisor{#1}}
-\def\informantes#1#2{\def\@informantex{#1}\def\@informantey{#2}}
+\def\informantes#1{\def\@informantex{#1}}
 \def\adicional#1{\def\@adicional{#1}}
 \def\director#1{\def\@director{#1}}
 \def\titulo#1{\def\@titulo{#1}}
@@ -230,8 +230,8 @@ Memoria para optar al t\'{\i}tulo de Ingeniero Civil en Computaci\'{o}n\\}%} \\}
 {Profesor Informante: \MakeUppercase{\@informantex}}
 \bigskip
 
-{Profesor Informante: \MakeUppercase{\@informantey}}
-\bigskip
+%{Profesor Informante: \MakeUppercase{\@informantey}}
+%\bigskip
 
 %{\@adicional}
 %\bigskip
